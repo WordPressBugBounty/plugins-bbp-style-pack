@@ -1894,7 +1894,7 @@ global $bsp_style_settings_topic_fields ;
 		if (!empty ($field)){
 			if (is_numeric($field)) $field=$field.'px';
 	?>
-			#bbpress-forums a.bbp-author-name
+			#bbpress-forums div.bbp-reply-author .bbp-author-name
 			{
 				font-size: <?php echo $field; ?>;
 			}
@@ -1906,7 +1906,7 @@ global $bsp_style_settings_topic_fields ;
 		$field= (!empty($datat['Author Name FontFont']) ? $datat['Author Name FontFont'] : '');
 		if (!empty ($field)){
 	?>
-			#bbpress-forums a.bbp-author-name
+			#bbpress-forums div.bbp-reply-author .bbp-author-name
 			{
 				font-family: <?php echo $field; ?>;
 			}
@@ -1919,7 +1919,7 @@ global $bsp_style_settings_topic_fields ;
 		if (!empty ($field)){
 			if (strpos($field,'Italic') !== false){
 			?>
-				#bbpress-forums a.bbp-author-name
+				#bbpress-forums div.bbp-reply-author .bbp-author-name
 				{
 					font-style: italic; 
 				}
@@ -1928,14 +1928,14 @@ global $bsp_style_settings_topic_fields ;
 
 			if (strpos($field,'Bold') !== false){
 			?>
-				#bbpress-forums a.bbp-author-name
+				#bbpress-forums div.bbp-reply-author .bbp-author-name
 				{
 					font-weight: bold; 
 				}
 			<?php
 			}
 			else {?>
-				#bbpress-forums a.bbp-author-name
+				#bbpress-forums div.bbp-reply-author .bbp-author-name
 				{
 					font-weight: normal; 
 				}

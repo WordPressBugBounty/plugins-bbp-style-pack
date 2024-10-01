@@ -1576,8 +1576,11 @@ function bsp_trim_revision_log( $r='' ) {
 	//if not set up or 'all' then just return
 	$rev = (!empty($bsp_style_settings_t['Revisionsrevisions']) ? $bsp_style_settings_t['Revisionsrevisions'] : 'all' );
 	if ($rev== 'all') return $r;
-        //if 0, then return none
+        //if zero or none, then return nothing
 	if ($rev == 'none') return;
+	if ($rev == 'None') return;
+	if ($rev == '0') return;
+	if (!is_numeric($rev)) return $r;
 	else {
                 //show only the last n revisions
                 $arr = array_slice($r, -$rev);
