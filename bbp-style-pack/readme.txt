@@ -3,7 +3,7 @@ Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
 Tested up to: 6.6
-Stable tag: 6.1.0
+Stable tag: 6.1.1
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,9 @@ To install this plugin :
 
 
 == Changelog ==
+
+= 6.1.1 =
+* The first of several technical releases which will help bring this plugin up to date with all the latest WordPress coding standards and PHP changes
 
 = 6.0.9/6.1.0 =
 * Fixed a bug if trim revisions was not numeric in bsp_trim_revision_log
