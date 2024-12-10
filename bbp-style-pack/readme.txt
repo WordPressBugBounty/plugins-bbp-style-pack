@@ -3,7 +3,7 @@ Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
 Tested up to: 6.7
-Stable tag: 6.1.4
+Stable tag: 6.1.5
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,9 @@ To install this plugin :
 
 
 == Changelog ==
+
+= 6.1.5 =
+*correct issue for Astra theme
 
 = 6.1.4 =
 * Further improvements for issues with translations following WP 6.7 release.

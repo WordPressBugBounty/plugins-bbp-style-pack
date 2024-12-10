@@ -4,7 +4,7 @@
 Plugin Name: bbp style pack
 Plugin URI: http://www.rewweb.co.uk/bbp-style-pack/
 Description: This plugin adds styling and features to bbPress.
-Version: 6.1.4
+Version: 6.1.5
 Author: Robin Wilson
 Text Domain: bbp-style-pack
 Domain Path: /languages
@@ -76,7 +76,7 @@ if(!defined('BSP_PLUGIN_URL'))
 add_action('plugins_loaded', 'bbp_style_pack_init');
 
 //theme check needs to be run from setup theme action , as calling at time of plugins loaded produces translation error in 6.7
-add_action('after_setup_theme', 'bsp_theme_check');
+add_action('setup_theme', 'bsp_theme_check');
 
 //set bbpress version which is needed for function below and template order (around line 187)
 
@@ -821,12 +821,14 @@ function bsp_theme_check() {
 			   $parent = wp_get_theme()->parent();
 			   				
 				if ($theme_name == 'Astra' || $parent ==  'Astra') {
-                        $version = $theme_name->get('Version') ;
+                       // if (!empty ($theme_name->get('Version'))) $version =  $theme_name->get('Version');
+					$version = '' ;
                         //older version don't have this issue, and fixed in later, so only...
                         if ($version == '4.0.2' || $version == '4.1.0' || $version == '4.1.1' || $version == '4.1.2' || $version == '4.1.3' || $version == '4.1.4' || $version == '4.1.5' || $version == '4.1.6' )  {
                                 $bsp_theme_check = 'astra' ;
                         }
                }
+			   
 		
 				if ($theme_name == 'Divi' || $parent ==  'Divi' ) $bsp_theme_check = 'divi' ;
 				if ($theme_name == 'Kadence' || $parent ==  'Kadence' ) $bsp_theme_check = 'kadence' ;
