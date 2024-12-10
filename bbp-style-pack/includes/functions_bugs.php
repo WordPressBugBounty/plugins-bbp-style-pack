@@ -566,7 +566,7 @@ function bsp_set_hidden_subscribers ($post) {
 
 	// Output
 	?>
-	<input name="bsp_topic_subscription" id="bsp_topic_subscription" type="hidden" value="<?php echo $list; ?>" />
+	<input name="bsp_topic_subscription" id="bsp_topic_subscription" type="hidden" value="<?php echo esc_html($list); ?>" />
 	<?php
 }
 
@@ -672,10 +672,10 @@ function bsp_display_errors_at_top_of_topic_list () {
 
 		<div class="bbp-template-notice error" role="alert" tabindex="-1">
 			<ul>
-				<li><?php echo implode( "</li>\n<li>", $errors ); ?></li>
+				<li><?php echo implode( "</li>\n<li>", esc_html($errors) ); ?></li>
 		<?php
 		echo '<a href = "#new-post">' ;
-		_e ('Click here to correct errors' , 'bbp-style-pack' ) ;
+		esc_html_e ('Click here to correct errors' , 'bbp-style-pack' ) ;
 		echo '</a>' ;
 		?>
 			</ul>

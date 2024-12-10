@@ -2,8 +2,8 @@
 Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
-Tested up to: 6.6
-Stable tag: 6.1.3
+Tested up to: 6.7
+Stable tag: 6.1.4
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,13 @@ To install this plugin :
 
 
 == Changelog ==
+
+= 6.1.4 =
+* Further improvements for issues with translations following WP 6.7 release.
+* I've added an additional shortcode is you are using unread posts, which lets you have say a page showing all unread posts.
+* Some further technical changes which will help bring this plugin up to date with all the latest WordPress coding standards and PHP changes
+
+
 
 = 6.1.3 =
 * Change to getting bbpress version in bbp-style-pack.php as old method is causing issues with translations following WP 6.7 release.

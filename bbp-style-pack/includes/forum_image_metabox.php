@@ -35,17 +35,17 @@ function bsp_forum_meta_box( $object, $box ) {
 		$name4= __('Full' , 'bbp-style-pack' );
 		$name5= __('Custom' , 'bbp-style-pack' );
 		echo '<p>' ;
-		_e ('By default the image will show as thumbnail in the forum lists, but you may wish to set a different size or custom size here.  Sizes are as defined in Dashboard>Settings>Media' , 'bbp-style-pack') ; 
+		esc_html_e ('By default the image will show as thumbnail in the forum lists, but you may wish to set a different size or custom size here.  Sizes are as defined in Dashboard>Settings>Media' , 'bbp-style-pack') ; 
 		echo '</p><p>' ;
-		echo '<input name="'.$name.'" id="'.$item.'" type="radio" value="1" class="code"  ' . checked( 1,$item, false ) . ' />'.$name1.'</p>' ;
+		echo '<input name="'.esc_html($name).'" id="'.esc_html($item).'" type="radio" value="1" class="code"  ' . checked( 1,esc_html($item), false ) . ' />'.esc_html($name1).'</p>' ;
 		echo '<p>' ;
-		echo '<input name="'.$name.'" id="'.$item.'" type="radio" value="2" class="code"  ' . checked( 2,$item, false ) . ' />'.$name2.'</p>' ;
+		echo '<input name="'.esc_html($name).'" id="'.esc_html($item).'" type="radio" value="2" class="code"  ' . checked( 2,esc_html($item), false ) . ' />'.esc_html($name2).'</p>' ;
 		echo '<p>' ;
-		echo '<input name="'.$name.'" id="'.$item.'" type="radio" value="3" class="code"  ' . checked( 3,$item, false ) . ' />'.$name3.'</p>' ;
+		echo '<input name="'.esc_html($name).'" id="'.esc_html($item).'" type="radio" value="3" class="code"  ' . checked( 3,esc_html($item), false ) . ' />'.esc_html($name3).'</p>' ;
 		echo '<p>' ;
-		echo '<input name="'.$name.'" id="'.$item.'" type="radio" value="4" class="code"  ' . checked( 4,$item, false ) . ' />'.$name4.'</p>' ;
+		echo '<input name="'.esc_html($name).'" id="'.esc_html($item).'" type="radio" value="4" class="code"  ' . checked( 4,esc_html($item), false ) . ' />'.esc_html($name4).'</p>' ;
 		echo '<p>' ;
-		echo '<input name="'.$name.'" id="'.$item.'" type="radio" value="5" class="code"  ' . checked( 5,$item, false ) . ' />'.$name5.'</p>' ;
+		echo '<input name="'.esc_html($name).'" id="'.esc_html($item).'" type="radio" value="5" class="code"  ' . checked( 5,esc_html($item), false ) . ' />'.esc_html($name5).'</p>' ;
 		echo '<p>' ;
 		_e ('If custom, enter width and height here : ' , 'bbp-style-pack') ;
 		$name6 = __('Width' , 'bbp-style-pack' );
@@ -56,10 +56,10 @@ function bsp_forum_meta_box( $object, $box ) {
 		$meta7 = get_post_meta( $post->ID, 'bsp_forum_thumbnailheight', true );
 		$item6 = (!empty($meta6) ? $meta6 : '');
 		$item7 = (!empty($meta7) ? $meta7 : '');
-		echo '<p>'.$name6.'<input id="'.$area6.'" class="small-text" name="'.$area6.'" type="text" value="'.esc_html( $item6 ).'"</p>' ; ?>
+		echo '<p>'.$name6.'<input id="'.esc_html($area6).'" class="small-text" name="'.esc_html($area6).'" type="text" value="'.esc_html( $item6 ).'"</p>' ; ?>
 		<label class="description"><?php _e( 'e.g. 50', 'bbp-style-pack' ); ?></label><br/>
 		<?php
-		echo '<p>'.$name7.'<input id="'.$area7.'" class="small-text" name="'.$area7.'" type="text" value="'.esc_html( $item7 ).'"</p>' ; ?>
+		echo '<p>'.$name7.'<input id="'.esc_html($area7).'" class="small-text" name="'.esc_html($area7).'" type="text" value="'.esc_html( $item7 ).'"</p>' ; ?>
 		<label class="description"><?php _e( 'e.g. 50', 'bbp-style-pack' ); ?></label><br/>
 			
 		</div><?php

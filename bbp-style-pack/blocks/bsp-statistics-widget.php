@@ -24,7 +24,7 @@ if (!$check) return ;
 		
 		if ( !empty( $attributes['title'] ) ) {
 	
-			echo '<span class="bsp-stats-title"><h3 class="widget-title bsp-widget-title">' .  $attributes['title']  . '</h3></span>' ;
+			echo '<span class="bsp-stats-title"><h3 class="widget-title bsp-widget-title">' .  esc_html($attributes['title'])  . '</h3></span>' ;
 		} 
 		
 		$sep = apply_filters ('bsp_stats_seperator', ': ') ;
@@ -35,25 +35,25 @@ if (!$check) return ;
 		$stats = bbp_get_statistics(); 
 		echo '<strong>' ;
 		 esc_html_e( 'Registered Users', 'bbpress' ); 
-			echo $sep.esc_html( $stats['user_count'] ).'<br/>';
+			echo esc_html($sep).esc_html( $stats['user_count'] ).'<br/>';
 		
 		 esc_html_e( 'Forums', 'bbpress' ); 
-		 echo $sep.esc_html( $stats['forum_count'] ).'<br/>';
+		 echo esc_html($sep).esc_html( $stats['forum_count'] ).'<br/>';
 			
 		
 		esc_html_e( 'Topics', 'bbpress' ); 
-			echo $sep.esc_html( $stats['topic_count'] ).'<br/>';
+			echo esc_html($sep).esc_html( $stats['topic_count'] ).'<br/>';
 		
 		esc_html_e( 'Replies', 'bbpress' ); 
 		
-			echo $sep.esc_html( $stats['reply_count'] ).'<br/>';
+			echo esc_html($sep).esc_html( $stats['reply_count'] ).'<br/>';
 		
 		
 		 if ( ! empty( $stats['topic_tag_count'] ) ) : 
 
 		esc_html_e( 'Topic Tags', 'bbpress' ); 
 		
-			echo $sep.esc_html( $stats['topic_tag_count'] ).'<br/>';
+			echo esc_html($sep).esc_html( $stats['topic_tag_count'] ).'<br/>';
 		
 		
 		 endif; 
@@ -62,7 +62,7 @@ if (!$check) return ;
 
 			esc_html_e( 'Empty Topic Tags', 'bbpress' ); 
 			
-				echo $sep.esc_html( $stats['empty_topic_tag_count'] ).'<br/>';
+				echo esc_html($sep).esc_html( $stats['empty_topic_tag_count'] ).'<br/>';
 			
 
 		 endif; 
@@ -70,13 +70,13 @@ if (!$check) return ;
 		 if ( ! empty( $stats['topic_count_hidden'] ) ) : 
 
 			esc_html_e( 'Hidden Topics', 'bbpress' ); 
-				echo $sep.esc_html( $stats['topic_count_hidden'] ).'<br/>';
+				echo esc_html($sep).esc_html( $stats['topic_count_hidden'] ).'<br/>';
 		 endif; 
 
 		 if ( ! empty( $stats['reply_count_hidden'] ) ) : 
 
 			esc_html_e( 'Hidden Replies', 'bbpress' ); 
-			echo $sep.esc_html( $stats['reply_count_hidden'] ).'<br/>';
+			echo esc_html($sep).esc_html( $stats['reply_count_hidden'] ).'<br/>';
 			
 		 endif; 
 

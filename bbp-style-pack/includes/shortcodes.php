@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 // All y/n and yes/no option values have been converted to true/false.
 // Legacy checks included to account for y/n and yes/no to prevent breaking existing shortcode uses on sites.
 // true/false now standard for shortcodes.
-
+global $bsp_style_settings_unread ;
 
 // shortcodes functions
 
@@ -19,9 +19,13 @@ add_shortcode('bsp-display-forum-index', 'bsp_display_selected_forum');
 add_shortcode ('bsp-profile', 'bsp_display_edit_profile_link') ;
 add_shortcode ('bsp-forum-subscriber-count', 'bsp_forum_subscriber_count') ;
 add_shortcode ('bsp-force-login', 'bsp_forum_login') ;
+//only load functions_unread if activated
+	if (!empty($bsp_style_settings_unread['unread_activate'])) {
+		//note the function for this shortcode is held in includes/unread_posts_page.php
+		add_shortcode ('bsp-display-unreads-index', 'bsp_display_unreads_index') ;
+	}
 
 
-//add_shortcode ('bsp-display-topic' , 'bsp_display_topic' ) ;
 
 function bsp_display_topic_index($attr, $content = '' ) {
 

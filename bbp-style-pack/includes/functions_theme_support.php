@@ -8,6 +8,7 @@ global $bsp_style_settings_theme_support ;
 
 
 if (!empty ($bsp_style_settings_theme_support['fse'])  && $bsp_theme_check == 'block_theme') {
+
 add_action( 'after_setup_theme', 'bsp_fse_support' );
 }
 

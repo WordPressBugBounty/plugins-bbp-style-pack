@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
 		
 		if ( !empty( $attributes['title'] ) ) {
 	
-			echo '<span class="bsp-sf-title"><h3 class="widget-title bsp-widget-title">' .  $attributes['title']  . '</h3></span>' ;
+			echo '<span class="bsp-sf-title"><h3 class="widget-title bsp-widget-title">' . esc_html($attributes['title'])  . '</h3></span>' ;
 		} 
 		
 		do_action ('bsp_single_forum_widget_after_title') ;
@@ -60,33 +60,33 @@ defined( 'ABSPATH' ) || exit;
 		$show_iconla = (!empty ($attributes['show_icons']) ? 'show-iconla' : '' ) ;
 
 		if ( bbp_get_forum_parent_id() ) : ?>
-			<li class="topic-parent <?php echo $show_iconf ; ?> ">
-			<?php echo $attributes['in'];
+			<li class="topic-parent <?php echo esc_html($show_iconf) ; ?> ">
+			<?php echo esc_html($attributes['in']);
 				printf( '<a href="%s">%s</a>',
 						esc_url( bbp_get_forum_permalink( bbp_get_forum_parent_id() ) ),
-						bbp_get_forum_title( bbp_get_forum_parent_id() )) ;
+						esc_html(bbp_get_forum_title( bbp_get_forum_parent_id() ))) ;
 					?></li>
 		<?php endif; ?>
 		<?php if ( !empty( $topic_count ) ) : ?>
-			<li class="topic-count <?php echo $show_icont ; ?> ">
-			<?php echo $topic_count;  ?></li>
+			<li class="topic-count <?php echo esc_html($show_icont) ; ?> ">
+			<?php echo esc_html($topic_count);  ?></li>
 		<?php endif; ?>
 		<?php if ( !empty( $reply_count ) ) : ?>
-		<li class="reply-count <?php echo $show_iconr ; ?> ">
-		<?php echo $reply_count; ?></li>
+		<li class="reply-count <?php echo esc_html($show_iconr) ; ?> ">
+		<?php echo esc_html($reply_count); ?></li>
 		<?php endif; ?>
 		<?php if ( !empty( $last_active  ) ) : ?>
-			<li class="topic-freshness-author <?php echo $show_iconlr ; ?> ">
+			<li class="topic-freshness-author <?php echo esc_html($show_iconlr) ; ?> ">
 			<?php
-				echo $attributes['last_reply'];
+				echo esc_html($attributes['last_reply']);
 				echo bbp_get_author_link( array( 'type' => 'name', 'post_id' => $last_active ) ) ;
 			?></li>
 		<?php endif; ?>
 		<?php if ( !empty( $time_since  ) ) : ?>
-		<li class="topic-freshness-time <?php echo $show_iconla ; ?> ">
+		<li class="topic-freshness-time <?php echo esc_html($show_iconla) ; ?> ">
 			<?php
-				echo $attributes['last_activity'];
-				echo $time_since ;
+				echo esc_html($attributes['last_activity']);
+				echo esc_html($time_since) ;
 			?></li>
 			
 		

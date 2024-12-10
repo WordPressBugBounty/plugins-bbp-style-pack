@@ -4,7 +4,7 @@
 Plugin Name: bbp style pack
 Plugin URI: http://www.rewweb.co.uk/bbp-style-pack/
 Description: This plugin adds styling and features to bbPress.
-Version: 6.1.3
+Version: 6.1.4
 Author: Robin Wilson
 Text Domain: bbp-style-pack
 Domain Path: /languages
@@ -73,6 +73,11 @@ if(!defined('BSP_PLUGIN_DIR'))
 if(!defined('BSP_PLUGIN_URL'))
 	define('BSP_PLUGIN_URL', plugin_dir_url( __FILE__ ));
 
+add_action('plugins_loaded', 'bbp_style_pack_init');
+
+//theme check needs to be run from setup theme action , as calling at time of plugins loaded produces translation error in 6.7
+add_action('after_setup_theme', 'bsp_theme_check');
+
 //set bbpress version which is needed for function below and template order (around line 187)
 
 $plugin_data = get_file_data(ABSPATH . 'wp-content/plugins/bbpress/bbpress.php', array('Version' => 'Version'), false);
@@ -100,7 +105,6 @@ function bbp_style_pack_init() {
         bsp_load_plugin() ;
 }
 
-add_action('plugins_loaded', 'bbp_style_pack_init');
 
 
 //  TEMPLATES - done now as needed when bbpress loads
@@ -359,36 +363,7 @@ function bsp_load_plugin() {
 
                 add_action( 'init', 'bsp_register_forum_patterns' );
 				
-				
-/*******************************************
-* Theme Checks
-*******************************************/
-                global $bsp_theme_check ;
 
-                // CHECK IF BLOCK THEME
-                // get current theme dir
-                $theme_dir = get_template_directory();
-                //Detect if FSE (what WordPress calls block themes) theme or traditional - FSE Block themes require a theme.json file.
-                if ( file_exists( $theme_dir . '/templates/index.html') ) {
-                        $bsp_theme_check = 'block_theme' ;
-                }
-                //check for specific themes
-                $theme_name = wp_get_theme() ;
-				$parent = wp_get_theme()->parent();
-
-                if ($theme_name == 'Astra' || $parent ==  'Astra') {
-                        $version = $theme_name->get('Version') ;
-                        //older version don't have this issue, and fixed in later, so only...
-                        if ($version == '4.0.2' || $version == '4.1.0' || $version == '4.1.1' || $version == '4.1.2' || $version == '4.1.3' || $version == '4.1.4' || $version == '4.1.5' || $version == '4.1.6' )  {
-                                $bsp_theme_check = 'astra' ;
-                        }
-                }
-
-                if ($theme_name == 'Divi' || $parent ==  'Divi' ) $bsp_theme_check = 'divi' ;
-                if ($theme_name == 'Kadence' || $parent ==  'Kadence' ) $bsp_theme_check = 'kadence' ;
-				if ($theme_name == 'Hello Elementor' || $parent ==  'Hello Elementor') $bsp_theme_check = 'hello-elementor' ;
-
-                if (!empty ($bsp_theme_check)) include(BSP_PLUGIN_DIR . '/includes/functions_theme_support.php');
 
 /*******************************************
 * front-end and admin files
@@ -400,8 +375,10 @@ function bsp_load_plugin() {
 
                 global $bsp_style_settings_unread ;
                 //only load functions_unread if activated
-                if (!empty($bsp_style_settings_unread['unread_activate'])) 
-                        include(BSP_PLUGIN_DIR . '/includes/functions_unread.php');
+                if (!empty($bsp_style_settings_unread['unread_activate'])) {
+                        include(BSP_PLUGIN_DIR . '/includes/functions_unread.php') ;
+						include(BSP_PLUGIN_DIR . '/includes/unread_posts_page.php');
+				}
 
                 //only load functions_quote if activated
                 global $bsp_style_settings_quote ;
@@ -820,4 +797,43 @@ function bsp_register_block_pattern_categories() {
                         register_block_pattern_category( $name, $properties );
                 }
         }
+}
+
+
+function bsp_theme_check() {
+
+/*******************************************
+* Theme Checks
+*******************************************/
+               global $bsp_theme_check ;
+
+                // CHECK IF BLOCK THEME
+                // get current theme dir
+                $theme_dir = get_template_directory();
+                //Detect if FSE (what WordPress calls block themes) theme or traditional - FSE Block themes require a theme.json file.
+                if ( file_exists( $theme_dir . '/templates/index.html') ) {
+                      $bsp_theme_check = 'block_theme' ;
+                }
+				else {
+                //check for specific themes
+               $theme= wp_get_theme() ;
+			   $theme_name = $theme->get( 'Name' ) ;
+			   $parent = wp_get_theme()->parent();
+			   				
+				if ($theme_name == 'Astra' || $parent ==  'Astra') {
+                        $version = $theme_name->get('Version') ;
+                        //older version don't have this issue, and fixed in later, so only...
+                        if ($version == '4.0.2' || $version == '4.1.0' || $version == '4.1.1' || $version == '4.1.2' || $version == '4.1.3' || $version == '4.1.4' || $version == '4.1.5' || $version == '4.1.6' )  {
+                                $bsp_theme_check = 'astra' ;
+                        }
+               }
+		
+				if ($theme_name == 'Divi' || $parent ==  'Divi' ) $bsp_theme_check = 'divi' ;
+				if ($theme_name == 'Kadence' || $parent ==  'Kadence' ) $bsp_theme_check = 'kadence' ;
+				if ($theme_name == 'Hello Elementor' || $parent ==  'Hello Elementor') $bsp_theme_check = 'hello-elementor' ;
+				}
+				
+				if (!empty ($bsp_theme_check))
+					include(BSP_PLUGIN_DIR . '/includes/functions_theme_support.php');
+				
 }

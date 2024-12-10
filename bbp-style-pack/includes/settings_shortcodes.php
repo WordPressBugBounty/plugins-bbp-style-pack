@@ -39,6 +39,7 @@ function bsp_shortcodes_display() {
                 * <a href="#display_profile_link"><?php _e( 'Display Profile Link ', 'bbp-style-pack' ); ?></a><br/>
                 * <a href="#force_login_on_forum_index"><?php _e( 'Force Login on Forum Index ', 'bbp-style-pack' ); ?></a><br/>
                 * <a href="#moderation_pending"><?php _e( 'Moderation Pending', 'bbp-style-pack' ); ?></a><br/>
+				* <a href="#unread_posts"><?php _e( 'Unread Posts', 'bbp-style-pack' ); ?></a><br/>
         </p>
         <hr/>
         
@@ -891,7 +892,33 @@ function bsp_shortcodes_display() {
                         })();
                 </script>
 
-<!-- end bsp-force-login shortcode --> 
+<!-- end bsp-moderation-pending shortcode --> 
+        <br/>
+        <hr/> 
+		
+<!-- start unread_posts shortcode --> 
+        <?php $shortcode_slug = "bsp_display_unreads_index" ?>
+        <h4 id="unread_posts">
+                <span style="color:blue">
+                        <?php _e( 'Display Unread Topics Index', 'bbp-style-pack' ); ?>
+                </span>
+        </h4>
+        <p>
+                <?php _e( 'Displays all the unread Topics for the user', 'bbp-style-pack' ); ?>
+        </p>
+		<p><b>
+                <?php _e( 'This shortcode will only work if unread posts are set in dashboard>settings>bbp-style-pack>Unread Posts', 'bbp-style-pack' ); ?>
+        </b></p>
+		 <p>
+                <?php _e( 'Warning: On sites with many topics, this shortcode may take a while to execute, so use with care', 'bbp-style-pack' ); ?>
+        </p>
+        
+        <!-- minimum example --> 
+                <p id="bsp-shortcode-<?php echo $shortcode_slug; ?>-min"><tt style="border:1px solid #000;padding:12px;background-color:#f5f5f5;margin:6px;line-height:42px;">[bsp-display-topic-index]</tt></p>
+                <p>
+                        <button type="button" class="button unselectable" id="copy-<?php echo $shortcode_slug; ?>-min" data-clipboard-action="copy" data-clipboard-target="#bsp-shortcode-<?php echo $shortcode_slug; ?>-min" onmousedown="return false" onselectstart="return false"><?php echo $copy_message; ?></button>
+                </p>
+<!-- end unread_posts shortcode --> 
         <br/>
         <hr/> 
 

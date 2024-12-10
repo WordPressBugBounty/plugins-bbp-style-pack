@@ -52,11 +52,11 @@ function bsp_forum_display_sort ($column, $forum_id) {
         switch ( $column ) {
         // forum
                 case 'bsp_forum_topic_count' :
-                echo '<a href="' . site_url() . '/wp-admin/edit.php?post_type=topic&amp;bsp_forum_id='.$forum_id.'&amp;bsp_checkf=1">'.bbp_get_forum_topic_count( $forum_id ).'</a>' ;
+                echo '<a href="' . esc_url(site_url()) . '/wp-admin/edit.php?post_type=topic&amp;bsp_forum_id='.esc_html($forum_id).'&amp;bsp_checkf=1">'.esc_html(bbp_get_forum_topic_count( $forum_id )).'</a>' ;
                 break;
         // replies
                 case 'bsp_forum_reply_count' :
-                echo '<a href="' . site_url() . '/wp-admin/edit.php?post_type=reply&amp;bbp_forum_id='.$forum_id.'&amp;bsp_checkf=1">'.bbp_get_forum_reply_count( $forum_id ).'</a>' ;
+                echo '<a href="' . esc_url(site_url()) . '/wp-admin/edit.php?post_type=reply&amp;bbp_forum_id='.esc_html($forum_id).'&amp;bsp_checkf=1">'.esc_html(bbp_get_forum_reply_count( $forum_id )).'</a>' ;
                 break;
 
         }
@@ -115,16 +115,16 @@ function bsp_topic_display_sort ($column, $topic_id) {
 	// Author
                 case 'bsp_topic_author' :
                 $author_id = bbp_get_topic_author_id($topic_id );
-                        echo '<a href="' . site_url() . '/wp-admin/edit.php?post_type=topic&amp;author='.$author_id.'">'.bbp_get_topic_author_display_name( $topic_id ).'</a>' ;
+                        echo '<a href="' . esc_url(site_url()) . '/wp-admin/edit.php?post_type=topic&amp;author='.esc_html($author_id).'">'.esc_html(bbp_get_topic_author_display_name( $topic_id )).'</a>' ;
                         break;
 		// replies
                 case 'bsp_topic_reply_count' :
-                        echo '<a href="' . site_url() . '/wp-admin/edit.php?post_type=reply&amp;bbp_topic_id='.$topic_id.'&amp;bsp_checkt=1">'.bbp_get_topic_reply_count( $topic_id ).'</a>' ;
+                        echo '<a href="' . esc_url(site_url()) . '/wp-admin/edit.php?post_type=reply&amp;bbp_topic_id='.esc_html($topic_id).'&amp;bsp_checkt=1">'.esc_html(bbp_get_topic_reply_count( $topic_id )).'</a>' ;
                         break;
 		// forum
                 case 'bsp_topic_forum' :
 			$forum_id = bbp_get_topic_forum_id () ;
-			echo '<a href="' . site_url() . '/wp-admin/edit.php?post_type=topic&amp;bbp_forum_id='.$forum_id.'">'.bbp_get_forum_title( $forum_id ).'</a>' ;
+			echo '<a href="' . esc_url(site_url()) . '/wp-admin/edit.php?post_type=topic&amp;bbp_forum_id='.esc_html($forum_id).'">'.esc_html(bbp_get_forum_title( $forum_id )).'</a>' ;
                         break;
         }
 }
@@ -156,7 +156,7 @@ function bsp_reply_display_author_sort ($column, $reply_id) {
 	// Author
                 case 'bsp_reply_author' :
                 $author_id = bbp_get_reply_author_id($reply_id );
-                        echo '<a href="' . site_url() . '/wp-admin/edit.php?post_type=reply&amp;author='.$author_id.'">'.bbp_get_reply_author_display_name( $reply_id ).'</a>' ;
+                        echo '<a href="' . esc_url(site_url()) . '/wp-admin/edit.php?post_type=reply&amp;author='.esc_html($author_id).'">'.esc_html(bbp_get_reply_author_display_name( $reply_id )).'</a>' ;
                         break;
         }
 }

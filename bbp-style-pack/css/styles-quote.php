@@ -18,7 +18,7 @@ if (!empty ($bsp_style_settings_quote['quote_activate'])) {
         ?>
         
                 body#tinymce blockquote  {
-                        background-color: <?php echo $field; ?> !important;
+                        background-color: <?php echo esc_html($field); ?> !important;
                 }
 
         <?php
@@ -29,7 +29,7 @@ if (!empty ($bsp_style_settings_quote['quote_activate'])) {
         ?>
         
                 body#tinymce blockquote {
-                        border-left: 4px solid <?php echo $field; ?> !important;
+                        border-left: 4px solid <?php echo esc_html($field); ?> !important;
                 }
                 
         <?php
@@ -65,7 +65,7 @@ if (!empty ($bsp_style_settings_quote['quote_activate'])) {
 
 			body#tinymce blockquote .bsp-quote-title
 			{
-				font-size: <?php echo $field; ?>;
+				font-size: <?php echo esc_html($field); ?>;
 			}
 		 
         <?php 
@@ -79,7 +79,7 @@ if (!empty ($bsp_style_settings_quote['quote_activate'])) {
                         
 		body#tinymce blockquote .bsp-quote-title
 		{
-			color: <?php echo $field; ?>;
+			color: <?php echo esc_html($field); ?>;
 		}
 	 
 	<?php
@@ -93,7 +93,7 @@ if (!empty ($bsp_style_settings_quote['quote_activate'])) {
                 
                 body#tinymce blockquote .bsp-quote-title
                 {
-                        font-family: <?php echo $field; ?>;
+                        font-family: <?php echo esc_html($field); ?>;
                 }
 	 
 	<?php

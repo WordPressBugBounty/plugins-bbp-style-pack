@@ -19,8 +19,37 @@ if (empty ($bsp_style_settings_theme_support['fse_template_version'])) {
 /*
 Added blocks and PHP bits to create a PHP template for usage in a FSE theme
 as described in https://fullsiteediting.com/lessons/how-to-use-php-templates-in-block-themes/
-Please note that weirdly not 100% all CSS is loaded correctly, in my case some missing lines to do with
- .wp-container-core-group-layout-1.wp-container-core-group-layout-1 were added to bbpsp's Custom CSS
+Please note that not 100% all CSS is loaded correctly, in my case some missing lines to do with layout in 2024 theme
+ 
+ see also
+ https://github.com/WordPress/gutenberg/issues/40018
+*/
+
+/*
+2024 css needed
+.wp-block-group-is-layout-flex {
+
+align-items: flex-start;
+
+}
+
+.is-content-justification-space-between {
+
+justify-content: space-between;
+
+}
+
+.is-content-justification-stretch {
+
+align-items: stretch;
+
+}
+
+.is-vertical {
+
+flex-direction: column;
+
+}
 */
 
 ?>
