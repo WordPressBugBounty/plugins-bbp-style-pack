@@ -180,6 +180,29 @@ function bsp_style_settings_theme_support() {
                                                 <?php _e( 'However try this if your header does not display correctly eg is out of line or has wrong font sizes etc. ', 'bbp-style-pack' ); ?>
                                         </label>
                                 </td>
+								
+								 <!-- ACTIVATE  -->	
+                <?php $footer_template = (!empty( $bsp_style_settings_theme_support['fse_template_footer'] ) ?  $bsp_style_settings_theme_support['fse_template_footer'] : 0); ?>
+                <tr valign="top">  
+                                <th style="width: 350px">
+                                        <?php _e('Footer options', 'bbp-style-pack'); ?>
+                                </th>
+
+                                <td>
+                                        <?php 
+                                        echo '<input name="bsp_style_settings_theme_support[fse_template_footer]" id="bsp_style_settings_theme_support[fse_template_footer]" type="radio" value="0" class="code" ' . checked( 0,$footer_template, false ) . ' />' ;
+                                        ?>
+                                        <label class="description" for="bsp_style_settings_theme_support[fse_template_footer]">
+                                                <?php _e( 'Standard Footer ', 'bbp-style-pack' ); ?>
+                                        </label>
+										<br>
+										<?php 
+                                        echo '<input name="bsp_style_settings_theme_support[fse_template_footer]" id="bsp_style_settings_theme_support[fse_template_footer]" type="radio" value="1" class="code" ' . checked( 1,$footer_template, false ) . ' />' ;
+                                        ?>
+                                        <label class="description" for="bsp_style_settings_theme_support[fse_template_footer]">
+                                                <?php _e( 'If you are using shortcodes in your footer, this option should ensure they display correctly ', 'bbp-style-pack' ); ?>
+                                        </label>
+                                </td>
 
 
                         

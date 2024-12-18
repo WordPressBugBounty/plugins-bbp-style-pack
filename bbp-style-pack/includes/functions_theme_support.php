@@ -6,8 +6,8 @@ defined( 'ABSPATH' ) || exit;
 global $bsp_theme_check ;
 global $bsp_style_settings_theme_support ;	
 
-
-if (!empty ($bsp_style_settings_theme_support['fse'])  && $bsp_theme_check == 'block_theme') {
+//don't do this if we are in admin, as it stops the other templates displaying
+if (!empty ($bsp_style_settings_theme_support['fse'])  && $bsp_theme_check == 'block_theme' && !is_admin() ) {
 
 add_action( 'after_setup_theme', 'bsp_fse_support' );
 }
@@ -38,7 +38,7 @@ function bsp_fse_support() {
 			// include either the BSP template, or default BBPress template
 			add_filter ( 'bbp_template_include_theme_compat', 'bsp_fse_theme_compat' );
 
-		}
+}
 	
 
 // function to include the wp-includes/template-canvas.php file if needed

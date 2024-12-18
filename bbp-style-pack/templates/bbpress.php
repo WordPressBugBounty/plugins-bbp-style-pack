@@ -210,18 +210,30 @@ if ($bsp_style_settings_theme_support['fse'] == 2) {
 <?php 
 } // end bbpsp code
 
-
 if (empty ($bsp_style_settings_theme_support['fse_template_version'])) {
 	
 ?>
 
 <footer class="wp-block-template-part site-footer">
-<?php block_footer_area(); ?>
+<?php
+
+if (!empty ($bsp_style_settings_theme_support['fse_template_footer'])) {
+ob_start();
+
+block_footer_area() ;
+
+$content = shortcode_unautop( ob_get_clean() );
+
+echo do_shortcode( $content );
+}
+else {
+block_footer_area() ;
+}
+
+//this next line seems to fix the menu area above, so is needed, but doesn't seem to do anything here - wish I understood all this better!
+wp_footer(); ?>
 </footer>
 </div>
-
-<?php wp_footer(); ?>
-
 </body>
 </html>
 
@@ -229,10 +241,14 @@ if (empty ($bsp_style_settings_theme_support['fse_template_version'])) {
 
 }
 
+
+//look at why we have these 2 areas, they are almost the same
 if (!empty ($bsp_style_settings_theme_support['fse_template_version'])) { 
 
-block_template_part('footer');
+block_footer_area() ;
 
 wp_footer() ;	
 	
 }
+
+
