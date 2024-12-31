@@ -475,7 +475,7 @@ function generate_delete_js() {
 		if (!empty( $bsp_style_settings_t['participant_trash_topic_confirm'] ) ) {
 	echo 'jQuery( function($) {       
         $(\'a.bbp-topic-trash-link\').click( function( event ) {
-		if( ! confirm( \''.$message.'\' ) ) {
+		if( ! confirm( \''.esc_html($message).'\' ) ) {
             event.preventDefault();
         }           
 		});
@@ -487,7 +487,7 @@ function generate_delete_js() {
 
                 echo 'jQuery( function($) {       
                 $(\'a.bbp-reply-trash-link\').click( function( event ) {
-                        if( ! confirm( \''.$message.'\' ) ) {
+                        if( ! confirm( \''.esc_html($message).'\' ) ) {
                     event.preventDefault();
                 }           
                         });

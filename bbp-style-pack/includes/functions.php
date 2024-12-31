@@ -3589,7 +3589,7 @@ function bsp_clear_cache() {
         // Concept and starter code borrowed from the WP-Optimize plugin
         $caching_plugins = array(
                 'WP Super Cache' => 'wp_cache_clear_cache',
-                'W3 Total Cache' => 'w3tc_pgcache_flush',
+                'W3 Total Cache' => 'w3tc_flush_all',
                 'WP Fastest Cache' => 'wpfc_clear_all_cache',
                 'WP Rocket' => 'rocket_clean_domain',
                 'Cachify' => 'cachify_flush_cache',

@@ -7,7 +7,7 @@ defined( 'ABSPATH' ) || exit;
 function bsp_logo ($width='448' , $height='448') {
 	ob_start();
 	?>
-	<svg width=" <?php echo $width ?> " height=" <?php echo $height ?> " viewBox="0 0 334.8135980824518 326">
+	<svg width=" <?php echo esc_html($width) ?> " height=" <?php echo esc_html($height) ?> " viewBox="0 0 334.8135980824518 326">
 	<defs>
 		<linearGradient id="SvgjsLinearGradient1019">
 			<stop stop-color="#2d388a" offset="0">

@@ -243,7 +243,7 @@ function bsp_custom_quote_profile_links( $content ) {
                                                 // To this: <a href="https://site.com/forums/users/username/" title="View username's profile"><span class="bbp-author-name">username</span></a>
                                                 $view_profile_text = sprintf( 
                                                         /* translators: %s is a username */
-                                                        __( 'View %s\'s profile'),
+                                                        __( 'View %s\'s profile', 'bbpress'),
                                                         $user_name
                                                 );
                                                 $new_link = preg_replace( '#">(.*?)</a>#is', '" title="'.$view_profile_text.'"><span class="bbp-author-name">$1</span></a>', $link );

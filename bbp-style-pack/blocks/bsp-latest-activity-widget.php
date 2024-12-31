@@ -209,7 +209,7 @@ if (!$check) return ;
 						//shorten freshness?
 						if ( ! empty( $attributes['laShortenFreshness'] ) ) $output = preg_replace( '/, .*[^ago]/', ' ', $output ); ?>
 						<div class = "bsp-activity-freshness"><?php 
-						echo '<span class="bsp-la-freshness">'.$output. '</span>'  ;
+						echo '<span class="bsp-la-freshness">'.esc_html($output). '</span>'  ;
 						//bbp_topic_last_active_time( $topic_id ); ?></div>
 					
 					<?php endif; ?>

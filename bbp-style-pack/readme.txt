@@ -3,7 +3,7 @@ Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
 Tested up to: 6.7
-Stable tag: 6.1.6
+Stable tag: 6.1.7
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,7 +62,12 @@ To install this plugin :
 
 == Changelog ==
 
-6.1.6
+= 6.1.7 =
+*fix issue with reply titles in subscription emails
+*fix deprecated cache clearing function for WT3C
+*Some further technical changes which will help bring this plugin up to date with all the latest WordPress coding standards and PHP changes
+
+= 6.1.6 =
 *fix issue for bock themes not displaying all templates in dashboard>themes>customise
 *fix issue for shortcodes not working in block theme footers - I've added an additional option in theme set-up to allow this.
 

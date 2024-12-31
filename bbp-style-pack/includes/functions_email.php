@@ -112,7 +112,7 @@ function bsp_topic_message( $message, $topic_id, $forum_id ) {
         else $type='email_topic_body_p' ;
 
         //old $message = (!empty($bsp_style_settings_email[$type]) ? $bsp_style_settings_email[$type]  : $message) ;
-		//amended to allow wpml to translate
+		//amended to allow wpml to translate, but this them fails the PCP check
 		$message = (!empty($bsp_style_settings_email[$type]) ? __($bsp_style_settings_email[$type],'bbp-style-pack') : $message) ;
 				
         $message = str_replace( '{author}',  $topic_author,  $message );
@@ -150,7 +150,8 @@ function bsp_reply_title( $title, $reply_id, $topic_id) {
 
         $site_title = get_bloginfo( 'name' );
         $title = strip_tags( bbp_get_topic_title( $topic_id ) );
-		$forum_name = bbp_get_forum_title( $forum_id );
+		$forum_id = bbp_get_topic_forum_id ($topic_id ) ;
+		$forum_name     = bbp_get_forum_title( $forum_id );
         $subject = str_replace( '{site_title}',  $site_title,  $subject );
         $subject = str_replace( '{title}',  $title,  $subject );
 		$subject = str_replace( '{forum_name}', $forum_name, $subject );		
@@ -184,7 +185,7 @@ function bsp_reply_message($message, $reply_id, $topic_id ) {
         else $type='email_reply_body_p' ;
 
         //old $message = (!empty($bsp_style_settings_email[$type]) ? $bsp_style_settings_email[$type]  : $message) ;
-		//allow wpml to translate
+		//amended to allow wpml to translate, but this them fails the PCP check
 		$message = (!empty($bsp_style_settings_email[$type]) ? __($bsp_style_settings_email[$type],'bbp-style-pack') : $message) ;
 		 
 		 
@@ -253,7 +254,7 @@ function bsp_test_email ($input) {
 			else $type='email_topic_body_p' ;
 
 			//old $message = (!empty($bsp_style_settings_email[$type]) ? $bsp_style_settings_email[$type]  : $message) ;
-			//amended to allow wpml to translate
+			//amended to allow wpml to translate, but this them fails the PCP check
 			$message = (!empty($bsp_style_settings_email[$type]) ? __($bsp_style_settings_email[$type],'bbp-style-pack') : $message) ;
 
 			

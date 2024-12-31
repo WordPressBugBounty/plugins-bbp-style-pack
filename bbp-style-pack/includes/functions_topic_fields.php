@@ -65,8 +65,8 @@ function bsp_topic_fields_form_input() {
 					}
 					if ( $check == true ) {
 						$label =  (!empty ($bsp_style_settings_topic_fields['item'.$i.'_label']) ? $bsp_style_settings_topic_fields['item'.$i.'_label'] : '')  ;
-						echo '<div id= "bsp-style-topic-fields-item'.$i.'">' ;			
-						echo '<label for="bsp-style-topic-fields-item'.$i.'">'.$label.'</label><br/>' ;
+						echo '<div id= "bsp-style-topic-fields-item'.esc_html($i).'">' ;			
+						echo '<label for="bsp-style-topic-fields-item'.esc_html($i).'">'.esc_html($label).'</label><br/>' ;
 										
 						$current_value = get_post_meta( bbp_get_topic_id(), 'bsp_topic_fields_label'.$i, true);
 						echo bsp_get_amend_field_input($i, $current_value) ;

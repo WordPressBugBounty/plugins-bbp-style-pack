@@ -230,10 +230,13 @@ else {
 block_footer_area() ;
 }
 
-//this next line seems to fix the menu area above, so is needed, but doesn't seem to do anything here - wish I understood all this better!
-wp_footer(); ?>
+?>
 </footer>
 </div>
+<?php 
+//this next line seems to fix the menu area above, so is needed, but doesn't seem to do anything here - wish I understood all this better!
+wp_footer(); 
+?>
 </body>
 </html>
 
