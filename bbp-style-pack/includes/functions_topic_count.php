@@ -104,12 +104,14 @@ defined( 'ABSPATH' ) || exit;
                         if ( ! empty ( $value ) ) {
                                 echo $location === 'author_details' ? '<li>' : '<td>';
                                         if ( empty( $tc_options_values['order'] ) ) { 
-                                                echo $label1 = $tc_options_values['topic_label']." ";
-                                                echo $topic_count_string;
+                                                echo esc_html($label1 = $tc_options_values['topic_label'])." ";
+                                                echo esc_html($topic_count_string);
                                         }
                                         else {
-                                                echo $topic_count_string." ";
-                                                echo $label1 = $tc_options_values['topic_label'];
+                                                echo esc_html($topic_count_string)." ";
+                                                $label1 = $tc_options_values['topic_label'];
+												echo esc_html($label1) ;
+												
                                         }
                                 echo $location === 'author_details' ? '</li>' : '</td>';
                         }
@@ -121,12 +123,14 @@ defined( 'ABSPATH' ) || exit;
                         if( ! empty( $value ) ) {
                                 echo $location === 'author_details' ? '<li>' : '<td>';
                                         if ( empty( $tc_options_values['order'] ) ) { 
-                                                echo $label2 = $tc_options_values['reply_label']." ";
-                                                echo $reply_count_string;
+                                                $label2 = $tc_options_values['reply_label']." ";
+												echo esc_html($label2) ;
+                                                echo esc_html($reply_count_string);
                                         }
                                         else {
-                                                echo $reply_count_string." ";
-                                                echo $label2 = $tc_options_values['reply_label'];
+                                                echo esc_html($reply_count_string)." ";
+                                                $label2 = $tc_options_values['reply_label'];
+												echo esc_html($label2) ;
                                         }
                                 echo $location === 'author_details' ? '</li>' : '</td>';
                         }
@@ -138,12 +142,14 @@ defined( 'ABSPATH' ) || exit;
                         if( ! empty( $value ) ) {
                             echo $location === 'author_details' ? '<li>' : '<td>';
                                if ( empty( $tc_options_values['order'] ) ) { 
-                                                echo $label3 = $tc_options_values['posts_label']." ";
-                                                echo $post_count_string;
+                                                $label3 = $tc_options_values['posts_label']." ";
+												echo esc_html($label3) ;
+                                                echo esc_html($post_count_string);
                                         }
                                         else {
-                                                echo $post_count_string." ";
-                                                echo $label3 = $tc_options_values['posts_label'];
+                                                echo esc_html($post_count_string)." ";
+                                                $label3 = $tc_options_values['posts_label'];
+												echo esc_html($label3) ;
                                         }
                                 echo $location === 'author_details' ? '</li>' : '</td>';
                         }

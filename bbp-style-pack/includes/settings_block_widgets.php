@@ -20,54 +20,54 @@ function bsp_style_settings_block_widgets () {
 		<tr valign="top">
 			<th colspan="2">
 				<h3>
-					<?php _e ('Block Widgets' , 'bbp-style-pack' ) ; ?>
+					<?php esc_html_e ('Block Widgets' , 'bbp-style-pack' ) ; ?>
 				</h3>
 		</tr>
 	</table>
 	
 	<p>
-		<?php _e('Blocks widgets are now available for bbPress.', 'bbp-style-pack'); ?>
-		<?php _e('These can be used instead of the legacy widgets, and in blocks in pages and posts.  For FSE themes,  legacy widgets are not available so block widgets are a necessity', 'bbp-style-pack'); ?>
+		<?php esc_html_e('Blocks widgets are now available for bbPress.', 'bbp-style-pack'); ?>
+		<?php esc_html_e('These can be used instead of the legacy widgets, and in blocks in pages and posts.  For FSE themes,  legacy widgets are not available so block widgets are a necessity', 'bbp-style-pack'); ?>
 	</p>
 	<p>	
-		<?php _e('The following widgets have been added', 'bbp-style-pack'); ?>
+		<?php esc_html_e('The following widgets have been added', 'bbp-style-pack'); ?>
 	</p>
 	<table>
 		<tr>
 			<td style="width:400px ; vertical-align:top">	
-				<b><?php _e('Style Pack block widgets', 'bbp-style-pack'); ?> </b>
+				<b><?php esc_html_e('Style Pack block widgets', 'bbp-style-pack'); ?> </b>
 			</td>
 			
 			<td>
-				 <?php _e('Latest Activity', 'bbp-style-pack'); ?> 
+				 <?php esc_html_e('Latest Activity', 'bbp-style-pack'); ?> 
 				
 				<p>
-				<?php _e('Single Forum Information', 'bbp-style-pack'); ?>
+				<?php esc_html_e('Single Forum Information', 'bbp-style-pack'); ?>
 				</p>
 				<p>
-				<?php _e('Single Topic Information', 'bbp-style-pack'); ?>
+				<?php esc_html_e('Single Topic Information', 'bbp-style-pack'); ?>
 				</p>
 				
 			</td>
 		</tr>
 		<tr>
 			<td style="width:400px ; vertical-align:top">	
-				<b><?php _e('Style Pack block versions of bbPress Widgets', 'bbp-style-pack'); ?> </b>
+				<b><?php esc_html_e('Style Pack block versions of bbPress Widgets', 'bbp-style-pack'); ?> </b>
 			</td>
 			
 			<td>
-				<?php _e('Login', 'bbp-style-pack'); ?> 
+				<?php esc_html_e('Login', 'bbp-style-pack'); ?> 
 				<p>
-				 <?php _e('Forums List', 'bbp-style-pack'); ?> 
+				 <?php esc_html_e('Forums List', 'bbp-style-pack'); ?> 
 				</p>
 				<p>
-				<?php _e('Search', 'bbp-style-pack'); ?>
+				<?php esc_html_e('Search', 'bbp-style-pack'); ?>
 				</p>
 				<p>
-				<?php _e('Statistics', 'bbp-style-pack'); ?>
+				<?php esc_html_e('Statistics', 'bbp-style-pack'); ?>
 				</p>
 				<p>
-				<?php _e('Topic Views', 'bbp-style-pack'); ?>
+				<?php esc_html_e('Topic Views', 'bbp-style-pack'); ?>
 				</p>
 				
 			</td>
@@ -75,34 +75,34 @@ function bsp_style_settings_block_widgets () {
 	</table>
 	
 	<p>
-		<?php _e('If you are not familiar with blocks that have settings, initially it can be confusing to work out where these are.', 'bbp-style-pack'); ?>
+		<?php esc_html_e('If you are not familiar with blocks that have settings, initially it can be confusing to work out where these are.', 'bbp-style-pack'); ?>
 		
 	</p>
 	<p>
-		<?php _e('Therefore I have added text that says \'Click here for settings on right hand side\'.  This is simply to get you to click inside the block to show the settings', 'bbp-style-pack'); ?>
+		<?php esc_html_e('Therefore I have added text that says \'Click here for settings on right hand side\'.  This is simply to get you to click inside the block to show the settings', 'bbp-style-pack'); ?>
 	</p>
 	<p>
-		<?php _e('You will also need to have the settings sidebar enabled to see these, so ensure that the settings icon in the top right is black.', 'bbp-style-pack'); ?>
+		<?php esc_html_e('You will also need to have the settings sidebar enabled to see these, so ensure that the settings icon in the top right is black.', 'bbp-style-pack'); ?>
 	</p>
 	
 	<p>
-		<?php echo '<img src="' . plugins_url( 'images/block-widgets.png',dirname(__FILE__)  ) . '"  > '; ?>
+		<?php echo '<img src="' . esc_url(plugins_url( 'images/block-widgets.png',dirname(__FILE__)  )) . '"  > '; ?>
 	</p>
 
 	<!-- save the options -->
 	<p class="submit">
-		<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'bbp-style-pack' ); ?>" />
+		<input type="submit" class="button-primary" value="<?php esc_html_e( 'Save changes', 'bbp-style-pack' ); ?>" />
 	</p>
 	<table class="form-table">
 	
 	<p><b>
-		<?php _e('How the title in widgets displays can depend on your theme.  The following lets you amend this if you wish to.', 'bbp-style-pack'); ?>
+		<?php esc_html_e('How the title in widgets displays can depend on your theme.  The following lets you amend this if you wish to.', 'bbp-style-pack'); ?>
 	</p></b>
 	
 	<p><i>
-		<?php _e('You can style the Latest Activity widget elements in the ', 'bbp-style-pack');
-				echo '<a href="' . site_url() . '/wp-admin/options-general.php?page=bbp-style-pack&tab=la_widget">' ;
-				_e('Latest Activity Widget Styling tab', 'bbp-style-pack');
+		<?php esc_html_e('You can style the Latest Activity widget elements in the ', 'bbp-style-pack');
+				echo '<a href="' . esc_url(site_url()) . '/wp-admin/options-general.php?page=bbp-style-pack&tab=la_widget">' ;
+				esc_html_e('Latest Activity Widget Styling tab', 'bbp-style-pack');
 				echo '</a>' ;
 		?>
 	</p></i>
@@ -150,7 +150,7 @@ function bsp_style_settings_block_widgets () {
 			<td>
 				<?php echo '<input id="'.$item2.'" class="bsp-color-picker" name="'.$item2.'" type="text" value="'.esc_html( $value2 ).'"<br>' ; ?> 
 				<label class="description">
-					<?php _e( 'Click to set color - You can select from palette or enter hex value- see help for further info', 'bbp-style-pack' ); ?>
+					<?php esc_html_e( 'Click to set color - You can select from palette or enter hex value- see help for further info', 'bbp-style-pack' ); ?>
 				</label>
 				<br/>
 			</td>
@@ -165,7 +165,7 @@ function bsp_style_settings_block_widgets () {
 			<td>
 				<?php echo '<input id="'.$item3.'" class="large-text" name="'.$item3.'" type="text" value="'.esc_html( $value3 ).'"<br>' ; ?> 
 				<label class="description">
-					<?php _e( 'Enter Font eg Arial - see help for further info', 'bbp-style-pack' ); ?>
+					<?php esc_html_e( 'Enter Font eg Arial - see help for further info', 'bbp-style-pack' ); ?>
 				</label>
 				<br/>
 			</td>
@@ -198,7 +198,7 @@ function bsp_style_settings_block_widgets () {
 	</table>
 	<!-- save the options -->
 	<p class="submit">
-		<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'bbp-style-pack' ); ?>" />
+		<input type="submit" class="button-primary" value="<?php esc_html_e( 'Save changes', 'bbp-style-pack' ); ?>" />
 	</p>
 </form>
 	 

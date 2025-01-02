@@ -137,10 +137,10 @@ function bsp_display_icon ($path, $topic_id, $amount_div='') {
 		else $url = bbp_get_topic_last_reply_url ( $topic_id ) ;
 		echo '
 			<div class="bbpresss_unread_posts_icon">
-				<a href="' . $url . '">
-					<img src="' . $path . '"/>
+				<a href="' . esc_url($url) . '">
+					<img src="' . esc_url($path) . '"/>
 				</a>
-				'. $amount_div. '
+				'. esc_html($amount_div). '
 			</div>
 			
 		';
@@ -392,12 +392,12 @@ function bsp_unread_profile_information()  {
 					<td style="text-align:left">
 						<?php
 						$item =  'bsp_unread_optinout' ;
-						echo '<input name="'.$item.'" id="'.$item.'" type="radio" value="1" class="code"  ' . checked( 1,$optinout, false ) . ' />' ;
-						echo $label1 ;?>
+						echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="radio" value="1" class="code"  ' . checked( 1,$optinout, false ) . ' />' ;
+						echo esc_html($label1) ;?>
 						<br/>
 						<?php
-						echo '<input name="'.$item.'" id="'.$item.'" type="radio" value="2" class="code"  ' . checked( 2,$optinout, false ) . ' />' ;
-						echo $label2 ;?>
+						echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="radio" value="2" class="code"  ' . checked( 2,$optinout, false ) . ' />' ;
+						echo esc_html($label2) ;?>
 					</td>
 				</tr>
 			</table>

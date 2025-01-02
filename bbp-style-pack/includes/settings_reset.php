@@ -19,7 +19,7 @@ function bsp_style_settings_reset() {
 		<tr valign="top">
 			<th colspan="2">
 				<h3>
-					<?php _e( 'Reset Settings' , 'bbp-style-pack' ); ?>
+					<?php esc_html_e( 'Reset Settings' , 'bbp-style-pack' ); ?>
 				</h3>
 		</tr>
 	</table>
@@ -27,12 +27,12 @@ function bsp_style_settings_reset() {
 		<tr>
 			<td>
 				<p>
-					<?php _e( 'This section allows you to reset any or all of the tabs in this plugin', 'bbp-style-pack' ); ?>
+					<?php esc_html_e( 'This section allows you to reset any or all of the tabs in this plugin', 'bbp-style-pack' ); ?>
 					
 				</p>
 				<p>
 				<strong>
-					<?php _e( 'WARNING - RESETTING deletes data for the tab(s) selected - use with care !', 'bbp-style-pack' ); ?>
+					<?php esc_html_e( 'WARNING - RESETTING deletes data for the tab(s) selected - use with care !', 'bbp-style-pack' ); ?>
 				</strong>
 				</p>
 			</td>
@@ -41,7 +41,7 @@ function bsp_style_settings_reset() {
             
 	<!-- save the options -->
 	<p class="submit">
-		<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'bbp-style-pack' ); ?>" />
+		<input type="submit" class="button-primary" value="<?php esc_html_e( 'Save changes', 'bbp-style-pack' ); ?>" />
 	</p>
 
         <!-- option group table -->
@@ -89,11 +89,11 @@ function bsp_style_settings_reset() {
                                 <!-- checkbox to activate  -->
                                 <tr>
                                         <th>
-                                                <?php echo $title ?>
+                                                <?php echo esc_html($title) ?>
                                         </th>
                                         <td>
                                                 <?php 
-                                                echo '<input name="'.$slug.'" id="'.$slug.'" type="checkbox" value="1" class="code" />';
+                                                echo '<input name="'.esc_html($slug).'" id="'.esc_html($slug).'" type="checkbox" value="1" class="code" />';
                                                 echo $reset_text;
                                                 ?>
                                         </td>
@@ -108,7 +108,7 @@ function bsp_style_settings_reset() {
 				
         <!-- save the options -->
 	<p class="submit">
-		<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'bbp-style-pack' ); ?>" />
+		<input type="submit" class="button-primary" value="<?php esc_html_e( 'Save changes', 'bbp-style-pack' ); ?>" />
 	</p>
 </form>
  

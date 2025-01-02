@@ -54,16 +54,16 @@ $location = $bsp_css_location ['location'] ;
 <?php echo '<i>' ;
 esc_html_e ('Default location: ' , 'bbp-style-pack' ) ;
 echo '</i>'  ; ?>
-<?php echo plugins_url('css/',dirname(__FILE__) ) ; ?>
+<?php esc_html_e(plugins_url('css/',dirname(__FILE__) )) ; ?>
 </p>
 
 <p>
 <?php esc_html_e ('Current location : ' , 'bbp-style-pack' ) ; ?>
 <?php if (!empty ($bsp_css_location ['activate css location']) && !empty($bsp_css_location ['location'])) {
 	$url = home_url();
-	echo esc_url( $url ).'/'.$bsp_css_location ['location'] ; 
+	echo esc_url( $url ).'/'.esc_html($bsp_css_location ['location']) ; 
 	}
-	else echo plugins_url('css/',dirname(__FILE__) ) ; ?>
+	else esc_html_e( plugins_url('css/',dirname(__FILE__) )) ; ?>
 </p>
 
 

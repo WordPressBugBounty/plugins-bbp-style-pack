@@ -10,27 +10,27 @@ function bsp_login_settings() {
  ?>
 			
 	<h3>
-		<?php _e( 'Login options' , 'bbp-style-pack' ) ; ?>
+		<?php esc_html_e( 'Login options' , 'bbp-style-pack' ) ; ?>
 	</h3>
 	<p>
-		<?php _e( 'There are many ways to get users logged into forums.' , 'bbp-style-pack' ) ; ?>
+		<?php esc_html_e( 'There are many ways to get users logged into forums.' , 'bbp-style-pack' ) ; ?>
 	</p>
 	<p/>
 	<p>
-		<?php _e( 'a. Remember bbPress just uses the wordpress login, so any plugin that does wordpress login will also do bbPress.There are lots out there go to' , 'bbp-style-pack' ) ; ?>
+		<?php esc_html_e( 'a. Remember bbPress just uses the wordpress login, so any plugin that does wordpress login will also do bbPress.There are lots out there go to' , 'bbp-style-pack' ) ; ?>
 		<a href="https://wordpress.org/plugins/">https://wordpress.org/plugins</a>
 	</p>
 	<p>
-		<?php _e( 'b. Within bbPress you can use the sidebar login widget Dashboard>appearance>widgets and look for (bbpress) Login widget' , 'bbp-style-pack' ) ; ?>
+		<?php esc_html_e( 'b. Within bbPress you can use the sidebar login widget Dashboard>appearance>widgets and look for (bbpress) Login widget' , 'bbp-style-pack' ) ; ?>
 	</p>
 	<p>
-		<?php _e( 'c. Or use a page or post to display the widget using the shortcode  [bbp-login]' , 'bbp-style-pack' ) ; ?>
+		<?php esc_html_e( 'c. Or use a page or post to display the widget using the shortcode  [bbp-login]' , 'bbp-style-pack' ) ; ?>
 	</p>
 	<p>
-		<?php _e( 'd. The following adds a simple login/logout to your menu and/or Register/Edit Profile' , 'bbp-style-pack' ) ; ?>
+		<?php esc_html_e( 'd. The following adds a simple login/logout to your menu and/or Register/Edit Profile' , 'bbp-style-pack' ) ; ?>
 	</p>
 	<p> 
-		<?php _e( "This can the give you the combination of 'login/Register' and 'logout/edit profile' as a menu display, which means users only see relevant items" , 'bbp-style-pack' ) ; ?>
+		<?php esc_html_e( "This can the give you the combination of 'login/Register' and 'logout/edit profile' as a menu display, which means users only see relevant items" , 'bbp-style-pack' ) ; ?>
 	</p>
 	<p>
 	</p>
@@ -59,25 +59,25 @@ function bsp_login_settings() {
         <table class="form-table">
 		<tr>
 			<th style="text-align:center">
-				<?php _e( 'Not Logged in' , 'bbp-style-pack' ) ; ?>
+				<?php esc_html_e( 'Not Logged in' , 'bbp-style-pack' ) ; ?>
 			</th>
 			<th style="text-align:center">
-				<?php _e( 'Logged in ' , 'bbp-style-pack' ) ; ?>
+				<?php esc_html_e( 'Logged in ' , 'bbp-style-pack' ) ; ?>
 			</th>
 		</tr>
 		<tr>
 		<td>
 		<strong>
-		<?php _e( 'Menu Items' , 'bbp-style-pack' ) ; ?>
+		<?php esc_html_e( 'Menu Items' , 'bbp-style-pack' ) ; ?>
 		</strong>
 		</td>
 		</tr>
 		<tr>
 			<td>
-				<?php echo '<img src="' . plugins_url( 'images/logina.JPG',dirname(__FILE__)  ) . '"  > '; ?>
+				<?php echo '<img src="' . esc_url(plugins_url( 'images/logina.JPG',dirname(__FILE__) ) ) . '"  > '; ?>
 			</td>
 			<td>
-				<?php echo '<img src="' . plugins_url( 'images/loginb.JPG',dirname(__FILE__)  ) . '"  > '; ?>
+				<?php echo '<img src="' . esc_url(plugins_url( 'images/loginb.JPG',dirname(__FILE__) ) ) . '"  > '; ?>
 			</td>
 		</tr>
 		<tr valign="top">
@@ -85,11 +85,11 @@ function bsp_login_settings() {
 		<tr>
 			<td>
 				<strong>
-				<?php _e( 'Wordpress Toolbar' , 'bbp-style-pack' ) ; ?>
+				<?php esc_html_e( 'Wordpress Toolbar' , 'bbp-style-pack' ) ; ?>
 				</strong>
 			</td>
 			<td>
-				<?php echo '<img src="' . plugins_url( 'images/profile3.JPG',dirname(__FILE__)  ) . '"  > '; ?>
+				<?php echo '<img src="' . esc_url(plugins_url( 'images/profile3.JPG',dirname(__FILE__))  ) . '"  > '; ?>
 			</td>
 		</tr>
 	</table>
@@ -98,7 +98,7 @@ function bsp_login_settings() {
 	
 	<!-- save the options -->
 	<p class="submit">
-		<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'bbp-style-pack' ); ?>" />
+		<input type="submit" class="button-primary" value="<?php esc_html_e( 'Save changes', 'bbp-style-pack' ); ?>" />
 	</p>
 	<table class="form-table">
 
@@ -106,7 +106,7 @@ function bsp_login_settings() {
 <!--Click to add login/logout---------------------------------------------------------------------->
 		<tr>
 			<th colspan="2">1. 
-				<?php _e( 'Add login/logout to menu items' , 'bbp-style-pack' ) ; ?>
+				<?php esc_html_e( 'Add login/logout to menu items' , 'bbp-style-pack' ) ; ?>
 			</th>
 			<?php
 			$name = 'Add login/logout to menu items' ;
@@ -132,7 +132,7 @@ function bsp_login_settings() {
 		
 			<td>
 			<?php
-			echo '<input name="'.$item.'" id="'.$item.'" type="checkbox" value="1" class="code" ' . checked( 1,$item5, false ) . ' />';
+			echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="checkbox" value="1" class="code" ' . checked( 1,$item5, false ) . ' />';
 			echo $activate_text;
   			?>
 		</td>
@@ -145,8 +145,8 @@ function bsp_login_settings() {
 				<?php echo $name1 ; ?>
 			</td>
 			<td>
-				<?php echo '<input id="'.$item1.'" class="large-text" name="'.$item1.'" type="text" value="'.esc_html( $value1 ).'"<br>' ; ?> 
-				<label class="description"><?php _e( 'Default "Login" Enter the words you want on the menu item eg "log in", "sign in" etc.', 'bbp-style-pack' ); ?></label><br/>
+				<?php echo '<input id="'.esc_html($item1).'" class="large-text" name="'.esc_html($item1).'" type="text" value="'.esc_html( $value1 ).'"<br>' ; ?> 
+				<label class="description"><?php esc_html_e( 'Default "Login" Enter the words you want on the menu item eg "log in", "sign in" etc.', 'bbp-style-pack' ); ?></label><br/>
 			</td>
 		</tr>
 		
@@ -157,8 +157,8 @@ function bsp_login_settings() {
 				<?php echo $name3 ; ?>
 			</td>
 			<td>
-				<?php echo '<input id="'.$item3.'" class="large-text" name="'.$item3.'" type="text" value="'.esc_html( $value3 ).'"<br>' ; ?> 
-				<label class="description"><?php _e( 'If you need a custom css class enter this here - if you do not understand this, then just leave it blank!', 'bbp-style-pack' ); ?></label><br/>
+				<?php echo '<input id="'.esc_html($item3).'" class="large-text" name="'.esc_html($item3).'" type="text" value="'.esc_html( $value3 ).'"<br>' ; ?> 
+				<label class="description"><?php esc_html_e( 'If you need a custom css class enter this here - if you do not understand this, then just leave it blank!', 'bbp-style-pack' ); ?></label><br/>
 			</td>
 		</tr>
 		
@@ -169,8 +169,8 @@ function bsp_login_settings() {
 				<?php echo $name2 ; ?>
 			</td>
 			<td>
-				<?php echo '<input id="'.$item2.'" class="large-text" name="'.$item2.'" type="text" value="'.esc_html( $value2 ).'"<br>' ; ?> 
-				<label class="description"><?php _e( 'Default "Logout" Enter the words you want on the menu item eg "Log out", "Sign out" etc.', 'bbp-style-pack' ); ?></label><br/>
+				<?php echo '<input id="'.esc_html($item2).'" class="large-text" name="'.esc_html($item2).'" type="text" value="'.esc_html( $value2 ).'"<br>' ; ?> 
+				<label class="description"><?php esc_html_e( 'Default "Logout" Enter the words you want on the menu item eg "Log out", "Sign out" etc.', 'bbp-style-pack' ); ?></label><br/>
 			</td>
 		</tr>
 		
@@ -182,7 +182,7 @@ function bsp_login_settings() {
 			</td>
 			<td>
 				<?php echo '<input id="'.$item4.'" class="large-text" name="'.$item4.'" type="text" value="'.esc_html( $value4).'"<br>' ; ?> 
-				<label class="description"><?php _e( 'If you need a custom css class enter this here - if you do not understand this, then just leave it blank!', 'bbp-style-pack' ); ?></label><br/>
+				<label class="description"><?php esc_html_e( 'If you need a custom css class enter this here - if you do not understand this, then just leave it blank!', 'bbp-style-pack' ); ?></label><br/>
 			</td>
 		</tr>
 	
@@ -190,7 +190,7 @@ function bsp_login_settings() {
 <!--only show on bbpress pages ---------------------------------------------------------------------->
                 <tr>
                         <th colspan="2">
-                                <?php _e( 'You can opt to only show these menu items on forum pages' , 'bbp-style-pack' ) ; ?>
+                                <?php esc_html_e( 'You can opt to only show these menu items on forum pages' , 'bbp-style-pack' ) ; ?>
                         </th>
 
                         <?php
@@ -199,8 +199,8 @@ function bsp_login_settings() {
                         ?>
                         <td colspan="2">
                                 <?php
-                                echo '<input name="'.$item.'" id="'.$item.'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />' ;
-                                _e('Only show on forum pages' , 'bbp-style-pack' ) ;
+                                echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />' ;
+                                esc_html_e('Only show on forum pages' , 'bbp-style-pack' ) ;
                                 ?>
                         </td>
                 </tr>
@@ -209,7 +209,7 @@ function bsp_login_settings() {
 <!--which menus? ---------------------------------------------------------------------->
                 <tr>
                         <th colspan="2">
-                                <?php _e('Select which menus to show these items on :' , 'bbp-style-pack' ) ; ?>
+                                <?php esc_html_e('Select which menus to show these items on :' , 'bbp-style-pack' ) ; ?>
                         </th>
                         <td colspan="2">
                         <?php 
@@ -220,7 +220,7 @@ function bsp_login_settings() {
                                         $item =  'bsp_login[login_'.$menu->name.']';
                                         $name= 'login_'.$menu->name ;
                                         $item1 = ( ! empty( $bsp_login[$name] ) ? $bsp_login[$name] : '' );
-                                        echo '<input name="'.$item.'" id="'.$item.'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />' ;
+                                        echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />' ;
                                         echo 'Show on '.$menu->name;
                                         if ( ! empty( $menu_locations ) && isset( $menu_locations['primary'] ) ) {
                                                 if ( $menu_locations['primary'] == $menu->term_id ) echo ' (' . $primary_menu_text . ')';
@@ -256,14 +256,14 @@ function bsp_login_settings() {
                         ?>
 
                         <th>
-                                <?php echo '2.'. $desc ?>
+                                <?php echo '2.'. esc_html($desc)?>
                         </th>
                         <td>
-                                <?php echo $name1; ?>
+                                <?php echo esc_html($name1); ?>
                         </td>
                         <td>
-                                <?php echo '<input id="'.$item1.'" class="large-text" name="'.$item1.'" type="text" value="'.esc_html( $value1 ).'"<br>' ; ?> 
-                                <label class="description"><?php _e( 'You should create a wordpress page with a login shortcode such as [bbp-login] and put the full url in here e.g. http://www.mysite.com/loginpage. If left blank the default wordpress login page will be used.', 'bbp-style-pack' ); ?></label><br/>
+                                <?php echo '<input id="'.esc_html($item1).'" class="large-text" name="'.esc_html($item1).'" type="text" value="'.esc_html( $value1 ).'"<br>' ; ?> 
+                                <label class="description"><?php esc_html_e( 'You should create a wordpress page with a login shortcode such as [bbp-login] and put the full url in here e.g. http://www.mysite.com/loginpage. If left blank the default wordpress login page will be used.', 'bbp-style-pack' ); ?></label><br/>
                         </td>
                 </tr>
 
@@ -271,11 +271,11 @@ function bsp_login_settings() {
                         <td>
                         </td>
                         <td>
-                                <?php echo $name2; ?>
+                                <?php echo esc_html($name2); ?>
                         </td>
                         <td>
-                                <?php echo '<input id="'.$item2.'" class="large-text" name="'.$item2.'" type="text" value="'.esc_html( $value2 ).'"<br>' ; ?> 
-                                <label class="description"><?php _e( 'This will be the url of the page you want users sent to on logout. For example this might be the home page or forums page http://www.mysite.com/home or http://www.mysite.com/forums', 'bbp-style-pack' ); ?></label><br/>
+                                <?php echo '<input id="'.esc_html($item2).'" class="large-text" name="'.esc_html($item2).'" type="text" value="'.esc_html( $value2 ).'"<br>' ; ?> 
+                                <label class="description"><?php esc_html_e( 'This will be the url of the page you want users sent to on logout. For example this might be the home page or forums page http://www.mysite.com/home or http://www.mysite.com/forums', 'bbp-style-pack' ); ?></label><br/>
                         </td>
                 </tr>
 
@@ -283,11 +283,11 @@ function bsp_login_settings() {
                         <td>
                         </td>
                         <td> 
-                                <?php echo $name3; ?>
+                                <?php echo esc_html($name3); ?>
                         </td>
                         <td>
-                                <?php echo '<input id="'.$item3.'" class="large-text" name="'.$item3.'" type="text" value="'.esc_html( $value3).'"<br>' ; ?> 
-                                <label class="description"><?php _e( 'If you are using [bbp-login], then users will get "you are already logged in" once they log in.  Maybe change this to something nicer such as "You are currently logged in" ', 'bbp-style-pack' ); ?></label><br/>
+                                <?php echo '<input id="'.esc_html($item3).'" class="large-text" name="'.esc_html($item3).'" type="text" value="'.esc_html( $value3).'"<br>' ; ?> 
+                                <label class="description"><?php esc_html_e( 'If you are using [bbp-login], then users will get "you are already logged in" once they log in.  Maybe change this to something nicer such as "You are currently logged in" ', 'bbp-style-pack' ); ?></label><br/>
                         </td>
                 </tr>
 
@@ -295,7 +295,7 @@ function bsp_login_settings() {
                         <td>
                         </td>
                         <td>
-                        <?php _e('OR' , 'bbp-style-pack' ) ; ?>
+                        <?php esc_html_e('OR' , 'bbp-style-pack' ) ; ?>
                         </td>
                 </tr>
 
@@ -303,11 +303,11 @@ function bsp_login_settings() {
                         <td>
                         </td>
                         <td> 
-                                <?php echo $name4; ?>
+                                <?php echo esc_html($name4); ?>
                         </td>
                         <td>
                                 <?php echo '<input id="'.$item4.'" class="large-text" name="'.$item4.'" type="text" value="'.esc_html( $value4 ).'"<br>' ; ?> 
-                                <label class="description"><?php _e( 'If you are using [bbp-login], then if you enter a full url of a page, users will be redirected to that page instead of getting the "you are already logged in" above', 'bbp-style-pack' ); ?></label><br/>
+                                <label class="description"><?php esc_html_e( 'If you are using [bbp-login], then if you enter a full url of a page, users will be redirected to that page instead of getting the "you are already logged in" above', 'bbp-style-pack' ); ?></label><br/>
                         </td>
                 </tr>
 
@@ -315,7 +315,7 @@ function bsp_login_settings() {
 <!--show register to non-logged on users ---------------------------------------------------------------------->			
                 <tr>
                         <th colspan="2">3. 
-                                <?php _e( "Show a menu 'Register' item to non-logged in users" , 'bbp-style-pack' ) ; ?>
+                                <?php esc_html_e( "Show a menu 'Register' item to non-logged in users" , 'bbp-style-pack' ) ; ?>
                         </th>
 
                         <?php
@@ -324,7 +324,7 @@ function bsp_login_settings() {
                         ?>
                         <td colspan="2">
                         <?php
-                                echo '<input name="'.$item.'" id="'.$item.'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' /> ';
+                                echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' /> ';
                                 echo $activate_text;
                         ?>
                         </td>
@@ -334,7 +334,7 @@ function bsp_login_settings() {
 <!--register only show on bbpress pages ---------------------------------------------------------------------->
                 <tr>
                         <th colspan="2"> 
-                                <?php _e( 'You can opt to only show register menu item on forum pages' , 'bbp-style-pack' ) ; ?>
+                                <?php esc_html_e( 'You can opt to only show register menu item on forum pages' , 'bbp-style-pack' ) ; ?>
                         </th>
 
                         <?php
@@ -343,8 +343,8 @@ function bsp_login_settings() {
                         ?>
                         <td colspan="2">
                         <?php
-                                echo '<input name="'.$item.'" id="'.$item.'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />' ;
-                                _e( 'Only show on forum pages' , 'bbp-style-pack' ) ;
+                                echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />' ;
+                                esc_html_e( 'Only show on forum pages' , 'bbp-style-pack' ) ;
                         ?>
                         </td>
                 </tr>
@@ -353,7 +353,7 @@ function bsp_login_settings() {
 <!--which menus? ---------------------------------------------------------------------->
                 <tr>
                         <th colspan="2">
-                                <?php _e( 'Select which menus to show register on :' , 'bbp-style-pack' ) ; ?>
+                                <?php esc_html_e( 'Select which menus to show register on :' , 'bbp-style-pack' ) ; ?>
                         </th>
                         <td colspan="2">
                         <?php 
@@ -364,7 +364,7 @@ function bsp_login_settings() {
                                         $item =  'bsp_login[register_'.$menu->name.']' ;
                                         $name= 'register_'.$menu->name ;
                                         $item1 = (!empty($bsp_login[$name]) ? $bsp_login[$name] : '');
-                                        echo '<input name="'.$item.'" id="'.$item.'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />' ;
+                                        echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />' ;
                                         echo 'Show on '.$menu->name ;
                                         if ( ! empty( $menu_locations ) && isset( $menu_locations['primary'] ) ) {
                                                 if ( $menu_locations['primary'] == $menu->term_id ) echo ' (' . $primary_menu_text . ')';
@@ -396,14 +396,14 @@ function bsp_login_settings() {
                         ?>
 
                         <th>
-                                <?php echo '4.'. $desc ?>
+                                <?php echo '4.'. esc_html($desc) ?>
                         </th>
                         <td>
-                                <?php echo $name1 ; ?> 
+                                <?php echo esc_html($name1) ; ?> 
                         </td>
                         <td>
-                                <?php echo '<input id="'.$item1.'" class="large-text" name="'.$item1.'" type="text" value="'.esc_html( $value1 ).'"<br>' ; ?> 
-                                <label class="description"><?php _e( 'You should create a wordpress page with a register shortcode such as [bbp-register] and put the full url in here e.g. http://www.mysite.com/loginpage. If left blank the default wordpress login page will be used.', 'bbp-style-pack' ); ?></label><br/>
+                                <?php echo '<input id="'.esc_html($item1).'" class="large-text" name="'.esc_html($item1).'" type="text" value="'.esc_html( $value1 ).'"<br>' ; ?> 
+                                <label class="description"><?php esc_html_e( 'You should create a wordpress page with a register shortcode such as [bbp-register] and put the full url in here e.g. http://www.mysite.com/loginpage. If left blank the default wordpress login page will be used.', 'bbp-style-pack' ); ?></label><br/>
                         </td>
                 </tr>
 
@@ -411,11 +411,11 @@ function bsp_login_settings() {
                         <td>
                         </td>
                         <td> 
-                                <?php echo $name2 ; ?>
+                                <?php echo esc_html($name2) ; ?>
                         </td>
                         <td>
-                                <?php echo '<input id="'.$item2.'" class="large-text" name="'.$item2.'" type="text" value="'.esc_html( $value2 ).'"<br>' ; ?> 
-                                <label class="description"><?php _e( 'Default "Register" Enter the words you want on the menu item eg "Sign-up", "Join this group" etc.', 'bbp-style-pack' ); ?></label><br/>
+                                <?php echo '<input id="'.esc_html($item2).'" class="large-text" name="'.esc_html($item2).'" type="text" value="'.esc_html( $value2 ).'"<br>' ; ?> 
+                                <label class="description"><?php esc_html_e( 'Default "Register" Enter the words you want on the menu item eg "Sign-up", "Join this group" etc.', 'bbp-style-pack' ); ?></label><br/>
                         </td>
                 </tr>
 
@@ -423,11 +423,11 @@ function bsp_login_settings() {
                         <td>
                         </td>
                         <td> 
-                                <?php echo $name3 ; ?>
+                                <?php echo esc_html($name3) ; ?>
                         </td>
                         <td>
-                                <?php echo '<input id="'.$item3.'" class="large-text" name="'.$item3.'" type="text" value="'.esc_html( $value3 ).'"<br>' ; ?> 
-                                <label class="description"><?php _e( 'If you need a custom css class enter this here - if you do not understand this, then just leave it blank!', 'bbp-style-pack' ); ?></label><br/>
+                                <?php echo '<input id="'.esc_html($item3).'" class="large-text" name="'.esc_html($item3).'" type="text" value="'.esc_html( $value3 ).'"<br>' ; ?> 
+                                <label class="description"><?php esc_html_e( 'If you need a custom css class enter this here - if you do not understand this, then just leave it blank!', 'bbp-style-pack' ); ?></label><br/>
                         </td>
                 </tr>
 				
@@ -435,7 +435,7 @@ function bsp_login_settings() {
 <!--show edit profile to logged on users ---------------------------------------------------------------------->			
                 <tr>
                         <th colspan="2">5. 
-                                <?php _e( "Show a menu 'Edit profile' item to logged in users" , 'bbp-style-pack' ) ; ?></th>
+                                <?php esc_html_e( "Show a menu 'Edit profile' item to logged in users" , 'bbp-style-pack' ) ; ?></th>
                         </th>
 
                         <?php
@@ -444,7 +444,7 @@ function bsp_login_settings() {
                         ?>
                         <td colspan="2">
                                 <?php
-                                echo '<input name="'.$item.'" id="'.$item.'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />';
+                                echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />';
                                 echo $activate_text;
                                 ?>
                         </td>
@@ -453,7 +453,7 @@ function bsp_login_settings() {
 <!--show profile rather than edit profile---------------------------------------------------------------------->
                 <tr>
                         <th colspan="2"> 
-                                <?php _e( 'Link to user profile rather than edit profile' , 'bbp-style-pack' ) ; ?>
+                                <?php esc_html_e( 'Link to user profile rather than edit profile' , 'bbp-style-pack' ) ; ?>
                         </th>
 
                         <?php
@@ -462,8 +462,8 @@ function bsp_login_settings() {
                         ?>
                         <td colspan="2">
                         <?php
-                                echo '<input name="'.$item.'" id="'.$item.'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />' ;
-                                _e( 'Click to link to the users profile rather than the edit section of user profile' , 'bbp-style-pack' ) ;
+                                echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />' ;
+                                esc_html_e( 'Click to link to the users profile rather than the edit section of user profile' , 'bbp-style-pack' ) ;
                         ?>
                         </td>
                 </tr>
@@ -471,7 +471,7 @@ function bsp_login_settings() {
 <!--profile only show on bbpress pages ---------------------------------------------------------------------->
                 <tr>
                         <th colspan="2"> 
-                                <?php _e( 'You can opt to only show profile menu item on forum pages' , 'bbp-style-pack' ) ; ?>
+                                <?php esc_html_e( 'You can opt to only show profile menu item on forum pages' , 'bbp-style-pack' ) ; ?>
                         </th>
 
                         <?php
@@ -480,8 +480,8 @@ function bsp_login_settings() {
                         ?>
                         <td colspan="2">
                         <?php
-                                echo '<input name="'.$item.'" id="'.$item.'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />' ;
-                                _e( 'Only show on forum pages' , 'bbp-style-pack' ) ;
+                                echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />' ;
+                                esc_html_e( 'Only show on forum pages' , 'bbp-style-pack' ) ;
                         ?>
                         </td>
                 </tr>
@@ -490,7 +490,7 @@ function bsp_login_settings() {
 <!--which menus? ---------------------------------------------------------------------->
                 <tr>
                         <th colspan="2">
-                                <?php _e( 'Select which menus to show Profile on :' , 'bbp-style-pack' ) ; ?>
+                                <?php esc_html_e( 'Select which menus to show Profile on :' , 'bbp-style-pack' ) ; ?>
                         </th>
                         <td colspan="2">
                         <?php 
@@ -501,7 +501,7 @@ function bsp_login_settings() {
                                         $item =  'bsp_login[profile_'.$menu->name.']';
                                         $name = 'profile_'.$menu->name;
                                         $item1 = ( ! empty( $bsp_login[$name] ) ? $bsp_login[$name] : '');
-                                        echo '<input name="'.$item.'" id="'.$item.'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />' ;
+                                        echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />' ;
                                         echo 'Show on '.$menu->name ;
                                         if ( ! empty( $menu_locations ) && isset( $menu_locations['primary'] ) ) {
                                                 if ( $menu_locations['primary'] == $menu->term_id ) echo ' (' . $primary_menu_text . ')';
@@ -529,11 +529,11 @@ function bsp_login_settings() {
                         <td>
                         </td>
                         <td>
-                                <?php echo $name2 ; ?>
+                                <?php echo esc_html($name2) ; ?>
                         </td>
                         <td>
-                                <?php echo '<input id="'.$item2.'" class="large-text" name="'.$item2.'" type="text" value="'.esc_html( $value2 ).'"<br>' ; ?> 
-                                <label class="description"><?php _e( 'Default "Edit Profile" Enter the words you want on the menu item eg "Edit your Profile", "Change your settings",  etc. ', 'bbp-style-pack' ); ?></label><br/>
+                                <?php echo '<input id="'.esc_html($item2).'" class="large-text" name="'.esc_html($item2).'" type="text" value="'.esc_html( $value2 ).'"<br>' ; ?> 
+                                <label class="description"><?php esc_html_e( 'Default "Edit Profile" Enter the words you want on the menu item eg "Edit your Profile", "Change your settings",  etc. ', 'bbp-style-pack' ); ?></label><br/>
                         </td>
                 </tr>
 
@@ -541,17 +541,17 @@ function bsp_login_settings() {
                         <td>
                         </td>
                         <td>
-                                <?php echo $name3 ; ?>
+                                <?php echo esc_html($name3) ; ?>
                         </td>
                         <td>
-                                <?php echo '<input id="'.$item3.'" class="large-text" name="'.$item3.'" type="text" value="'.esc_html( $value3 ).'"<br>' ; ?> 
-                                <label class="description"><?php _e( 'If you need a custom css class enter this here - if you do not understand this, then just leave it blank!', 'bbp-style-pack' ); ?></label><br/>
+                                <?php echo '<input id="'.esc_html($item3).'" class="large-text" name="'.esc_html($item3).'" type="text" value="'.esc_html( $value3 ).'"<br>' ; ?> 
+                                <label class="description"><?php esc_html_e( 'If you need a custom css class enter this here - if you do not understand this, then just leave it blank!', 'bbp-style-pack' ); ?></label><br/>
                         </td>
                 </tr>
 
                 <tr>
                         <th colspan="2">6. 
-                                <?php _e( "Amend to make toolbar profile go to bbpress profile" , 'bbp-style-pack' ) ; ?></th>
+                                <?php esc_html_e( "Amend to make toolbar profile go to bbpress profile" , 'bbp-style-pack' ) ; ?></th>
                         </th>
 
                         <?php
@@ -560,12 +560,12 @@ function bsp_login_settings() {
                         ?>
                         <td colspan="2">
                                 <?php
-                                echo '<input name="'.$item.'" id="'.$item.'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />';
+                                echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />';
                                 echo $activate_text;
                                 echo '<br>' ;
-                                _e( 'If users are allowed to see the toolbar, then activating this takes them to the bbpress edit profile, replacing the wordpress one' , 'bbp-style-pack' ) ;
+                                esc_html_e( 'If users are allowed to see the toolbar, then activating this takes them to the bbpress edit profile, replacing the wordpress one' , 'bbp-style-pack' ) ;
                                 echo '<br>' ;
-                                _e( 'Default wording : Edit Profile, but the Menu Item Description from item 5 above will be used if set' , 'bbp-style-pack' ) ;
+                                esc_html_e( 'Default wording : Edit Profile, but the Menu Item Description from item 5 above will be used if set' , 'bbp-style-pack' ) ;
 
                                 ?>
                         </td>
@@ -575,7 +575,7 @@ function bsp_login_settings() {
         </table>
 <!-- save the options -->
         <p class="submit">
-                <input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'bbp-style-pack' ); ?>" />
+                <input type="submit" class="button-primary" value="<?php esc_html_e( 'Save changes', 'bbp-style-pack' ); ?>" />
         </p>
         </form>
 

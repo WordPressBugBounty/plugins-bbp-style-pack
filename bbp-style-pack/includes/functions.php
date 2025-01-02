@@ -307,7 +307,7 @@ function bsp_new_topic_button() {
 	}
 	if ( bbp_current_user_can_access_create_topic_form() && !bbp_is_forum_category() ) {
                 $href = apply_filters ('bsp_new_topic_button' , '#new-post' );
-                echo '<a class="' . $class . '" href ="' . $href . '">' . $text . '</a>';
+                echo '<a class="' . $class . '" href ="' . esc_url($href) . '">' . esc_html($text) . '</a>';
 	}
 }
 
@@ -321,14 +321,14 @@ function bsp_unread_button() {
                 if ( $bsp_style_settings_buttons['button_type'] == 2 ) $class = esc_attr( $bsp_style_settings_buttons['Buttonclass'] );
 	}
 	$forum_id = bbp_get_forum_id();
-	$html = '
+	$html_safe = '
                 <form action="" method="post" >
                         <input type="hidden" name="bsp_ur_mark_all_topic_as_read" value="1"/>
-                        <input type="hidden" name="bsp_ur_mark_id" value="' . $forum_id . '"/>
-                        <input class="' . $class . '"type="submit" value="' . $text . '"/>
+                        <input type="hidden" name="bsp_ur_mark_id" value="' . esc_html($forum_id) . '"/>
+                        <input class="' . esc_html($class) . '"type="submit" value="' . $text . '"/>
                 </form>
 			';
-	echo $html;	
+	echo $html_safe;	
 }
 
 // Actually display/render the subscription button
@@ -489,9 +489,9 @@ function bsp_display_reply_button() {
 	}
 	if ( bbp_current_user_can_access_create_reply_form() ) {
                 $href = apply_filters ( 'bsp_new_reply_button' , '#new-post' );
-                echo '<a class="' . $class . '" href ="' . $href . '">' . $text . '</a>';
+                echo '<a class="' . esc_html($class) . '" href ="' . esc_url($href) . '">' . esc_html($text) . '</a>';
 	}
-        echo '</div>';
+    echo '</div>';
 	
 }
 	
@@ -512,7 +512,8 @@ function bsp_create_new_topica() {
 	else $text=__('Create New Topic', 'bbp-style-pack');
 	if ( bbp_current_user_can_access_create_topic_form() && !bbp_is_forum_category() ) {
                 $href = apply_filters ('bsp_create_new_topica' , '#new-post' );
-                echo '<div class="bsp-new-topic"> <a href ="'.$href.'">'.$text.'</a></div>';
+                echo '<div class="bsp-new-topic"> <a href ="'.esc_url($href).'">'.esc_html($text).'</a></div>';
+
 	}
 }
 	
@@ -538,7 +539,7 @@ function bsp_profile_link() {
 	}
 	$current_user = wp_get_current_user();
 	$user = $current_user->ID;
-	echo '<a class="' . $class . '" href="' . esc_url( bbp_get_user_profile_url( $user ) ) . '">' . $text . '</a>';
+	echo '<a class="' . esc_html($class) . '" href="' . esc_url( bbp_get_user_profile_url( $user ) ) . '">' . esc_html($text) . '</a>';
 }
 	
 
@@ -856,9 +857,9 @@ function bsp_mention_gravatar() {
         $gurldesc = (!empty($bsp_profile['ProfileURL Description']) ? esc_html ($bsp_profile['ProfileURL Description']) : '');
         ?>
         <div>
-                <label for="bbp-gravatar-notice"><?php echo $label ?></label>
+                <label for="bbp-gravatar-notice"><?php echo esc_html($label) ?></label>
                 <fieldset style="width: 60%;">
-                        <span style="margin-left: 0; width: 100%;" name="bbp-gravatar-notice" class="description"><?php echo $gdesc ?> <?php echo $gurl?> <?php echo $gurldesc ?></a>.</span>
+                        <span style="margin-left: 0; width: 100%;" name="bbp-gravatar-notice" class="description"><?php echo esc_html($gdesc) ?> <?php echo esc_html($gurl)?> <?php echo esc_html($gurldesc) ?></a>.</span>
                 </fieldset>
         </div>
 
@@ -899,7 +900,7 @@ function bsp_display_reply_role( $args = array() ) {
         ), 'get_reply_author_role' );
         $r['reply_id'] = bbp_get_reply_id( $r['reply_id'] );
         $author_role = bsp_author_role ($r);
-        echo $author_role;
+        echo esc_html($author_role);
 }
 
 function bsp_display_topic_role( $args = array() ) {
@@ -912,7 +913,7 @@ function bsp_display_topic_role( $args = array() ) {
         ), 'get_reply_author_role' );
 	$r['topic_id'] = bbp_get_topic_id( $r['topic_id'] );
 	$author_role = bsp_author_role ($r);
-	echo $author_role;
+	echo esc_html($author_role);
 }
 
 //added function to allow others to call the role
@@ -1275,7 +1276,7 @@ if (!empty ($bsp_style_settings_freshness ['activate'] )) {
 function bsp_freshness_display_title ($forum_id = 0) {
 	//use pg function if private groups plugin active
 	if (function_exists ('pg_get_forum_freshness_title')) {
-		$anchor = pg_get_forum_freshness_title();		
+		$anchor_safe = pg_get_forum_freshness_title();		
 	} 
 	else {	
                 // Verify forum and get last active meta
@@ -1301,9 +1302,9 @@ function bsp_freshness_display_title ($forum_id = 0) {
                         $title = bbp_get_forum_last_reply_title( $forum_id );
                 }
 
-                $anchor = '<a class="bsp_freshness_display_title" href="' . esc_url( $link_url ) . '" title="' . esc_attr( $title ) . '">' . esc_html( $title ) . '</a>';
+                $anchor_safe = '<a class="bsp_freshness_display_title" href="' . esc_url( $link_url ) . '" title="' . esc_attr( $title ) . '">' . esc_html( $title ) . '</a>';
 	}
-        echo $anchor.'<p/>';
+    echo $anchor_safe.'<p/>';
 }
 
 function bsp_get_forum_freshness_link ($anchor, $forum_id) {
@@ -1482,7 +1483,7 @@ function bsp_load_spinner_topic() {
 	echo '<button type="submit" id="bsp_topic_submit" name="bbp_topic_submit" class="button submit">';
 	//leave as is if field is blanked (user may just want spinner)
 	$value = (!empty($bsp_style_settings_form['SubmittingSubmitting']) ? $bsp_style_settings_form['SubmittingSubmitting'] : '');
-	echo $value;
+	echo esc_html($value);
 	//then add spinner if activated
 	if (!empty( $bsp_style_settings_form['SubmittingSpinner'])) echo '<span class="bsp-spinner"></span>';
 	//then finish button
@@ -1498,7 +1499,7 @@ function bsp_load_spinner_reply() {
 	echo '<button type="submit" id="bsp_reply_submit" name="bbp_reply_submit" class="button submit">';
 	//leave as is if field is blanked (user may just want spinner)
 	$value = (!empty($bsp_style_settings_form['SubmittingSubmitting']) ? $bsp_style_settings_form['SubmittingSubmitting'] : '');
-	echo $value;
+	echo esc_html($value);
 	//then add spinner if activated
 	if (!empty ( $bsp_style_settings_form['SubmittingSpinner'])) echo '<span class="bsp-spinner"></span>';
 	//then finish button
@@ -1560,7 +1561,7 @@ function bsp_column_add($columns) {
 }
 	
 function bsp_column_value($column_name, $id) {
-        if ($column_name == 'bsp_id') echo $id;
+        if ($column_name == 'bsp_id') echo esc_html($id);
 }
 			
 			
@@ -1790,7 +1791,8 @@ function bsp_sub_forum_imagea ($args, $forum_id = '') {
 }
 
 function bsp_forum_display_thumbnail(){
-	echo bsp_get_forum_display_thumbnail();
+	$thumbnail_safe =  bsp_get_forum_display_thumbnail();
+	echo $thumbnail_safe ;
 }
 
 function bsp_get_forum_display_thumbnail ($forum_id=0) {
@@ -2057,13 +2059,13 @@ if (!empty($bsp_style_settings_form['topic_posting_rulesactivate_for_replies']))
 function bsp_topic_rules() {
         global $bsp_style_settings_form; 
         $content = $bsp_style_settings_form['topic_rules_text'];
-        echo '<div class="bsp-topic-rules">'.$content.'</div>';
+        echo '<div class="bsp-topic-rules">'.esc_html($content).'</div>';
 }
 
 function bsp_reply_rules() {
         global $bsp_style_settings_form; 
         $content = $bsp_style_settings_form['reply_rules_text'];
-        echo '<div class="bsp-topic-rules">'.$content.'</div>';
+        echo '<div class="bsp-topic-rules">'.esc_html($content).'</div>';
 }
 
 //This function changes the text wherever it is quoted
@@ -2192,7 +2194,7 @@ if (!empty($bsp_style_settings_t['anon_emailShow'])) {
 function bsp_add_email() {
 	$email = get_post_meta ( bbp_get_reply_id() , '_bbp_anonymous_email', true );
 	if (!empty ($email))
-		echo '<p>'.$email;
+		echo '<p>'.esc_html($email);
 }
 
 //decide what author links to show on replies
@@ -2368,7 +2370,7 @@ function bsp_add_register() {
 	if (substr($version, 0, 3) == '2.6') {
 		$desc = (!empty ($bsp_style_settings_ti['register_page_page']) ? $bsp_style_settings_ti['register_page_page'] : 'Register');
 		$url = (!empty ($bsp_style_settings_ti['register_page_url']) ? $bsp_style_settings_ti['register_page_url'] : site_url().'/wp-login.php');
-		echo '<div class="bbp-submit-wrapper"><a class="button bsp-register" href="'.$url.'"> '.$desc.'</a></div>';
+		echo '<div class="bbp-submit-wrapper"><a class="button bsp-register" href="'.esc_url($url).'"> '.esc_html($desc).'</a></div>';
 	}
 }
 
@@ -2915,7 +2917,7 @@ function bsp_current_page_url(){
 
 function bsp_login_form_url() {
 	$url = bsp_current_page_url();
-	echo '<input type="hidden" name="bsp_login_referrer" value="'.$url.'"/>';
+	echo '<input type="hidden" name="bsp_login_referrer" value="'.esc_url($url).'"/>';
 }
 
 
@@ -2937,7 +2939,7 @@ function bsp_login_failed_message() {
 			if ($error == 'empty_username' ) $text= (!empty ($bsp_login_fail ['fail_empty_username']) ? $bsp_login_fail ['fail_empty_username'] :'ERROR: The username field was empty');
 			if ($error == 'empty_password' ) $text= (!empty ($bsp_login_fail ['fail_empty_password']) ? $bsp_login_fail ['fail_empty_password'] :'ERROR: The password field was empty');
 			if ($error == 'nothing_entered' ) $text= (!empty ($bsp_login_fail ['fail_nothing_entered']) ? $bsp_login_fail ['fail_nothing_entered'] :'ERROR: Nothing was entered');
-			echo '<div id="bsp-login-error">'.$text.'</div>';
+			echo '<div id="bsp-login-error">'.esc_html($text).'</div>';
 		}
 	}
 }
@@ -2946,9 +2948,9 @@ function bsp_login_failed_message() {
 add_action ('bbp_author_metabox' , 'bsp_author_help_text' );
 
 function bsp_author_help_text() {
-	_e('To amend author - type ID,' , 'bbp-style-pack' );
+	esc_html_e('To amend author - type ID,' , 'bbp-style-pack' );
         echo '<br/>';
-        _e('or start to type username or email.' , 'bbp-style-pack' );
+        esc_html_e('or start to type username or email.' , 'bbp-style-pack' );
 }
 
 //topic preview functions
@@ -2973,7 +2975,7 @@ function bsp_topic_preview2() {
 		if (mb_strlen($content ) > mb_strlen($extract) ) $extract.='...';
 		$content = $extract;
 	}
-	echo $content;
+	echo esc_html($content);
 	echo '</span>';
 	//and set for mobile screens if set
 	if (!empty ($bsp_style_settings_topic_preview['previewmscreen'])) {
@@ -2984,7 +2986,7 @@ function bsp_topic_preview2() {
 			if (mb_strlen($content ) > mb_strlen($extract) ) $extract.='...';
 			$content = $extract;
 		}
-		echo $content;
+		echo esc_html($content);
                 echo '</span>';
                 echo '</div>';
 	}
@@ -3034,7 +3036,7 @@ function bsp_template_error_notices() {
 					<?php echo implode( "</li>\n<li>", $errors ); ?>
 					<?php if (!empty($bsp_style_settings_form['errormsgActivateLink'])) { 
                                                 $message = (!empty($bsp_style_settings_form['errormsgMessage']) ? $bsp_style_settings_form['errormsgMessage'] : 'Click here to correct'); 
-                                                echo '<a href="#new-post">'.$message.'</a>';
+                                                echo '<a href="#new-post">'.esc_html($message).'</a>';
 					} ?>
 				</li>
 			</ul>
@@ -3155,7 +3157,7 @@ function bsp_topic_tags ($topic_id=0) {
 	<select multiple="multiple" name="bbp_topic_tags[]"
 		style="min-width:300px;"
 		class="bsp-topic-tag-multiple"
-		data-placeholder="<?php _e('Choose Topic Tags', 'bsp-style-pack'); ?>">
+		data-placeholder="<?php esc_html_e('Choose Topic Tags', 'bsp-style-pack'); ?>">
 		<?php
 		//echo '<p>'.$tag_list;
 		foreach ($tags as $tag=>$name) {	
@@ -3165,7 +3167,7 @@ function bsp_topic_tags ($topic_id=0) {
 				$selected = 'selected';
 			}
 			?>
-			<option value="<?php echo $item; ?>" <?php echo $selected; ?>><?php echo $item; ?></option>
+			<option value="<?php echo esc_html($item); ?>" <?php echo esc_html($selected); ?>><?php echo esc_html($item); ?></option>
                 <?php
                 }
                 ?>

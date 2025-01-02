@@ -17,34 +17,34 @@ function bsp_style_settings_export() {
                 <tr>
                         <td>
                                 <h3>
-                                        <?php _e( 'Export Plugin Settings' , 'bbp-style-pack' ); ?>
+                                        <?php esc_html_e( 'Export Plugin Settings' , 'bbp-style-pack' ); ?>
                                 </h3>
                                 <p>
-                                        <?php _e( 'This tab lets you export settings to an file.' , 'bbp-style-pack' ); ?>
+                                        <?php esc_html_e( 'This tab lets you export settings to an file.' , 'bbp-style-pack' ); ?>
                                 </p>
                                 <p>
-                                        <?php _e( 'This can be useful if you want to move settings from say a test or development site to a live site ' , 'bbp-style-pack' ); ?>
+                                        <?php esc_html_e( 'This can be useful if you want to move settings from say a test or development site to a live site ' , 'bbp-style-pack' ); ?>
                                 </p>
                                 <p>
-                                        <?php _e( 'or' , 'bbp-style-pack' ) ; ?>
+                                        <?php esc_html_e( 'or' , 'bbp-style-pack' ) ; ?>
                                 </p>
                                 <p>
-                                        <?php _e( 'to let you save a set of settings, so that you can come back to them if need-be' , 'bbp-style-pack' ); ?>
+                                        <?php esc_html_e( 'to let you save a set of settings, so that you can come back to them if need-be' , 'bbp-style-pack' ); ?>
                                 </p>
                                 <p><b>
-                                        <?php _e( 'Click the button below which will take you to the export options in Wordpress and select \'bbp style settings\' at the bottom of the list', 'bbp-style-pack' ); ?>
+                                        <?php esc_html_e( 'Click the button below which will take you to the export options in Wordpress and select \'bbp style settings\' at the bottom of the list', 'bbp-style-pack' ); ?>
                                 </b></p>
                         </td>
                         <td>
                                 <?php
                                 //show style image
-                                echo '<img src="' . plugins_url( 'images/export.JPG',dirname(__FILE__)  ) . '" width = "600" > '; 
+                                echo '<img src="' . esc_url(plugins_url( 'images/export.JPG',dirname(__FILE__) ) ) . '" width = "600" > '; 
                                 ?>
                         </td>
                 </tr>
 	</table>
 	<?php $export = home_url().'/wp-admin/export.php'; ?>
-	<input type="submit" value="<?php _e( 'Export Settings', 'bbp-style-pack' ); ?>" class="button-primary" onClick="document.location.href='<?php echo $export ; ?>'" />
+	<input type="submit" value="<?php esc_html_e( 'Export Settings', 'bbp-style-pack' ); ?>" class="button-primary" onClick="document.location.href='<?php echo $export ; ?>'" />
  <?php
 }
 
@@ -53,7 +53,7 @@ function bsp_style_settings_export() {
 //set options as the filter
 function bsp_export_filters() {
 		?>
-		<p><label><input type="radio" name="content" value="bsp" /> <?php _e( 'bbp Style Pack Settings', 'bbp-style-pack' ); ?></label></p>
+		<p><label><input type="radio" name="content" value="bsp" /> <?php esc_html_e( 'bbp Style Pack Settings', 'bbp-style-pack' ); ?></label></p>
 		<?php
 	}	
 		

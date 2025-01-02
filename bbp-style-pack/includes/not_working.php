@@ -60,7 +60,7 @@ $dir =$dir.'/bbpress/' ;
 		 
 		while (($file = readdir($dh)) !== false){
 			if ($file != '.' && $file != '..' ) {
-				echo $file . '<br>';
+				echo esc_html($file) . '<br>';
 			}
 		}
 		closedir($dh);
@@ -91,7 +91,7 @@ if ($dir != $dir2 ) {
 	  if ($dh = opendir($dir2)){
 		while (($file = readdir($dh)) !== false){
 		if ($file != '.' && $file != '..' ) {
-			echo $file . '<br>';
+			echo esc_html($file) . '<br>';
 		}
 		}
 		closedir($dh);

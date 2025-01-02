@@ -70,7 +70,7 @@ function bsp_style_settings_email () {
                 </tr>
 				<tr>
                         <td valign="top">
-						<?php _e ('From Name' , 'bbp-style-pack' ) ;?>
+						<?php esc_html_e ('From Name' , 'bbp-style-pack' ) ;?>
 						</td>
 						<td>
                                         <?php echo '<input id="'.esc_html($item2).'" class="large-text" name="'.esc_html($item2).'" type="text" value="'.esc_html( $value2 ).'"> <br>' ; ?> 
@@ -118,11 +118,11 @@ function bsp_style_settings_email () {
                                 $item1="bsp_style_settings_email[".$name.$area1."]" ;
                                 $value1 = (!empty($bsp_style_settings_email[$name.$area1]) ? $bsp_style_settings_email[$name.$area1]  : 0) ;
 				echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="radio" value="0" class="code"  ' . checked( 0,esc_html($value1), false ) . ' />' ;
-				_e ('Wordpress Login' , 'bbp-style-pack' ) ;?>
+				esc_html_e ('Wordpress Login' , 'bbp-style-pack' ) ;?>
 				<p/>
 				<?php
 				echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="radio" value="1" class="code"  ' . checked( 1,esc_html($value1), false ) . ' />' ;
-				_e ('bbPress Login or login using a specific page' , 'bbp-style-pack' ) ;?>
+				esc_html_e ('bbPress Login or login using a specific page' , 'bbp-style-pack' ) ;?>
 				<p/>
 															
 			</td>		
@@ -180,7 +180,7 @@ function bsp_style_settings_email () {
                                 // is this role in the current set roles to email? if so,, set to checked
                                 $checked = in_array( $role, $value1 ) ? true : false;
                                 // display input checkbox  for for role
-                                echo '<input name="' .esc_html($item1). '[' . $role . ']" id="' .esc_html($item1). '[' . $role . ']" type="checkbox" value="' . $role . '" class="code" ' . checked( true, $checked, false ) . ' /> ' . $role_values['name'];
+                                echo '<input name="' .esc_html($item1). '[' . esc_html($role) . ']" id="' .esc_html($item1). '[' . esc_html($role) . ']" type="checkbox" value="' . $role . '" class="code" ' . checked( true, $checked, false ) . ' /> ' . $role_values['name'];
                                 echo '<br/>';
                         }
                         // include a hidden value so that we can preserve not sending emails for any role if site admin unchecked all and saved
@@ -219,11 +219,11 @@ function bsp_style_settings_email () {
 				<td colspan = '2'>
 				<?php
 				echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="radio" value="0" class="code"  ' . checked( 0,esc_html($value1), false ) . ' />' ;
-				_e ('Plain Text' , 'bbp-style-pack' ) ;?>
+				esc_html_e ('Plain Text' , 'bbp-style-pack' ) ;?>
 				<p/>
 				<?php
 				echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="radio" value="1" class="code"  ' . checked( 1,esc_html($value1), false ) . ' />' ;
-				_e ('HTML Text' , 'bbp-style-pack' ) ;?>
+				esc_html_e ('HTML Text' , 'bbp-style-pack' ) ;?>
 				<p/>
 				<label class="description"><?php esc_html_e( 'By default bbpress uses plain text to send emails.', 'bbp-style-pack' ); ?></label><br/>
 				<label class="description"><b><?php esc_html_e( 'If you want HTML text, then click HTML text, and press the \'save\' button, and the wordpress text editor will appear on the refreshed screen', 'bbp-style-pack' ); ?></b></label><br/>
@@ -315,8 +315,8 @@ $default_reply_body_h = '{author} wrote:<p>{content}</p><p>Post Link: {url}</p><
 			</th>
 			<td colspan=2>
 			<?php if (empty ($bsp_style_settings_email['email_email_type'])) {
-				echo '<textarea id="'.$item2p.'" class="large-text" name="'.$item2p.'" type="text" rows="15">'.esc_html($value2p).'</textarea>' ; 
-				echo '<input type="hidden" id="'.$item2h.'" name="'.$item2h.'" value="'.$value2h.'">' ; 
+				echo '<textarea id="'.esc_html($item2p).'" class="large-text" name="'.esc_html($item2p).'" type="text" rows="15">'.esc_html($value2p).'</textarea>' ; 
+				echo '<input type="hidden" id="'.esc_html($item2h).'" name="'.esc_html($item2h).'" value="'.esc_html($value2h).'">' ; 
 			} 
 			else {
 			wp_editor( $value2h, 'bsp_style_topic', array(
@@ -325,7 +325,7 @@ $default_reply_body_h = '{author} wrote:<p>{content}</p><p>Post Link: {url}</p><
 				// TRUE to output the minimal editor config, such as the Comment editor.
 				'teeny'         => false,
 			) );
-			echo '<input type="hidden" id="'.$item2p.'" name="'.$item2p.'" value="'.esc_html($value2p).'">' ;
+			echo '<input type="hidden" id="'.esc_html($item2p).'" name="'.esc_html($item2p).'" value="'.esc_html($value2p).'">' ;
 			} ?>
 
 					
@@ -405,12 +405,12 @@ $default_reply_body_h = '{author} wrote:<p>{content}</p><p>Post Link: {url}</p><
 		<td>
 			<?php
 				echo '<input name="'.esc_html($item2).'" id="'.esc_html($item2).'" type="radio" value="char" class="code"  ' . checked( 'char',$value2, false ) . ' />' ;
-				_e ('Characters' , 'bbp-style-pack' ) ;
+				esc_html_e('Characters' , 'bbp-style-pack' ) ;
 			?>
 				<p/>
 			<?php
 				echo '<input name="'.esc_html($item2).'" id="'.esc_html($item2).'" type="radio" value="words" class="code"  ' . checked( 'words',$value2, false ) . ' />' ;
-				_e ('Words' , 'bbp-style-pack' ) ;
+				esc_html_e ('Words' , 'bbp-style-pack' ) ;
 			?>
 				<p/>
 														

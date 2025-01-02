@@ -13,14 +13,14 @@ function bsp_css_settings() {
 		<tr valign="top">
 			<th colspan="2">
 				<h3>
-					<?php _e ('Custom CSS' , 'bbp-style-pack' ) ; ?>
+					<?php esc_html_e ('Custom CSS' , 'bbp-style-pack' ) ; ?>
 				</h3>
 			</th>
 		</tr>	
 
 		<tr>
 			<td>
-			<?php _e ('You can add any custom css here' , 'bbp-style-pack' ) ; ?>
+			<?php esc_html_e ('You can add any custom css here' , 'bbp-style-pack' ) ; ?>
 			</td>
 		</tr>	
 				
@@ -43,7 +43,7 @@ function bsp_css_settings() {
 				$name = __('css', 'bbp-style-pack') ;
 				$item1="bsp_css[".$name."]" ;
 				$value1 = (!empty($bsp_css[$name]) ? $bsp_css[$name] : '');
-				echo '<textarea id="'.$item1.'" class="large-text" name="'.$item1.'" rows="20" cols="40" >' ; 
+				echo '<textarea id="'.esc_html($item1).'" class="large-text" name="'.esc_html($item1).'" rows="20" cols="40" >' ; 
 				echo $value1 ; ?> 
 				</textarea>
 			</td>
@@ -53,7 +53,7 @@ function bsp_css_settings() {
 	
 <!-- save the options -->
 		<p class="submit">
-			<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'bbp-style-pack' ); ?>" />
+			<input type="submit" class="button-primary" value="<?php esc_html_e( 'Save changes', 'bbp-style-pack' ); ?>" />
 		</p>
 </form>
 

@@ -24,7 +24,7 @@ function bsp_help() {
                         <p>
                         <?php
                         //show style image
-                                 echo '<img src="' . plugins_url( 'images/color.JPG',dirname(__FILE__)  ) . '" > '; 
+                                 echo '<img src="' . esc_url(plugins_url( 'images/color.JPG',dirname(__FILE__)  )) . '" > '; 
                         ?>
                         </p>
                         <p>
@@ -89,7 +89,11 @@ function bsp_help() {
                                 <span style="color:blue"><?php esc_html_e('If you need further help', 'bbp-style-pack' ) ; ?></span>
                         </h4>
                         <p>
-                                <?php _e('Please log a topic at <a href = "https://wordpress.org/support/plugin/bbp-style-pack" target="blank">plugin support</a> - you will need to scroll to the bottom of the page to find the new topic form', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('Please log a topic at', 'bbp-style-pack'); ?>
+								<a href = "https://wordpress.org/support/plugin/bbp-style-pack" target="blank">
+								<?php esc_html_e('plugin support', 'bbp-style-pack'); ?>
+								</a>
+								<?php esc_html_e('- you will need to create an account and scroll to the bottom of the page to find the new topic form', 'bbp-style-pack'); ?>
                          </p>
 				</td>
                 </tr>

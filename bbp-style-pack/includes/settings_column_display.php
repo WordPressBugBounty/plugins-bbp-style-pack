@@ -11,12 +11,12 @@ function bsp_style_settings_column_display() {
 	?>
 			
 	<h3>
-		<?php _e ('Column Display' , 'bbp-style-pack' ) ; ?>
+		<?php esc_html_e ('Column Display' , 'bbp-style-pack' ) ; ?>
 	</h3>
 	
 	
                 <p><b>
-                        <?php _e ('This tab lets you decide which columns for forum and topic indexes you want to show and whether on all devices or just mobile ' , 'bbp-style-pack') ; ?>
+                        <?php esc_html_e ('This tab lets you decide which columns for forum and topic indexes you want to show and whether on all devices or just mobile ' , 'bbp-style-pack') ; ?>
                         </b></p>
 
                 <?php global $bsp_style_settings_column_display ;
@@ -36,7 +36,7 @@ function bsp_style_settings_column_display() {
                <tr><td><hr></td></tr>
 				<tr valign="top">  
                                 <th style="width: 350px">
-                                        <?php _e('FORUM DISPLAY', 'bbp-style-pack'); ?>
+                                        <?php esc_html_e('FORUM DISPLAY', 'bbp-style-pack'); ?>
                                 </th>
 
                                 <td>
@@ -44,13 +44,13 @@ function bsp_style_settings_column_display() {
                                         echo '<input name="bsp_style_settings_column_display[forum_activate]" id="bsp_style_settings_column_display[forum_activate]" type="checkbox" value="1" class="code" ' . checked( 1,$forum_display, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[fse]">
-                                                <?php _e( 'Activate', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Activate', 'bbp-style-pack' ); ?>
                                         </label>
                                 </td>
 				</tr>
 				<tr valign="top">  
                                 <th style="width: 350px">
-                                    <?php _e('Forum name Column', 'bbp-style-pack'); ?>     
+                                    <?php esc_html_e('Forum name Column', 'bbp-style-pack'); ?>     
                                 </th>
 
 						 
@@ -59,7 +59,7 @@ function bsp_style_settings_column_display() {
                
                                           <td>
                                         <label class="description" for="bsp_style_settings_column_display[forum_name]">
-                                                <?php _e( 'Width desktop', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Width desktop', 'bbp-style-pack' ); ?>
                                         </label>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[forum_name_width]" id="bsp_style_settings_column_display[forum_name_width]" class="small-text" type="text" value="'. $forum_name_width.'"/>% - '.__( 'default 55%', 'bbp-style-pack' );
@@ -67,7 +67,7 @@ function bsp_style_settings_column_display() {
                                        
 										<br/>
 										<label class="description" for="bsp_style_settings_column_display[forum_name_mobile]">
-                                                <?php _e( 'Width mobile', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Width mobile', 'bbp-style-pack' ); ?>
                                         </label>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[forum_name_width_mobile]" id="bsp_style_settings_column_display[forum_name_width_mobile]" class="small-text" type="text" value="'. $forum_name_width_mobile.'"/>% - '.__( 'default 55%', 'bbp-style-pack' );
@@ -79,7 +79,7 @@ function bsp_style_settings_column_display() {
                
                         <tr valign="top">  
                                 <th style="width: 350px">
-                                    <?php _e('Topics Column', 'bbp-style-pack'); ?>     
+                                    <?php esc_html_e('Topics Column', 'bbp-style-pack'); ?>     
                                 </th>
 
                               <td>
@@ -87,21 +87,21 @@ function bsp_style_settings_column_display() {
                                         echo '<input name="bsp_style_settings_column_display[forum_topics]" id="bsp_style_settings_column_display[forum_topics]" type="radio" value="0" class="code" ' . checked( 0,$forum_topics, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[forum_topics]">
-                                                <?php _e( 'Show', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Show', 'bbp-style-pack' ); ?>
                                         </label>
 										<br/>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[forum_topics]" id="bsp_style_settings_column_display[forum_topics]" type="radio" value="1" class="code" ' . checked( 1,$forum_topics, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[forum_topics]">
-                                                <?php _e( 'Hide', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Hide', 'bbp-style-pack' ); ?>
                                         </label>
 										<br/>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[forum_topics]" id="bsp_style_settings_column_display[forum_topics]" type="radio" value="2" class="code" ' . checked( 2,$forum_topics, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[forum_topics]">
-                                                <?php _e( 'Hide only on mobile', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Hide only on mobile', 'bbp-style-pack' ); ?>
                                         </label>
                                 </td>   
                         </tr>
@@ -111,13 +111,13 @@ function bsp_style_settings_column_display() {
 						 <tr valign="top">  
                                 <td style="width: 350px">
 								<i>
-                                    <?php _e('If being shown', 'bbp-style-pack'); ?> 
+                                    <?php esc_html_e('If being shown', 'bbp-style-pack'); ?> 
 								</i>									
                                 </td>
 
                               <td>
                                         <label class="description" for="bsp_style_settings_column_display[forum_topics_width]">
-                                                <?php _e( 'Width desktop', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Width desktop', 'bbp-style-pack' ); ?>
                                         </label>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[forum_topics_width]" id="bsp_style_settings_column_display[forum_topics_width]" class="small-text" type="text" value="'. $forum_topics_width.'"/>% - '.__( 'default 15%', 'bbp-style-pack' );
@@ -125,7 +125,7 @@ function bsp_style_settings_column_display() {
                                        
 										<br/>
 										<label class="description" for="bsp_style_settings_column_display[forum_topics_width_mobile]">
-                                                <?php _e( 'Width mobile', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Width mobile', 'bbp-style-pack' ); ?>
                                         </label>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[forum_topics_width_mobile]" id="bsp_style_settings_column_display[forum_topics_width_mobile]" class="small-text" type="text" value="'. $forum_topics_width_mobile.'"/>% - '.__( 'default 15%', 'bbp-style-pack' );
@@ -136,7 +136,7 @@ function bsp_style_settings_column_display() {
                
 						  <tr valign="top">  
                                 <th style="width: 350px">
-                                    <?php _e('Posts Column', 'bbp-style-pack'); ?>     
+                                    <?php esc_html_e('Posts Column', 'bbp-style-pack'); ?>     
                                 </th>
 
                               <td>
@@ -144,21 +144,21 @@ function bsp_style_settings_column_display() {
                                         echo '<input name="bsp_style_settings_column_display[forum_posts]" id="bsp_style_settings_column_display[forum_posts]" type="radio" value="0" class="code" ' . checked( 0,$forum_posts, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[forum_posts]">
-                                                <?php _e( 'Show', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Show', 'bbp-style-pack' ); ?>
                                         </label>
 										<br/>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[forum_posts]" id="bsp_style_settings_column_display[forum_posts]" type="radio" value="1" class="code" ' . checked( 1,$forum_posts, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[forum_posts]">
-                                                <?php _e( 'Hide', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Hide', 'bbp-style-pack' ); ?>
                                         </label>
 										<br/>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[forum_posts]" id="bsp_style_settings_column_display[forum_posts]" type="radio" value="2" class="code" ' . checked( 2,$forum_posts, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[forum_posts]">
-                                                <?php _e( 'Hide only on mobile', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Hide only on mobile', 'bbp-style-pack' ); ?>
                                         </label>
                                 </td>   
                         </tr>
@@ -168,13 +168,13 @@ function bsp_style_settings_column_display() {
 						 <tr valign="top">  
                                 <td style="width: 350px">
 								<i>
-                                    <?php _e('If being shown', 'bbp-style-pack'); ?> 
+                                    <?php esc_html_e('If being shown', 'bbp-style-pack'); ?> 
 								</i>									
                                 </td>
 
                               <td>
                                         <label class="description" for="bsp_style_settings_column_display[forum_posts_width]">
-                                                <?php _e( 'Width desktop', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Width desktop', 'bbp-style-pack' ); ?>
                                         </label>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[forum_posts_width]" id="bsp_style_settings_column_display[forum_posts_width]" class="small-text" type="text" value="'. $forum_posts_width.'"/>% - '.__( 'default 15%', 'bbp-style-pack' );
@@ -182,7 +182,7 @@ function bsp_style_settings_column_display() {
                                        
 										<br/>
 										<label class="description" for="bsp_style_settings_column_display[forum_posts_width_mobile]">
-                                                <?php _e( 'Width mobile', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Width mobile', 'bbp-style-pack' ); ?>
                                         </label>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[forum_posts_width_mobile]" id="bsp_style_settings_column_display[forum_posts_width_mobile]" class="small-text" type="text" value="'. $forum_posts_width_mobile.'"/>% - '.__( 'default 15%', 'bbp-style-pack' );
@@ -193,7 +193,7 @@ function bsp_style_settings_column_display() {
                
 						 <tr valign="top">  
                                 <th style="width: 350px">
-                                    <?php _e('Last Post Column', 'bbp-style-pack'); ?>     
+                                    <?php esc_html_e('Last Post Column', 'bbp-style-pack'); ?>     
                                 </th>
 
                               <td>
@@ -201,21 +201,21 @@ function bsp_style_settings_column_display() {
                                         echo '<input name="bsp_style_settings_column_display[forum_freshness]" id="bsp_style_settings_column_display[forum_freshness]" type="radio" value="0" class="code" ' . checked( 0,$forum_freshness, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[forum_freshness]">
-                                                <?php _e( 'Show', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Show', 'bbp-style-pack' ); ?>
                                         </label>
 										<br/>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[forum_freshness]" id="bsp_style_settings_column_display[forum_freshness]" type="radio" value="1" class="code" ' . checked( 1,$forum_freshness, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[forum_freshness]">
-                                                <?php _e( 'Hide', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Hide', 'bbp-style-pack' ); ?>
                                         </label>
 										<br/>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[forum_freshness]" id="bsp_style_settings_column_display[forum_freshness]" type="radio" value="2" class="code" ' . checked( 2,$forum_freshness, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[forum_freshness]">
-                                                <?php _e( 'Hide only on mobile', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Hide only on mobile', 'bbp-style-pack' ); ?>
                                         </label>
                                 </td>   
                         </tr>
@@ -225,13 +225,13 @@ function bsp_style_settings_column_display() {
 						 <tr valign="top">  
                                 <td style="width: 350px">
 								<i>
-                                    <?php _e('If being shown', 'bbp-style-pack'); ?> 
+                                    <?php esc_html_e('If being shown', 'bbp-style-pack'); ?> 
 								</i>									
                                 </td>
 
                               <td>
                                         <label class="description" for="bsp_style_settings_column_display[forum_freshness_width]">
-                                                <?php _e( 'Width desktop', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Width desktop', 'bbp-style-pack' ); ?>
                                         </label>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[forum_freshness_width]" id="bsp_style_settings_column_display[forum_freshness_width]" class="small-text" type="text" value="'. $forum_freshness_width.'"/>% - '.__( 'default 15%', 'bbp-style-pack' );
@@ -239,7 +239,7 @@ function bsp_style_settings_column_display() {
                                        
 										<br/>
 										<label class="description" for="bsp_style_settings_column_display[forum_freshness_width_mobile]">
-                                                <?php _e( 'Width mobile', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Width mobile', 'bbp-style-pack' ); ?>
                                         </label>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[forum_freshness_width_mobile]" id="bsp_style_settings_column_display[forum_freshness_width_mobile]" class="small-text" type="text" value="'. $forum_freshness_width_mobile.'"/>% - '.__( 'default 15%', 'bbp-style-pack' );
@@ -253,7 +253,7 @@ function bsp_style_settings_column_display() {
               
 						<tr valign="top">  
                                 <th style="width: 350px">
-                                        <?php _e('TOPICS DISPLAY', 'bbp-style-pack'); ?>
+                                        <?php esc_html_e('TOPICS DISPLAY', 'bbp-style-pack'); ?>
                                 </th>
 
                                 <td>
@@ -261,13 +261,13 @@ function bsp_style_settings_column_display() {
                                         echo '<input name="bsp_style_settings_column_display[topic_activate]" id="bsp_style_settings_column_display[topic_activate]" type="checkbox" value="1" class="code" ' . checked( 1,$topic_display, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[fse]">
-                                                <?php _e( 'Activate', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Activate', 'bbp-style-pack' ); ?>
                                         </label>
                                 </td>
 				</tr>
 				<tr valign="top">  
                                 <th style="width: 350px">
-                                    <?php _e('Topic name Column', 'bbp-style-pack'); ?>     
+                                    <?php esc_html_e('Topic name Column', 'bbp-style-pack'); ?>     
                                 </th>
 
 						 
@@ -276,7 +276,7 @@ function bsp_style_settings_column_display() {
                
                                           <td>
                                         <label class="description" for="bsp_style_settings_column_display[topic_name]">
-                                                <?php _e( 'Width desktop', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Width desktop', 'bbp-style-pack' ); ?>
                                         </label>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[topic_name_width]" id="bsp_style_settings_column_display[topic_name_width]" class="small-text" type="text" value="'. $topic_name_width.'"/>% - '.__( 'default 55%', 'bbp-style-pack' );
@@ -284,7 +284,7 @@ function bsp_style_settings_column_display() {
                                        
 										<br/>
 										<label class="description" for="bsp_style_settings_column_display[topic_name_mobile]">
-                                                <?php _e( 'Width mobile', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Width mobile', 'bbp-style-pack' ); ?>
                                         </label>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[topic_name_width_mobile]" id="bsp_style_settings_column_display[topic_name_width_mobile]" class="small-text" type="text" value="'. $topic_name_width_mobile.'"/>% - '.__( 'default 55%', 'bbp-style-pack' );
@@ -296,7 +296,7 @@ function bsp_style_settings_column_display() {
                
                         <tr valign="top">  
                                 <th style="width: 350px">
-                                    <?php _e('Topics Column', 'bbp-style-pack'); ?>     
+                                    <?php esc_html_e('Topics Column', 'bbp-style-pack'); ?>     
                                 </th>
 
                               <td>
@@ -304,21 +304,21 @@ function bsp_style_settings_column_display() {
                                         echo '<input name="bsp_style_settings_column_display[topic_topics]" id="bsp_style_settings_column_display[topic_topics]" type="radio" value="0" class="code" ' . checked( 0,$topic_topics, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[topic_topics]">
-                                                <?php _e( 'Show', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Show', 'bbp-style-pack' ); ?>
                                         </label>
 										<br/>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[topic_topics]" id="bsp_style_settings_column_display[topic_topics]" type="radio" value="1" class="code" ' . checked( 1,$topic_topics, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[topic_topics]">
-                                                <?php _e( 'Hide', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Hide', 'bbp-style-pack' ); ?>
                                         </label>
 										<br/>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[topic_topics]" id="bsp_style_settings_column_display[topic_topics]" type="radio" value="2" class="code" ' . checked( 2,$topic_topics, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[topic_topics]">
-                                                <?php _e( 'Hide only on mobile', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Hide only on mobile', 'bbp-style-pack' ); ?>
                                         </label>
                                 </td>   
                         </tr>
@@ -328,13 +328,13 @@ function bsp_style_settings_column_display() {
 						 <tr valign="top">  
                                 <td style="width: 350px">
 								<i>
-                                    <?php _e('If being shown', 'bbp-style-pack'); ?> 
+                                    <?php esc_html_e('If being shown', 'bbp-style-pack'); ?> 
 								</i>									
                                 </td>
 
                               <td>
                                         <label class="description" for="bsp_style_settings_column_display[topic_topics_width]">
-                                                <?php _e( 'Width desktop', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Width desktop', 'bbp-style-pack' ); ?>
                                         </label>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[topic_topics_width]" id="bsp_style_settings_column_display[topic_topics_width]" class="small-text" type="text" value="'. $topic_topics_width.'"/>% - '.__( 'default 15%', 'bbp-style-pack' );
@@ -342,7 +342,7 @@ function bsp_style_settings_column_display() {
                                        
 										<br/>
 										<label class="description" for="bsp_style_settings_column_display[topic_topics_width_mobile]">
-                                                <?php _e( 'Width mobile', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Width mobile', 'bbp-style-pack' ); ?>
                                         </label>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[topic_topics_width_mobile]" id="bsp_style_settings_column_display[topic_topics_width_mobile]" class="small-text" type="text" value="'. $topic_topics_width_mobile.'"/>% - '.__( 'default 15%', 'bbp-style-pack' );
@@ -353,7 +353,7 @@ function bsp_style_settings_column_display() {
                
 						  <tr valign="top">  
                                 <th style="width: 350px">
-                                    <?php _e('Posts Column', 'bbp-style-pack'); ?>     
+                                    <?php esc_html_e('Posts Column', 'bbp-style-pack'); ?>     
                                 </th>
 
                               <td>
@@ -361,21 +361,21 @@ function bsp_style_settings_column_display() {
                                         echo '<input name="bsp_style_settings_column_display[topic_posts]" id="bsp_style_settings_column_display[topic_posts]" type="radio" value="0" class="code" ' . checked( 0,$topic_posts, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[topic_posts]">
-                                                <?php _e( 'Show', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Show', 'bbp-style-pack' ); ?>
                                         </label>
 										<br/>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[topic_posts]" id="bsp_style_settings_column_display[topic_posts]" type="radio" value="1" class="code" ' . checked( 1,$topic_posts, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[topic_posts]">
-                                                <?php _e( 'Hide', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Hide', 'bbp-style-pack' ); ?>
                                         </label>
 										<br/>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[topic_posts]" id="bsp_style_settings_column_display[topic_posts]" type="radio" value="2" class="code" ' . checked( 2,$topic_posts, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[topic_posts]">
-                                                <?php _e( 'Hide only on mobile', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Hide only on mobile', 'bbp-style-pack' ); ?>
                                         </label>
                                 </td>   
                         </tr>
@@ -385,13 +385,13 @@ function bsp_style_settings_column_display() {
 						 <tr valign="top">  
                                 <td style="width: 350px">
 								<i>
-                                    <?php _e('If being shown', 'bbp-style-pack'); ?> 
+                                    <?php esc_html_e('If being shown', 'bbp-style-pack'); ?> 
 								</i>									
                                 </td>
 
                               <td>
                                         <label class="description" for="bsp_style_settings_column_display[topic_posts_width]">
-                                                <?php _e( 'Width desktop', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Width desktop', 'bbp-style-pack' ); ?>
                                         </label>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[topic_posts_width]" id="bsp_style_settings_column_display[topic_posts_width]" class="small-text" type="text" value="'. $topic_posts_width.'"/>% - '.__( 'default 15%', 'bbp-style-pack' );
@@ -399,7 +399,7 @@ function bsp_style_settings_column_display() {
                                        
 										<br/>
 										<label class="description" for="bsp_style_settings_column_display[topic_posts_width_mobile]">
-                                                <?php _e( 'Width mobile', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Width mobile', 'bbp-style-pack' ); ?>
                                         </label>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[topic_posts_width_mobile]" id="bsp_style_settings_column_display[topic_posts_width_mobile]" class="small-text" type="text" value="'. $topic_posts_width_mobile.'"/>% - '.__( 'default 15%', 'bbp-style-pack' );
@@ -410,7 +410,7 @@ function bsp_style_settings_column_display() {
                
 						 <tr valign="top">  
                                 <th style="width: 350px">
-                                    <?php _e('Last Post Column', 'bbp-style-pack'); ?>     
+                                    <?php esc_html_e('Last Post Column', 'bbp-style-pack'); ?>     
                                 </th>
 
                               <td>
@@ -418,21 +418,21 @@ function bsp_style_settings_column_display() {
                                         echo '<input name="bsp_style_settings_column_display[topic_freshness]" id="bsp_style_settings_column_display[topic_freshness]" type="radio" value="0" class="code" ' . checked( 0,$topic_freshness, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[topic_freshness]">
-                                                <?php _e( 'Show', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Show', 'bbp-style-pack' ); ?>
                                         </label>
 										<br/>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[topic_freshness]" id="bsp_style_settings_column_display[topic_freshness]" type="radio" value="1" class="code" ' . checked( 1,$topic_freshness, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[topic_freshness]">
-                                                <?php _e( 'Hide', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Hide', 'bbp-style-pack' ); ?>
                                         </label>
 										<br/>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[topic_freshness]" id="bsp_style_settings_column_display[topic_freshness]" type="radio" value="2" class="code" ' . checked( 2,$topic_freshness, false ) . ' />' ;
                                         ?>
                                         <label class="description" for="bsp_style_settings_column_display[topic_freshness]">
-                                                <?php _e( 'Hide only on mobile', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Hide only on mobile', 'bbp-style-pack' ); ?>
                                         </label>
                                 </td>   
                         </tr>
@@ -442,13 +442,13 @@ function bsp_style_settings_column_display() {
 						 <tr valign="top">  
                                 <td style="width: 350px">
 								<i>
-                                    <?php _e('If being shown', 'bbp-style-pack'); ?> 
+                                    <?php esc_html_e('If being shown', 'bbp-style-pack'); ?> 
 								</i>									
                                 </td>
 
                               <td>
                                         <label class="description" for="bsp_style_settings_column_display[topic_freshness_width]">
-                                                <?php _e( 'Width desktop', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Width desktop', 'bbp-style-pack' ); ?>
                                         </label>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[topic_freshness_width]" id="bsp_style_settings_column_display[topic_freshness_width]" class="small-text" type="text" value="'. $topic_freshness_width.'"/>% - '.__( 'default 15%', 'bbp-style-pack' );
@@ -456,7 +456,7 @@ function bsp_style_settings_column_display() {
                                        
 										<br/>
 										<label class="description" for="bsp_style_settings_column_display[topic_freshness_width_mobile]">
-                                                <?php _e( 'Width mobile', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Width mobile', 'bbp-style-pack' ); ?>
                                         </label>
 										<?php 
                                         echo '<input name="bsp_style_settings_column_display[topic_freshness_width_mobile]" id="bsp_style_settings_column_display[topic_freshness_width_mobile]" class="small-text" type="text" value="'. $topic_freshness_width_mobile.'"/>% - '.__( 'default 15%', 'bbp-style-pack' );
@@ -471,7 +471,7 @@ function bsp_style_settings_column_display() {
 		
 		<!-- save the options -->
                         <p class="submit">
-                                <input type="submit" class="button-primary" value="<?php _e( 'Save', 'bbp-style-pack' ); ?>" />
+                                <input type="submit" class="button-primary" value="<?php esc_html_e( 'Save', 'bbp-style-pack' ); ?>" />
                         </p>
                 </form>
    

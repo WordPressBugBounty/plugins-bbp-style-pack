@@ -21,13 +21,13 @@ function bsp_settings_page() {
                                         </td>
                                         <td>
                                                 <h2>
-                                                        <?php _e( 'RELAX !!!!', 'bbp-style-pack' ); ?>
+                                                        <?php esc_html_e( 'RELAX !!!!', 'bbp-style-pack' ); ?>
                                                 </h2>
                                                 <p>
-                                                        <?php _e( 'This plugin can look daunting, with lots of tabs and settings.  <b>But you do not need to set anything</b> - your bbpress forums will continue to work without changing anything here.', 'bbp-style-pack' ); ?>
+                                                        <?php esc_html_e( 'This plugin can look daunting, with lots of tabs and settings.  <b>But you do not need to set anything</b> - your bbpress forums will continue to work without changing anything here.', 'bbp-style-pack' ); ?>
                                                 </p>
                                                 <p>
-                                                        <?php _e( 'Rather think of this plugin as the ability to change things as you want - so browse these tabs at your leisure to see what you can change, but don\'t think that you need to set something in every tab or work your way through this plugin. ', 'bbp-style-pack' ); ?>
+                                                        <?php esc_html_e( 'Rather think of this plugin as the ability to change things as you want - so browse these tabs at your leisure to see what you can change, but don\'t think that you need to set something in every tab or work your way through this plugin. ', 'bbp-style-pack' ); ?>
                                                 </p>
                                         </td>
                                 </tr>
@@ -41,7 +41,7 @@ function bsp_settings_page() {
                                 <div class="updated fade">
                                         <p>
                                                 <strong>
-                                                        <?php _e( 'Settings saved', 'bbp-style-pack'); ?>
+                                                        <?php esc_html_e( 'Settings saved', 'bbp-style-pack'); ?>
                                                 </strong>
                                         </p>
                                 </div>
@@ -102,10 +102,10 @@ function bsp_settings_page() {
                                                 </form>
                                         </td>
                                         <td>
-                                                <?php _e('If you find this plugin useful, please consider donating just a few dollars to help me develop and maintain it. You support will be appreciated', 'bbp-style-pack'); ?>
+                                                <?php esc_html_e('If you find this plugin useful, please consider donating just a few dollars to help me develop and maintain it. You support will be appreciated', 'bbp-style-pack'); ?>
                                         </td>
                                         <td>
-                                        <?php _e('With thanks to Jacobo Feijóo for extensive testing !', 'bbp-style-pack'); ?>
+                                        <?php esc_html_e('With thanks to Jacobo Feijóo for extensive testing !', 'bbp-style-pack'); ?>
                                         </td>
                                 </tr>
                         </table>
@@ -159,7 +159,7 @@ function bsp_settings_page() {
 						elseif ( $active_tab == 'column_display' ) bsp_style_settings_column_display();
                         ?>
                         
-                        <a href="javascript:void(0);" id="back-to-top" class="button-back-to-top" title="<?php _e( 'Scroll To Top', 'bbp-style-pack' ); ?>">
+                        <a href="javascript:void(0);" id="back-to-top" class="button-back-to-top" title="<?php esc_html_e( 'Scroll To Top', 'bbp-style-pack' ); ?>">
                                 <span class="to-top-dashicon dashicons dashicons-arrow-up-alt2"></span>
                         </a>
                         

@@ -42,11 +42,11 @@ function bsp_buddypress_support() {
                 );
                 ?>
 
-                <h3> <?php _e ('BuddyPress Settings' , 'bbp-style-pack' ) ; ?>	</h3>
+                <h3> <?php esc_html_e ('BuddyPress Settings' , 'bbp-style-pack' ) ; ?>	</h3>
                 
         <!-- save the options -->
                 <p class="submit">
-                        <input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'bbp-style-pack' ); ?>" />
+                        <input type="submit" class="button-primary" value="<?php esc_html_e( 'Save changes', 'bbp-style-pack' ); ?>" />
                 </p>
         
         <!-- Start Table -->
@@ -61,11 +61,11 @@ function bsp_buddypress_support() {
 				$version = substr($buddy['Version'], 0, 2);
 				if ($version == '12') {
 					echo '<h2>' ;
-					_e( 'YOU ARE USING BUDDYPRESS VERSION 12.x.x which needs the additional Buddypress plugin "BP Classic" to fully work with bbPress. ', 'bbp-style-pack' ); 
+					esc_html_e( 'YOU ARE USING BUDDYPRESS VERSION 12.x.x which needs the additional Buddypress plugin "BP Classic" to fully work with bbPress. ', 'bbp-style-pack' ); 
 					echo '</h2>' ;
-					 _e( 'This link will take you to the wordpress official version: ' , 'bbp-style-pack' ); 
+					 esc_html_e( 'This link will take you to the wordpress official version: ' , 'bbp-style-pack' ); 
 					echo '<a href="https://wordpress.org/plugins/bp-classic/">' ;
-					_e( 'BP Classic' , 'bbp-style-pack' );
+					esc_html_e( 'BP Classic' , 'bbp-style-pack' );
 					echo '</a></b>' ;
 				}
 				
@@ -111,7 +111,7 @@ function bsp_buddypress_support() {
                                         <td>
                                                 <?php
                                                 echo '<input name="' . $item . '" id="' . $item1 . '" type="radio" value="0" class="code" ' . checked( 0, $item1, false ) . ' />';
-                                                _e( 'Show to everyone', 'bbp-style-pack' ); 
+                                                esc_html_e( 'Show to everyone', 'bbp-style-pack' ); 
                                                 ?>
                                                 <br>
                                                 <label class="description">
@@ -126,7 +126,7 @@ function bsp_buddypress_support() {
                                         <td>
                                                 <?php
                                                 echo '<input name="' . $item . '" id="' . $item1 . '" type="radio" value="1" class="code" ' . checked( 1, $item1, false ) . ' />';
-                                                _e( 'Show only to logged in users', 'bbp-style-pack' ); 
+                                                esc_html_e( 'Show only to logged in users', 'bbp-style-pack' ); 
                                                 ?>
                                         </td>
                                 </tr>
@@ -138,7 +138,7 @@ function bsp_buddypress_support() {
                                         <td>
                                                 <?php
                                                 echo '<input name="' . $item . '" id="' . $item1 . '" type="radio" value="2" class="code" ' . checked( 2, $item1, false ) . ' />';
-                                                _e( 'Do not show to anyone', 'bbp-style-pack' );
+                                                esc_html_e( 'Do not show to anyone', 'bbp-style-pack' );
                                                 ?>
                                         </td>
                                 </tr>
@@ -207,7 +207,7 @@ function bsp_buddypress_support() {
                         <tr valign="top">
                                 <th colspan="2">
                                         <p>						
-                                                <?php _e( 'Section Redirection', 'bbp-style-pack' ); ?> 
+                                                <?php esc_html_e( 'Section Redirection', 'bbp-style-pack' ); ?> 
                                         </p>                                        
                                 </th>
                         </tr>
@@ -215,7 +215,7 @@ function bsp_buddypress_support() {
                                 <td colspan=2>
                                         <?php echo '<input id="'.$item1.'" class="large-text" name="'.$item1.'" type="text" value="'.esc_html ($value1).'"<br>' ; ?> 
                                         <label class="description">
-                                                <?php _e( 'If you are restricting any BuddyPres section visbility above, anyone unauthorised trying to access those sections directly need to be sent somewhere.  By default this will be the homepage, but you can choose a different page here, or enter "/404/" to send them to your sites 404 page.', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'If you are restricting any BuddyPres section visbility above, anyone unauthorised trying to access those sections directly need to be sent somewhere.  By default this will be the homepage, but you can choose a different page here, or enter "/404/" to send them to your sites 404 page.', 'bbp-style-pack' ); ?>
                                         </label>
                                         <br/>
                                 </td>
@@ -226,7 +226,7 @@ function bsp_buddypress_support() {
 
         <!-- save the options -->
                 <p class="submit">
-                        <input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'bbp-style-pack' ); ?>" />
+                        <input type="submit" class="button-primary" value="<?php esc_html_e( 'Save changes', 'bbp-style-pack' ); ?>" />
                 </p>
 <!-- End Form -->
 	</form>

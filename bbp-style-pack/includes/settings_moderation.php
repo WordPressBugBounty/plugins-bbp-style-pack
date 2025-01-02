@@ -13,14 +13,14 @@ function bsp_style_settings_moderation () {
                 <tr valign="top">
                         <th colspan="2">
                                 <h3>
-                                        <?php _e ('Moderation' , 'bbp-style-pack' ) ; ?>
+                                        <?php esc_html_e ('Moderation' , 'bbp-style-pack' ) ; ?>
                                 </h3>
                 </tr>
 
                 <tr>
                         <td>
                                 <p><i><b>
-                                        <?php _e('This section adds the bbpress Moderation tools plugin which was withdrawn from the worpdress plugins directory.', 'bbp-style-pack'); ?>
+                                        <?php esc_html_e('This section adds the bbpress Moderation tools plugin which was withdrawn from the worpdress plugins directory.', 'bbp-style-pack'); ?>
                                 </b></i></p>
 
                         </td>
@@ -35,7 +35,7 @@ function bsp_style_settings_moderation () {
                         <tr>
                                 <td>
                                         <p>
-                                                <?php _e('You already have the bbpress Moderation tools plugin activate, so do not need this section', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e('You already have the bbpress Moderation tools plugin activate, so do not need this section', 'bbp-style-pack' ); ?>
                                         </p>
                                 </td>
                         </tr>
@@ -60,7 +60,7 @@ function bsp_style_settings_moderation () {
                         <!-- checkbox to activate  -->
                                 <tr valign="top">  
                                         <th>
-                                                1. <?php _e('Activate Moderation', 'bbp-style-pack'); ?>
+                                                1. <?php esc_html_e('Activate Moderation', 'bbp-style-pack'); ?>
                                         </th>
 
                                         <td>
@@ -74,7 +74,7 @@ function bsp_style_settings_moderation () {
                                         <td colspan='2'>
                                                 <p><strong>
                                                         <?php esc_html_e('NOTE- Once activated the settings are in Dashboard>settings>forums - click', 'bbp-style-pack'); 
-														echo '<a href="' . site_url() . '/wp-admin/options-general.php?page=bbpress/#bsp-moderation" >' ;
+														echo '<a href="' . esc_url(site_url()) . '/wp-admin/options-general.php?page=bbpress/#bsp-moderation" >' ;
 														esc_html_e(' here', 'bbp-style-pack'); 
 														echo '</a>' ; ?>
 														</strong>
@@ -85,15 +85,15 @@ function bsp_style_settings_moderation () {
                     
                         <!-- save the options -->
                         <p class="submit">
-                                <input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'bbp-style-pack' ); ?>" />
+                                <input type="submit" class="button-primary" value="<?php esc_html_e( 'Save changes', 'bbp-style-pack' ); ?>" />
                         </p>
                     
                 </form>
 
-                <p> <b> <?php _e( 'Additional Shortcode', 'bbp-style-pack' ); ?> </b></p>
+                <p> <b> <?php esc_html_e( 'Additional Shortcode', 'bbp-style-pack' ); ?> </b></p>
 
                 <p><b> <tt> [bsp-moderation-pending] </tt></b> </p>
-                <?php _e('If you have activated the moderation tab, then this shortcode for keymasters and moderators will display all the pending topics and replies in one place, letting you approve, edit, delete, spam and do other administration tasks on the front end.  Add this shortcode to a page or post to use.', 'bbp-style-pack' ) ; ?>
+                <?php esc_html_e('If you have activated the moderation tab, then this shortcode for keymasters and moderators will display all the pending topics and replies in one place, letting you approve, edit, delete, spam and do other administration tasks on the front end.  Add this shortcode to a page or post to use.', 'bbp-style-pack' ) ; ?>
                 </p>
 
         <?php
@@ -103,13 +103,13 @@ function bsp_style_settings_moderation () {
         <table>
                 <tr>
                         <td>
-                                <?php _e('Moderation Tools gives you more control over your forums by adding rules that can automatically detect spam from users and bots. Out of the box bbPress has limited moderation tools which means running a forum can be a constant battle to stop spam.', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('Moderation Tools gives you more control over your forums by adding rules that can automatically detect spam from users and bots. Out of the box bbPress has limited moderation tools which means running a forum can be a constant battle to stop spam.', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
                 <tr>
                         <th>
-                                <?php _e('When you activate this setting you will find a new set of rules added to the bbPress Forums settings page, found under Settings > Forums.', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('When you activate this setting you will find a new set of rules added to the bbPress Forums settings page, found under Settings > Forums.', 'bbp-style-pack'); ?>
                         </th>
                 </tr>
         </table>
@@ -120,7 +120,7 @@ function bsp_style_settings_moderation () {
                 <tr>
 
                         <td colspan="2">
-                                <?php _e('Spam Detection Rules', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('Spam Detection Rules', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
@@ -128,7 +128,7 @@ function bsp_style_settings_moderation () {
                         <td>
                         </td>
                         <td colspan="2">
-                                <?php _e('Use one or more rules to automatically hold posts for moderation, including:', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('Use one or more rules to automatically hold posts for moderation, including:', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
@@ -138,7 +138,7 @@ function bsp_style_settings_moderation () {
                         <td>
                         </td>
                         <td>
-                                <?php _e('* Anonymous/Guest posting', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('* Anonymous/Guest posting', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
@@ -148,7 +148,7 @@ function bsp_style_settings_moderation () {
                         <td>
                         </td>
                         <td>
-                                <?php _e('* Unapproved users posting', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('* Unapproved users posting', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
@@ -158,7 +158,7 @@ function bsp_style_settings_moderation () {
                         <td>
                         </td>
                         <td>
-                                <?php _e('* Unapproved users posting links', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('* Unapproved users posting links', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
@@ -168,7 +168,7 @@ function bsp_style_settings_moderation () {
                         <td>
                         </td>
                         <td>
-                                <?php _e('* Unapproved users posting below the English character threshold (this is a percentage that can be tweaked)', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('* Unapproved users posting below the English character threshold (this is a percentage that can be tweaked)', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
@@ -178,7 +178,7 @@ function bsp_style_settings_moderation () {
                         <td>
                         </td>
                         <td>
-                                <?php _e('* All posts below the English character threshold', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('* All posts below the English character threshold', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
@@ -188,7 +188,7 @@ function bsp_style_settings_moderation () {
                         <td>
                         </td>
                         <td>
-                                <?php _e('* All posts (lockdown)', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('* All posts (lockdown)', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
@@ -198,7 +198,7 @@ function bsp_style_settings_moderation () {
                         <td>
                         </td>
                         <td>
-                                <?php _e('* Flag individual users for moderation', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('* Flag individual users for moderation', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 	</table>
@@ -208,7 +208,7 @@ function bsp_style_settings_moderation () {
 
 
                         <td>
-                                <?php _e('Email notifications', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('Email notifications', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
@@ -216,7 +216,7 @@ function bsp_style_settings_moderation () {
                         <td>
                         </td>
                         <td>
-                                <?php _e('* When posts are held for moderation', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('* When posts are held for moderation', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
@@ -224,14 +224,14 @@ function bsp_style_settings_moderation () {
                         <td>
                         </td>
                         <td>
-                                <?php _e('* When a user reports a post', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('* When a user reports a post', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
 
                 <tr>
                         <td colspan="2">
-                                <?php _e('Send email notifications to any combination of the following:', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('Send email notifications to any combination of the following:', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
@@ -239,7 +239,7 @@ function bsp_style_settings_moderation () {
                         <td>
                         </td>
                         <td>
-                                <?php _e('* Keymasters', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('* Keymasters', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
@@ -247,7 +247,7 @@ function bsp_style_settings_moderation () {
                         <td>
                         </td>
                         <td>
-                                <?php _e('* Moderators', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('* Moderators', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
@@ -255,28 +255,14 @@ function bsp_style_settings_moderation () {
                         <td>
                         </td>
                         <td>
-                                <?php _e('* Specified emails', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('* Specified emails', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
 
                 <tr>
                         <td>
-                                <?php _e('Front end controls', 'bbp-style-pack'); ?>
-                        </td>
-                </tr>
-
-                <tr>
-                        <td>
-                        </td>
-                        <td colspan="2">
-                                <?php _e('*Approval and unapproval of posts and blocking users is handled on the front end by showing pending posts to the post author, moderators and administrators.', 'bbp-style-pack'); ?>
-                        </td>
-                </tr>
-
-                <tr>
-                        <td>
-                                <?php _e('More Features', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('Front end controls', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
@@ -284,7 +270,21 @@ function bsp_style_settings_moderation () {
                         <td>
                         </td>
                         <td colspan="2">
-                                <?php _e('* Redirect blocked users to a custom page instead of the default 404', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('*Approval and unapproval of posts and blocking users is handled on the front end by showing pending posts to the post author, moderators and administrators.', 'bbp-style-pack'); ?>
+                        </td>
+                </tr>
+
+                <tr>
+                        <td>
+                                <?php esc_html_e('More Features', 'bbp-style-pack'); ?>
+                        </td>
+                </tr>
+
+                <tr>
+                        <td>
+                        </td>
+                        <td colspan="2">
+                                <?php esc_html_e('* Redirect blocked users to a custom page instead of the default 404', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
@@ -292,7 +292,7 @@ function bsp_style_settings_moderation () {
                         <td>
                         </td>
                         <td>
-                                <?php _e('* Adds a Senior Moderator role', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('* Adds a Senior Moderator role', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 
@@ -300,7 +300,7 @@ function bsp_style_settings_moderation () {
                         <td>
                         </td>
                         <td>
-                                <?php _e('* Support for single forum moderators', 'bbp-style-pack'); ?>
+                                <?php esc_html_e('* Support for single forum moderators', 'bbp-style-pack'); ?>
                         </td>
                 </tr>
 

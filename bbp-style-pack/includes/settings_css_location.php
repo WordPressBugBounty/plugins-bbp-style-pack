@@ -14,22 +14,22 @@ function bsp_css_location() {
 	?>
 
 	<h3>
-		<?php _e ('CSS/JS Location' , 'bbp-style-pack' ) ; ?>
+		<?php esc_html_e ('CSS/JS Location' , 'bbp-style-pack' ) ; ?>
 	</h3>
 	<p>
-		<?php _e ('This plugin creates/loads several Cascade Style Sheets (CSS) files and Javascript (JS) files which allow the user\'s browser to know what styling to apply, and also adds some client-side functionality.' , 'bbp-style-pack' ) ; ?>
+		<?php esc_html_e ('This plugin creates/loads several Cascade Style Sheets (CSS) files and Javascript (JS) files which allow the user\'s browser to know what styling to apply, and also adds some client-side functionality.' , 'bbp-style-pack' ) ; ?>
 	</p>
 	<p>
-		<?php _e ('By default these files are served from the plugin\'s css and js directories.' , 'bbp-style-pack' ) ; ?>
+		<?php esc_html_e ('By default these files are served from the plugin\'s css and js directories.' , 'bbp-style-pack' ) ; ?>
 	</p>
 	<p>
-		<?php _e ('Some users may have issues with using these directories under permissions on their server, and some advanced users may wish to serve these files from elsewhere.' , 'bbp-style-pack' ) ; ?>
+		<?php esc_html_e ('Some users may have issues with using these directories under permissions on their server, and some advanced users may wish to serve these files from elsewhere.' , 'bbp-style-pack' ) ; ?>
 	</p>
 	<p>
-		<?php _e ('To allow flexibility, this tab allows you to amend where these files are stored and served from.' , 'bbp-style-pack' ) ; ?>
+		<?php esc_html_e ('To allow flexibility, this tab allows you to amend where these files are stored and served from.' , 'bbp-style-pack' ) ; ?>
 	</p>
 	<p>
-		<?php _e ('If you don\'t understand any of the above, just exit from this tab - you should really only change this if you understand what you\'re or specifically advised to change these values.' , 'bbp-style-pack' ) ; ?>
+		<?php esc_html_e ('If you don\'t understand any of the above, just exit from this tab - you should really only change this if you understand what you\'re or specifically advised to change these values.' , 'bbp-style-pack' ) ; ?>
 	</p>
 
 
@@ -45,10 +45,10 @@ function bsp_css_location() {
             
                 <hr />
         <h4>
-                <?php _e ('CSS File Location' , 'bbp-style-pack' ) ; ?>
+                <?php esc_html_e ('CSS File Location' , 'bbp-style-pack' ) ; ?>
         </h4>
         <p>
-		<?php _e ('You can change the CSS file location with the settings below.', 'bbp-style-pack' ) ; ?>
+		<?php esc_html_e ('You can change the CSS file location with the settings below.', 'bbp-style-pack' ) ; ?>
 	</p>
 	<p>
 		<?php echo '<strong>' . __('Default CSS location' , 'bbp-style-pack' ) . ' : </strong>'; ?>
@@ -85,11 +85,11 @@ function bsp_css_location() {
 				$item2 = "bsp_css_location[".$area2."]";
 				$value1 = (!empty($bsp_css_location[$area1] ) ? $bsp_css_location[$area1]  : '');
 				$value2 = $css_location;
-				_e( 'Click to activate' , 'bbp-style-pack' );
+				esc_html_e( 'Click to activate' , 'bbp-style-pack' );
 				?>
 			</td>
 			<td>
-                                <?php echo '<input name="'.$item1.'" id="'.$item1.'" type="checkbox" value="1" class="code" ' . checked( 1,$value1, false ) . ' />'; ?>
+                                <?php echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="checkbox" value="1" class="code" ' . checked( 1,$value1, false ) . ' />'; ?>
 			</td>
 		</tr>
 		
@@ -109,16 +109,16 @@ function bsp_css_location() {
 			</td>
 			<td>
 				<label class="description">
-					<?php _e( 'Enter the desired path to the CSS files', 'bbp-style-pack' ); ?>
+					<?php esc_html_e( 'Enter the desired path to the CSS files', 'bbp-style-pack' ); ?>
 				</label>
 				<br/>
 				<label class="description">
-					<?php _e( 'Don\'t forget to end with a "/" !!', 'bbp-style-pack' ); ?>
+					<?php esc_html_e( 'Don\'t forget to end with a "/" !!', 'bbp-style-pack' ); ?>
 				</label>
 				<br/>
                                 <br/>
 				<label class="description">
-					<?php _e( 'If the directory does not currently exist, Style Pack will try to create the directory for you', 'bbp-style-pack' ); ?>
+					<?php esc_html_e( 'If the directory does not currently exist, Style Pack will try to create the directory for you', 'bbp-style-pack' ); ?>
 				</label>
 				<br/>
 			</td>
@@ -129,10 +129,10 @@ function bsp_css_location() {
         <hr />
         
         <h4>
-                <?php _e ('JS File Location' , 'bbp-style-pack' ) ; ?>
+                <?php esc_html_e ('JS File Location' , 'bbp-style-pack' ) ; ?>
         </h4>
         <p>
-		<?php _e ('You can change the JS file location with the settings below.', 'bbp-style-pack' ) ; ?>
+		<?php esc_html_e ('You can change the JS file location with the settings below.', 'bbp-style-pack' ) ; ?>
 	</p>
 	<p>
 		<?php echo '<strong>' . __('Default JS location' , 'bbp-style-pack' ) . ' : </strong>'; ?>
@@ -169,11 +169,11 @@ function bsp_css_location() {
 				$item2 = "bsp_css_location[".$area2."]";
 				$value1 = ( !empty($bsp_css_location[$area1] ) ? $bsp_css_location[$area1]  : '' );
 				$value2 = $js_location;
-				_e( 'Click to activate' , 'bbp-style-pack' );
+				esc_html_e( 'Click to activate' , 'bbp-style-pack' );
 				?>
 			</td>
 			<td>
-                                <?php echo '<input name="'.$item1.'" id="'.$item1.'" type="checkbox" value="1" class="code" ' . checked( 1,$value1, false ) . ' />'; ?>
+                                <?php echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="checkbox" value="1" class="code" ' . checked( 1,$value1, false ) . ' />'; ?>
 			</td>
 		</tr>
 		
@@ -193,15 +193,15 @@ function bsp_css_location() {
 			</td>
 			<td>
 				<label class="description">
-					<?php _e( 'Enter the desired path to the JS files', 'bbp-style-pack' ); ?>
+					<?php esc_html_e( 'Enter the desired path to the JS files', 'bbp-style-pack' ); ?>
 				</label>
 				<br/>
 				<label class="description">
-					<?php _e( 'Don\'t forget to end with a "/" !!', 'bbp-style-pack' ); ?>
+					<?php esc_html_e( 'Don\'t forget to end with a "/" !!', 'bbp-style-pack' ); ?>
 				</label>
 				<br/>
                                 <label class="description">
-					<?php _e( 'If the directory does not currently exist, Style Pack will try to create the directory for you', 'bbp-style-pack' ); ?>
+					<?php esc_html_e( 'If the directory does not currently exist, Style Pack will try to create the directory for you', 'bbp-style-pack' ); ?>
 				</label>
 				<br/>
 			</td>
@@ -211,7 +211,7 @@ function bsp_css_location() {
         
 <!-- save the options -->
 	<p class="submit">
-		<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'bbp-style-pack' ); ?>" />
+		<input type="submit" class="button-primary" value="<?php esc_html_e( 'Save changes', 'bbp-style-pack' ); ?>" />
 	</p>
 	</form>
 
