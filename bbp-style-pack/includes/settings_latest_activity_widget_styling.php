@@ -276,7 +276,7 @@ function bsp_style_settings_la () {
 				<?php echo esc_html($name4) ; ?>
 			</td>
 			<td>
-				<select name="<?php echo $item4 ; ?>">
+				<select name="<?php echo esc_html($item4) ; ?>">
 					<?php echo '<option value="'.esc_html( $value4).'">'.esc_html( $value4 ) ; ?> 
 					<option value="Normal">Normal</option>
 					<option value="Italic">Italic</option>
@@ -427,7 +427,7 @@ function bsp_style_settings_la () {
 				<?php echo esc_html($name4) ; ?> 
 			</td>
 			<td>
-				<select name="<?php echo $item4 ; ?>">
+				<select name="<?php echo esc_html($item4) ; ?>">
 					<?php echo '<option value="'.esc_html( $value4).'">'.esc_html( $value4 ) ; ?> 
 					<option value="Normal">Normal</option>
 					<option value="Italic">Italic</option>

@@ -24,7 +24,11 @@ function bsp_settings_page() {
                                                         <?php esc_html_e( 'RELAX !!!!', 'bbp-style-pack' ); ?>
                                                 </h2>
                                                 <p>
-                                                        <?php esc_html_e( 'This plugin can look daunting, with lots of tabs and settings.  <b>But you do not need to set anything</b> - your bbpress forums will continue to work without changing anything here.', 'bbp-style-pack' ); ?>
+                                                        <?php esc_html_e( 'This plugin can look daunting, with lots of tabs and settings.', 'bbp-style-pack' ); ?>
+														<b>
+														<?php esc_html_e( 'But you do not need to set anything', 'bbp-style-pack' ); ?>
+														</b>
+														<?php esc_html_e( '- your bbpress forums will continue to work without changing anything here.', 'bbp-style-pack' ); ?>
                                                 </p>
                                                 <p>
                                                         <?php esc_html_e( 'Rather think of this plugin as the ability to change things as you want - so browse these tabs at your leisure to see what you can change, but don\'t think that you need to set something in every tab or work your way through this plugin. ', 'bbp-style-pack' ); ?>
@@ -73,18 +77,18 @@ function bsp_settings_page() {
                                         if ( $slug === 'bsp_block_theme' ) {
                                                 // see if we have block or theme with support
                                                 if ( ! empty( $bsp_theme_check ) )  {
-                                                        echo '<a href="?page=bbp-style-pack&tab=' . $slug . '" class="nav-tab bsp-nav-tab' . ( $active_tab === $slug ? ' bsp-nav-tab-active' : '' ) . '">' . $title . '</a>';
+                                                        echo '<a href="?page=bbp-style-pack&tab=' . esc_html($slug) . '" class="nav-tab bsp-nav-tab' . ( $active_tab === $slug ? ' bsp-nav-tab-active' : '' ) . '">' . esc_html($title) . '</a>';
                                                 }
                                         } 
                                         elseif ( $slug === 'bsp_buddypress' ) {
                                                 // see if we have buddypress active
                                                 if ( function_exists( 'bp_is_active' ) )  {
-                                                        echo '<a href="?page=bbp-style-pack&tab=' . $slug . '" class="nav-tab bsp-nav-tab' . ( $active_tab === $slug ? ' bsp-nav-tab-active' : '' ) . '">' . $title . '</a>';
+                                                        echo '<a href="?page=bbp-style-pack&tab=' . esc_html($slug) . '" class="nav-tab bsp-nav-tab' . ( $active_tab === $slug ? ' bsp-nav-tab-active' : '' ) . '">' . esc_html($title) . '</a>';
                                                 }
                                         } 
                                         else {
                                                 // else, not a special case, so display the tab in the nav group
-                                                echo '<a href="?page=bbp-style-pack&tab=' . $slug . '" class="nav-tab bsp-nav-tab' . ( $active_tab === $slug ? ' bsp-nav-tab-active' : '' ) . '">' . $title . '</a>';
+                                                echo '<a href="?page=bbp-style-pack&tab=' . esc_html($slug) . '" class="nav-tab bsp-nav-tab' . ( $active_tab === $slug ? ' bsp-nav-tab-active' : '' ) . '">' . esc_html($title) . '</a>';
                                         }  
                                 }
                                 ?>

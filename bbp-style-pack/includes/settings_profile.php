@@ -151,7 +151,7 @@ function bsp_profile_settings() {
 		<?php esc_html_e ('This feature allows you to tell them about this when they visit their profile page' , 'bbp-style-pack' ) ; ?>
 	</p>
 
-		<?php echo '<img src="' . plugins_url( 'images/profile1.JPG',dirname(__FILE__)  ) . '" width="600" > '; ?>
+		<?php echo '<img src="' . esc_url(plugins_url( 'images/profile1.JPG',dirname(__FILE__) ) ) . '" width="600" > '; ?>
 
 
 	<table class="form-table">
@@ -198,7 +198,7 @@ function bsp_profile_settings() {
 			</td>
 			
 			<td>
-				<?php echo '1. '.$name1 ; ?> 
+				<?php echo '1. '.esc_html($name1) ; ?> 
 			</td>
 			
 			<td>
@@ -214,11 +214,11 @@ function bsp_profile_settings() {
 			<td>
 			</td>
 			<td>
-				<?php echo '2. '.$name2 ; ?>
+				<?php echo '2. '.esc_html($name2) ; ?>
 			</td>
 			
 			<td>
-				<?php echo '<input id="'.$item2.'" class="large-text" name="'.$item2.'" type="text" value="'.esc_html( $value2 ).'"<br>' ; ?> 
+				<?php echo '<input id="'.esc_html($item2).'" class="large-text" name="'.esc_html($item2).'" type="text" value="'.esc_html( $value2 ).'"<br>' ; ?> 
 				<label class="description">
 					<?php esc_html_e( 'Enter any text eg "Manage your profile picture at"', 'bbp-style-pack' ); ?>
 				</label>
@@ -230,11 +230,11 @@ function bsp_profile_settings() {
 			<td>
 			</td>
 			<td>
-				<?php echo '3. '.$name3 ; ?> 
+				<?php echo '3. '.esc_html($name3) ; ?> 
 			</td>
 			
 			<td>
-				<?php echo '<input id="'.$item3.'" class="large-text" name="'.$item3.'" type="text" value="'.esc_html ($value3).'"<br>' ; ?> 
+				<?php echo '<input id="'.esc_html($item3).'" class="large-text" name="'.esc_html($item3).'" type="text" value="'.esc_html ($value3).'"<br>' ; ?> 
 				<label class="description">
 					<?php esc_html_e( 'You should create either a wordpress page with gravatar instructions or link to gravatar eg http://www.mysite.com/gravatar-explanation-page or https://en.gravatar.com/', 'bbp-style-pack' ); ?>
 				</label>
@@ -246,11 +246,11 @@ function bsp_profile_settings() {
 			<td>
 			</td>
 			<td>
-				<?php echo '4. '.$name4 ; ?>
+				<?php echo '4. '.esc_html($name4) ; ?>
 			</td>
 			
 			<td>
-				<?php echo '<input id="'.$item4.'" class="large-text" name="'.$item4.'" type="text" value="'.esc_html( $value4 ).'"<br>' ; ?> 
+				<?php echo '<input id="'.esc_html($item4).'" class="large-text" name="'.esc_html($item4).'" type="text" value="'.esc_html( $value4 ).'"<br>' ; ?> 
 				<label class="description">
 					<?php esc_html_e( 'Enter text you want this link to show eg "click here" or "https://en.gravatar.com/"', 'bbp-style-pack' ); ?>
 				</label>

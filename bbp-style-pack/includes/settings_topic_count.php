@@ -66,7 +66,7 @@ if ( ! function_exists( 'tc_settings' ) ) {
                                                 <tr valign="top">
                                                         <th colspan="2">
                                                                 <h3>
-                                                                <?php _e( 'Topic Count Settings', 'bbp-style-pack' ); ?>
+                                                                <?php esc_html_e( 'Topic Count Settings', 'bbp-style-pack' ); ?>
                                                                 </h3>
                                                         </th>
                                                 </tr>
@@ -78,10 +78,10 @@ if ( ! function_exists( 'tc_settings' ) ) {
                                                                 <td colspan="2"> 
                                                                         <b> 
                                                                                 <?php echo "*****"; ?> <br/>
-                                                                                <?php _e( '* You currently have the bbP Topic Count plugin active.', 'bbp-style-pack' ); ?> <br/>
-                                                                                <?php _e( '* The settings have been copied here to the bbP Style Pack plugin.', 'bbp-style-pack' ); ?> <br/>
-                                                                                <?php _e( '* Click "Save Options" below to apply those settings.', 'bbp-style-pack' ); ?> <br/>
-                                                                                <?php _e( '* After that, you can safely deactivate the bbP Topic Count plugin.', 'bbp-style-pack' ); ?> <br/>
+                                                                                <?php esc_html_e( '* You currently have the bbP Topic Count plugin active.', 'bbp-style-pack' ); ?> <br/>
+                                                                                <?php esc_html_e( '* The settings have been copied here to the bbP Style Pack plugin.', 'bbp-style-pack' ); ?> <br/>
+                                                                                <?php esc_html_e( '* Click "Save Options" below to apply those settings.', 'bbp-style-pack' ); ?> <br/>
+                                                                                <?php esc_html_e( '* After that, you can safely deactivate the bbP Topic Count plugin.', 'bbp-style-pack' ); ?> <br/>
                                                                                 <?php echo "*****"; ?> <br/>
                                                                         </b>
                                                                 </td>
@@ -95,8 +95,8 @@ if ( ! function_exists( 'tc_settings' ) ) {
                                                                 <td colspan="2"> 
                                                                         <b> 
                                                                                 <?php echo "*****"; ?> <br/>
-                                                                                <?php _e( '* You currently have the bbP Style Pack plugin active.', 'bbp-style-pack' ); ?> <br/>
-                                                                                <?php _e( '* It includes all of the same functionality found in the bbP Topic Count plugin.', 'bbp-style-pack' ); ?> <br/>
+                                                                                <?php esc_html_e( '* You currently have the bbP Style Pack plugin active.', 'bbp-style-pack' ); ?> <br/>
+                                                                                <?php esc_html_e( '* It includes all of the same functionality found in the bbP Topic Count plugin.', 'bbp-style-pack' ); ?> <br/>
                                                                                 <?php 
                                                                                         printf(
                                                                                                 /* translators: %1$s is the opening URL HTML code string and %2$s is the closing HTML tag. */
@@ -105,7 +105,7 @@ if ( ! function_exists( 'tc_settings' ) ) {
                                                                                                 '</a>'
                                                                                         );
                                                                                 ?> <br/>
-                                                                                <?php _e( '* After that, you can safely deactivate the bbP Topic Count plugin.', 'bbp-style-pack' ); ?> <br/>
+                                                                                <?php esc_html_e( '* After that, you can safely deactivate the bbP Topic Count plugin.', 'bbp-style-pack' ); ?> <br/>
                                                                                 <?php echo "*****"; ?> <br/>
                                                                         </b>
                                                                 </td>
@@ -144,7 +144,7 @@ if ( ! function_exists( 'tc_settings' ) ) {
                                                         <td colspan="2">
                                                                 <!-- save the options -->
                                                                 <p class="submit">
-                                                                        <input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'bbp-style-pack' ); ?>" />
+                                                                        <input type="submit" class="button-primary" value="<?php esc_html_e( 'Save Options', 'bbp-style-pack' ); ?>" />
                                                                 </p>
                                                         </td>
                                                 </tr>
@@ -154,14 +154,14 @@ if ( ! function_exists( 'tc_settings' ) ) {
 
                                                 <tr valign="top">
                                                         <th colspan="2"><h3>
-                                                                <?php _e( 'Topics', 'bbp-style-pack' ); ?>
+                                                                <?php esc_html_e( 'Topics', 'bbp-style-pack' ); ?>
                                                         </h3></th>
                                                 </tr>
 
                                                 <!-- checkbox to activate -->
                                                 <tr valign="top">  
                                                         <th>
-                                                                <?php _e( 'Activate', 'bbp-style-pack' ); ?>
+                                                                <?php esc_html_e( 'Activate', 'bbp-style-pack' ); ?>
                                                         </th>
                                                         <td>
                                                                 <?php tc_activate_checkbox( 'activate_topics' ); ?>
@@ -171,11 +171,11 @@ if ( ! function_exists( 'tc_settings' ) ) {
 
                                                 <tr valign="top">
                                                         <th>
-                                                                <?php _e( 'Topic Label Name', 'bbp-style-pack' ); ?>
+                                                                <?php esc_html_e( 'Topic Label Name', 'bbp-style-pack' ); ?>
                                                         </th>
                                                         <td>
                                                                 <input id="<?php echo $tc_field_name ?>[topic_label]" class="large-text" name="<?php echo $tc_field_name ?>[topic_label]" type="text" value="<?php echo isset( $tc_options_values['topic_label'] ) ? esc_html( $tc_options_values['topic_label'] ) : ''; ?>" /><br/>
-                                                                <label class="description" for="<?php echo $tc_field_name ?>[topic_label]"><?php _e( 'Enter the description eg "Topics:", "Topics - ", "Posts :" "Started : " ebsp.', 'bbp-style-pack' ); ?></label><br/>
+                                                                <label class="description" for="<?php echo $tc_field_name ?>[topic_label]"><?php esc_html_e( 'Enter the description eg "Topics:", "Topics - ", "Posts :" "Started : " ebsp.', 'bbp-style-pack' ); ?></label><br/>
                                                         </td>
                                                 </tr>
 
@@ -183,14 +183,14 @@ if ( ! function_exists( 'tc_settings' ) ) {
                                                 <!------------------------------- Replies ------------------------------------------>
                                                 <tr valign="top">
                                                         <th colspan="2"><h3>
-                                                                <?php _e( 'Replies', 'bbp-style-pack' ); ?>
+                                                                <?php esc_html_e( 'Replies', 'bbp-style-pack' ); ?>
                                                         </h3></th>
                                                 </tr>
 
                                                 <!-- checkbox to activate -->
                                                 <tr valign="top">  
                                                         <th>
-                                                                <?php _e( 'Activate', 'bbp-topic count' ); ?>
+                                                                <?php esc_html_e( 'Activate', 'bbp-topic count' ); ?>
                                                         </th>
                                                         <td>
                                                                 <?php tc_activate_checkbox( 'activate_replies' ); ?>
@@ -200,11 +200,11 @@ if ( ! function_exists( 'tc_settings' ) ) {
 
                                                 <tr valign="top">
                                                         <th>
-                                                                <?php _e( 'Reply Label Name', 'bbp-style-pack' ); ?>
+                                                                <?php esc_html_e( 'Reply Label Name', 'bbp-style-pack' ); ?>
                                                         </th>
                                                         <td>
                                                                 <input id="<?php echo $tc_field_name ?>[reply_label]" class="large-text" name="<?php echo $tc_field_name ?>[reply_label]" type="text" value="<?php echo isset( $tc_options_values['reply_label'] ) ? esc_html( $tc_options_values['reply_label'] ) : ''; ?>" /><br/>
-                                                                <label class="description" for="<?php echo $tc_field_name ?>[reply_label]"><?php _e( 'Enter the description eg "Replies:", "Replies - ", "Posts", "joined in : " ebsp.', 'bp-topic-count' ); ?></label><br/>
+                                                                <label class="description" for="<?php echo $tc_field_name ?>[reply_label]"><?php esc_html_e( 'Enter the description eg "Replies:", "Replies - ", "Posts", "joined in : " ebsp.', 'bp-topic-count' ); ?></label><br/>
                                                         </td>
                                                 </tr>
 
@@ -213,14 +213,14 @@ if ( ! function_exists( 'tc_settings' ) ) {
                                                 <!------------------------------- Total Posts ------------------------------------------>
                                                 <tr valign="top">
                                                         <th colspan="2"><h3>
-                                                                <?php _e( 'Total posts (Topics + Replies)', 'bbp-style-pack' ); ?>
+                                                                <?php esc_html_e( 'Total posts (Topics + Replies)', 'bbp-style-pack' ); ?>
                                                         </h3></th>
                                                 </tr>
 
                                                 <!-- checkbox to activate -->
                                                 <tr valign="top">  
                                                         <th>
-                                                                <?php _e( 'Activate', 'bbp-style-pack' ); ?>
+                                                                <?php esc_html_e( 'Activate', 'bbp-style-pack' ); ?>
                                                         </th>
                                                         <td>
                                                                 <?php tc_activate_checkbox( 'activate_posts' ); ?>
@@ -230,11 +230,11 @@ if ( ! function_exists( 'tc_settings' ) ) {
 
                                                 <tr valign="top">
                                                         <th>
-                                                                <?php _e( 'Total Posts Name', 'bbp-style-pack' ); ?>
+                                                                <?php esc_html_e( 'Total Posts Name', 'bbp-style-pack' ); ?>
                                                         </th>
                                                         <td>
                                                                 <input id="<?php echo $tc_field_name ?>[posts_label]" class="large-text" name="<?php echo $tc_field_name ?>[posts_label]" type="text" value="<?php echo isset( $tc_options_values['posts_label'] ) ? esc_html( $tc_options_values['posts_label'] ) : ''; ?>" /><br/>
-                                                                <label class="description" for="<?php echo $tc_field_name ?>[item3_label]"><?php _e( 'Enter the description eg "Total posts:", "Total Posts - ", "Total", "Posts: " ebsp.', 'bp-topic-count' ); ?></label><br/>
+                                                                <label class="description" for="<?php echo $tc_field_name ?>[item3_label]"><?php esc_html_e( 'Enter the description eg "Total posts:", "Total Posts - ", "Total", "Posts: " ebsp.', 'bp-topic-count' ); ?></label><br/>
                                                         </td>
                                                 </tr>
 
@@ -242,7 +242,7 @@ if ( ! function_exists( 'tc_settings' ) ) {
                                                 <!------------------------------- Display parameters ------------------------------------------>
                                                 <tr valign="top">
                                                         <th colspan="2"><h3>
-                                                                <?php _e( 'Display parameters', 'bbp-style-pack' ); ?>
+                                                                <?php esc_html_e( 'Display parameters', 'bbp-style-pack' ); ?>
                                                         </h3></th>
                                                 </tr>
 
@@ -252,23 +252,23 @@ if ( ! function_exists( 'tc_settings' ) ) {
                                                 ?>
                                                 <tr valign="top">
                                                         <th>
-                                                                <?php _e( 'Thousands Seperator', 'bbp-style-pack' ); ?>
+                                                                <?php esc_html_e( 'Thousands Seperator', 'bbp-style-pack' ); ?>
                                                         </th>
                                                         <td>
                                                                 <?php echo '<input name="'.$item0.'" id="'.$item0.'" type="radio" value="0" class="code"  ' . checked( 0,$value0, false ) . ' />';
-                                                                _e( 'No seperator (eg 1000)', 'bbp-style-pack' ); ?>
+                                                                esc_html_e( 'No seperator (eg 1000)', 'bbp-style-pack' ); ?>
                                                                 <br>
                                                                 <?php echo '<input name="'.$item0.'" id="'.$item0.'" type="radio" value="1" class="code"  ' . checked( 1,$value0, false ) . ' />';
-                                                                _e( 'Comma Seperator (eg 1,000)', 'bbp-style-pack' ); ?>
+                                                                esc_html_e( 'Comma Seperator (eg 1,000)', 'bbp-style-pack' ); ?>
                                                                 <br>
                                                                 <?php echo '<input name="'.$item0.'" id="'.$item0.'" type="radio" value="2" class="code"  ' . checked( 2,$value0, false ) . ' />';
-                                                                _e( 'Space Seperator (eg 1 000)', 'bbp-style-pack' ); ?>
+                                                                esc_html_e( 'Space Seperator (eg 1 000)', 'bbp-style-pack' ); ?>
                                                                 <br>
                                                                 <?php echo '<input name="'.$item0.'" id="'.$item0.'" type="radio" value="3" class="code"  ' . checked( 3,$value0, false ) . ' />';
-                                                                _e( 'Show counts over 1000 as "x.xk" eg "1.6k"', 'bbp-style-pack' ); ?>
+                                                                esc_html_e( 'Show counts over 1000 as "x.xk" eg "1.6k"', 'bbp-style-pack' ); ?>
                                                                 <br>
                                                                 <?php echo '<input name="'.$item0.'" id="'.$item0.'" type="radio" value="4" class="code"  ' . checked( 4,$value0, false ) . ' />';
-                                                                _e( 'Show counts over 1000 as "x,xk" eg "1,6k"', 'bbp-style-pack' ); ?>
+                                                                esc_html_e( 'Show counts over 1000 as "x,xk" eg "1,6k"', 'bbp-style-pack' ); ?>
                                                         </td>
                                                 </tr>
 
@@ -278,14 +278,14 @@ if ( ! function_exists( 'tc_settings' ) ) {
                                                 ?>
                                                 <tr valign="top">
                                                         <th>
-                                                                <?php _e( 'Link Counts', 'bbp-style-pack' ); ?>
+                                                                <?php esc_html_e( 'Link Counts', 'bbp-style-pack' ); ?>
                                                         </th>
                                                         <td>
                                                                 <?php echo '<input name="'.$item0.'" id="'.$item0.'" type="radio" value="0" class="code"  ' . checked( 0,$value0, false ) . ' />';
-                                                                _e( 'Do Not Link Number Counts to User Profile Page Sections', 'bbp-style-pack' ); ?>
+                                                                esc_html_e( 'Do Not Link Number Counts to User Profile Page Sections', 'bbp-style-pack' ); ?>
                                                                 <br>
                                                                 <?php echo '<input name="'.$item0.'" id="'.$item0.'" type="radio" value="1" class="code"  ' . checked( 1,$value0, false ) . ' />';
-                                                                _e( 'Link Number Counts to User Profile Page Sections', 'bbp-style-pack' ); ?>
+                                                                esc_html_e( 'Link Number Counts to User Profile Page Sections', 'bbp-style-pack' ); ?>
                                                                 <br>
                                                         </td>
                                                 </tr>
@@ -296,14 +296,14 @@ if ( ! function_exists( 'tc_settings' ) ) {
                                                 ?>
                                                 <tr valign="top">
                                                         <th>
-                                                                <?php _e( 'Display order', 'bbp-style-pack' ); ?>
+                                                                <?php esc_html_e( 'Display order', 'bbp-style-pack' ); ?>
                                                         </th>
                                                         <td>
                                                                 <?php echo '<input name="'.$item0.'" id="'.$item0.'" type="radio" value="0" class="code"  ' . checked( 0,$value0, false ) . ' />';
-                                                                _e ( "Text then count eg 'Topics: 10'", 'bbp-style-pack' ); ?>
+                                                                esc_html_e ( "Text then count eg 'Topics: 10'", 'bbp-style-pack' ); ?>
                                                                 <br>
                                                                 <?php echo '<input name="'.$item0.'" id="'.$item0.'" type="radio" value="1" class="code"  ' . checked( 1,$value0, false ) . ' />';
-                                                                _e ( "Count then text eg '10 Topics'", 'bbp-style-pack' ); ?>
+                                                                esc_html_e ( "Count then text eg '10 Topics'", 'bbp-style-pack' ); ?>
                                                                 <br>
                                                         </td>
                                                 </tr>
@@ -314,14 +314,14 @@ if ( ! function_exists( 'tc_settings' ) ) {
                                                 ?>
                                                 <tr valign="top">
                                                         <th>
-                                                                <?php _e( 'Display Location', 'bbp-style-pack' ); ?>
+                                                                <?php esc_html_e( 'Display Location', 'bbp-style-pack' ); ?>
                                                         </th>
                                                         <td>
                                                                 <?php echo '<input name="'.$item0.'" id="'.$item0.'" type="radio" value="0" class="code"  ' . checked( 0,$value0, false ) . ' />';
-                                                                _e( 'Display in Author Details', 'bbp-style-pack' ); ?>
+                                                                esc_html_e( 'Display in Author Details', 'bbp-style-pack' ); ?>
                                                                 <br>
                                                                 <?php echo '<input name="'.$item0.'" id="'.$item0.'" type="radio" value="1" class="code"  ' . checked( 1,$value0, false ) . ' />';
-                                                                _e( 'Display in Reply content', 'bbp-style-pack' ); ?>
+                                                                esc_html_e( 'Display in Reply content', 'bbp-style-pack' ); ?>
                                                                 <br>
                                                         </td>
                                                 </tr>
@@ -330,7 +330,7 @@ if ( ! function_exists( 'tc_settings' ) ) {
                                                         <td colspan="2">
                                                                 <!-- save the options -->
                                                                 <p class="submit">
-                                                                        <input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'bbp-style-pack' ); ?>" />
+                                                                        <input type="submit" class="button-primary" value="<?php esc_html_e( 'Save Options', 'bbp-style-pack' ); ?>" />
                                                                 </p>
                                                         </td>
                                                 </tr>
@@ -393,7 +393,7 @@ if ( ! function_exists( 'tc_activate_checkbox' ) ) {
 
                 $item = ! empty( $tc_options_values[$field] ) ? $tc_options_values[$field] : '';
                 echo '<input name="'.$tc_field_name.'['.$field.']" id="'.$tc_field_name.'['.$field.']" type="checkbox" value="1" class="code" ' . checked( 1,$item, false ) . ' />';
-                _e( 'Add this item to the display', 'bbp-style-pack' );
+                esc_html_e( 'Add this item to the display', 'bbp-style-pack' );
         }
 }
 
@@ -424,7 +424,7 @@ if ( ! function_exists( 'tc_shortcodes_display' ) ) {
                         <tr valign="top">
                                 <th colspan="2">
                                         <h3>
-                                                <?php _e( 'Additional Shortcodes', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Additional Shortcodes', 'bbp-style-pack' ); ?>
                                         </h3>
                                 </th>
                         </tr>
@@ -432,25 +432,25 @@ if ( ! function_exists( 'tc_shortcodes_display' ) ) {
                                 <td colspan="2">
                                         <p>
                                                 <tt>[display-topic-count]</tt> 
-                                                <?php _e( 'Displays the current users topic count', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Displays the current users topic count', 'bbp-style-pack' ); ?>
                                         </p>
                                         <p>
                                                 <tt>[display-reply-count]</tt>  
-                                                <?php _e( 'Displays the current users reply count', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Displays the current users reply count', 'bbp-style-pack' ); ?>
                                         </p>
                                         <p>
                                                 <tt>[display-total-count]</tt>  
-                                                <?php _e( 'Displays the current users total topic and reply count', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Displays the current users total topic and reply count', 'bbp-style-pack' ); ?>
                                         </p>
                                         <p>
                                                 <tt>[display-top-users]</tt>
-                                                <?php _e( 'Displays top x users for total topics and replies', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Displays top x users for total topics and replies', 'bbp-style-pack' ); ?>
                                         </p>
                                         <p>
-                                                <?php _e( 'This shortcode has many parameters - these are optional and only add those you need !', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'This shortcode has many parameters - these are optional and only add those you need !', 'bbp-style-pack' ); ?>
                                         </p>
                                         <p><h3>
-                                                <?php _e( 'display-top-users - additional parameters !', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'display-top-users - additional parameters !', 'bbp-style-pack' ); ?>
                                         </h3></p>
                                         <p>
                                                 <tt>[display-top-users avatar-size="25" padding="20" before=" - " after=" topics"  show="6" count="tr" hide-admins="yes" profile-link="no" show-avatar="no" show-name="no" forum="1234"]</tt>
@@ -461,7 +461,7 @@ if ( ! function_exists( 'tc_shortcodes_display' ) ) {
                                         <!-- end paragraph break -->
 
                                         <p><i><b>
-                                                <?php _e( 'Note - you only need enter parameters where you want to change the default', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'Note - you only need enter parameters where you want to change the default', 'bbp-style-pack' ); ?>
                                         </i></b></p>
 
                                         <!-- paragraph break -->
@@ -469,10 +469,10 @@ if ( ! function_exists( 'tc_shortcodes_display' ) ) {
                                         <!-- end paragraph break -->
 
                                         <p><i>
-                                                <?php _e( 'avatar-size', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'avatar-size', 'bbp-style-pack' ); ?>
                                         </i></p>
                                         <p>
-                                                <?php _e( "Default = '96' - the smaller the number the smaller the avatar", 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( "Default = '96' - the smaller the number the smaller the avatar", 'bbp-style-pack' ); ?>
                                         </p>
 
                                         <!-- paragraph break -->
@@ -480,10 +480,10 @@ if ( ! function_exists( 'tc_shortcodes_display' ) ) {
                                         <!-- end paragraph break -->
 
                                         <p><i>
-                                                <?php _e( 'padding', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'padding', 'bbp-style-pack' ); ?>
                                         </i></p>
                                         <p>
-                                                <?php _e( "Default = '50' - The space between the avatar/username and the text to the right of this", 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( "Default = '50' - The space between the avatar/username and the text to the right of this", 'bbp-style-pack' ); ?>
                                         </p>
 
                                         <!-- paragraph break -->
@@ -491,10 +491,10 @@ if ( ! function_exists( 'tc_shortcodes_display' ) ) {
                                         <!-- end paragraph break -->
 
                                         <p><i>
-                                                <?php _e( 'before', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'before', 'bbp-style-pack' ); ?>
                                         </i></p>
                                         <p>
-                                                <?php _e( "Default = blank -  Any characters/text before the count number - eg 'Topics : ", 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( "Default = blank -  Any characters/text before the count number - eg 'Topics : ", 'bbp-style-pack' ); ?>
                                         </p>
 
                                         <!-- paragraph break -->
@@ -502,10 +502,10 @@ if ( ! function_exists( 'tc_shortcodes_display' ) ) {
                                         <!-- end paragraph break -->
 
                                         <p><i>
-                                                <?php _e( 'after', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'after', 'bbp-style-pack' ); ?>
                                         </i></p>
                                         <p>
-                                                <?php _e( "Default = blank - Any characters/text after the count number - eg ' Topics ", 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( "Default = blank - Any characters/text after the count number - eg ' Topics ", 'bbp-style-pack' ); ?>
                                         </p>
 
                                         <!-- paragraph break -->
@@ -513,10 +513,10 @@ if ( ! function_exists( 'tc_shortcodes_display' ) ) {
                                         <!-- end paragraph break -->
 
                                         <p><i>
-                                                <?php _e( 'show', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'show', 'bbp-style-pack' ); ?>
                                         </i></p>
                                         <p>
-                                                <?php _e( "Default = '5' - the number of users to show", 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( "Default = '5' - the number of users to show", 'bbp-style-pack' ); ?>
                                         </p>
 
                                         <!-- paragraph break -->
@@ -524,10 +524,10 @@ if ( ! function_exists( 'tc_shortcodes_display' ) ) {
                                         <!-- end paragraph break -->
 
                                         <p><i>
-                                                <?php _e( 'count', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'count', 'bbp-style-pack' ); ?>
                                         </i></p>
                                         <p>
-                                                <?php _e( "Default = 'tr' - what to count - put 't' for just topics, 'r' for just replies default is to count the total topics and replies ", 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( "Default = 'tr' - what to count - put 't' for just topics, 'r' for just replies default is to count the total topics and replies ", 'bbp-style-pack' ); ?>
                                         </p>
 
                                         <!-- paragraph break -->
@@ -535,10 +535,10 @@ if ( ! function_exists( 'tc_shortcodes_display' ) ) {
                                         <!-- end paragraph break -->
 
                                         <p><i>
-                                                <?php _e( 'hide-admins', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'hide-admins', 'bbp-style-pack' ); ?>
                                         </i></p>
                                         <p>
-                                                <?php _e( "Default = 'no' - if set to 'yes' - then administrators are excluded from display", 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( "Default = 'no' - if set to 'yes' - then administrators are excluded from display", 'bbp-style-pack' ); ?>
                                         </p>
 
                                         <!-- paragraph break -->
@@ -546,10 +546,10 @@ if ( ! function_exists( 'tc_shortcodes_display' ) ) {
                                         <!-- end paragraph break -->
 
                                         <p><i>
-                                                <?php _e( 'profile-link', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'profile-link', 'bbp-style-pack' ); ?>
                                         </i></p>
                                         <p>
-                                                <?php _e( "Default = 'yes' - if set to 'no' - then the avatar and/or name do not have a link to the users profile", 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( "Default = 'yes' - if set to 'no' - then the avatar and/or name do not have a link to the users profile", 'bbp-style-pack' ); ?>
                                         </p>
 
                                         <!-- paragraph break -->
@@ -557,10 +557,10 @@ if ( ! function_exists( 'tc_shortcodes_display' ) ) {
                                         <!-- end paragraph break -->
 
                                         <p><i>
-                                                <?php _e( 'show-avatar', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'show-avatar', 'bbp-style-pack' ); ?>
                                         </i></p>
                                         <p>
-                                                <?php _e( "Default = 'yes' -  if set to 'no' - then the avatar will not show", 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( "Default = 'yes' -  if set to 'no' - then the avatar will not show", 'bbp-style-pack' ); ?>
                                         </p>
 
                                         <!-- paragraph break -->
@@ -568,10 +568,10 @@ if ( ! function_exists( 'tc_shortcodes_display' ) ) {
                                         <!-- end paragraph break -->
 
                                         <p><i>
-                                                <?php _e( 'show-name', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'show-name', 'bbp-style-pack' ); ?>
                                         </i></p>
                                         <p>
-                                                <?php _e( "Default = 'yes' -  if set to 'no' - then the name will not show", 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( "Default = 'yes' -  if set to 'no' - then the name will not show", 'bbp-style-pack' ); ?>
                                         </p>
 
                                         <!-- paragraph break -->
@@ -579,10 +579,10 @@ if ( ! function_exists( 'tc_shortcodes_display' ) ) {
                                         <!-- end paragraph break -->
 
                                         <p><i>
-                                                <?php _e( 'forum', 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( 'forum', 'bbp-style-pack' ); ?>
                                         </i></p>
                                         <p>
-                                                <?php _e( "Default = blank - Enter a single forum ID to only count from that forum", 'bbp-style-pack' ); ?>
+                                                <?php esc_html_e( "Default = blank - Enter a single forum ID to only count from that forum", 'bbp-style-pack' ); ?>
                                         </p>
 
                                 </td>

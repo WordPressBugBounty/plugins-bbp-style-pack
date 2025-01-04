@@ -107,7 +107,7 @@ function bsp_login_fail() {
 				<?php echo esc_html($name2) ; ?>
 			</td>
 			<td>
-				<?php echo '<input id="'.$item2.'" class="large-text" name="'.$item2.'" type="text" value="'.esc_html( $value2 ).'"<br>' ; ?> 
+				<?php echo '<input id="'.esc_html($item2).'" class="large-text" name="'.esc_html($item2).'" type="text" value="'.esc_html( $value2 ).'"<br>' ; ?> 
 				<label class="description"><?php esc_html_e( 'Default: "ERROR: The username field was empty" ', 'bbp-style-pack' ); ?></label><br/>
 				</td>
 		</tr>
@@ -176,7 +176,7 @@ function bsp_login_fail() {
 				<?php echo esc_html($name2) ; ?> 
 			</td>
 			<td>
-				<?php echo '<input id="'.$item2.'" class="bsp-color-picker" name="'.$item2.'" type="text" value="'.esc_html( $value2 ).'"<br>' ; ?> 
+				<?php echo '<input id="'.esc_html($item2).'" class="bsp-color-picker" name="'.esc_html($item2).'" type="text" value="'.esc_html( $value2 ).'"<br>' ; ?> 
 				<label class="description"><?php esc_html_e( 'Click to set color - You can select from palette or enter hex value - see help for further info', 'bbp-style-pack') ; ?>
 				</label><br/>
 			</td>

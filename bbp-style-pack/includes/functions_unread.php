@@ -135,15 +135,16 @@ function bsp_display_icon ($path, $topic_id, $amount_div='') {
 		$last_id = get_post_meta ( $topic_id, bsp_ur_get_last_visit_meta_key_id (), true );
 		if (!empty ($last_id))	$url = bbp_get_reply_url ($last_id) ;
 		else $url = bbp_get_topic_last_reply_url ( $topic_id ) ;
-		echo '
+		$output = '
 			<div class="bbpresss_unread_posts_icon">
 				<a href="' . esc_url($url) . '">
 					<img src="' . esc_url($path) . '"/>
 				</a>
-				'. esc_html($amount_div). '
+				'. $amount_div. '
 			</div>
 			
 		';
+		echo wp_kses_post($output) ;
 	}
 }
 

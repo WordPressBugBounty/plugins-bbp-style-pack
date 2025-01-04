@@ -94,7 +94,7 @@ function bsp_style_settings_reset() {
                                         <td>
                                                 <?php 
                                                 echo '<input name="'.esc_html($slug).'" id="'.esc_html($slug).'" type="checkbox" value="1" class="code" />';
-                                                echo $reset_text;
+                                                echo esc_html($reset_text);
                                                 ?>
                                         </td>
                                 </tr>

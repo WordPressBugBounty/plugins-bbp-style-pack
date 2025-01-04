@@ -190,12 +190,12 @@ function bsp_display_newest_users ($attr) {
 	$users = get_users( array( 'orderby' => 'registered', 'order' => 'desc', 'number' => $number ) ); 
 	$heading1= __('Newest users','bbp-style-pack'); 
 	$heading2= __('Date joined','bbp-style-pack'); 
-	echo '<table><th align=left>'.$heading1.'</th><th align=left>'.$heading2.'</th>';
+	echo '<table><th align=left>'.esc_html($heading1).'</th><th align=left>'.esc_html($heading2).'</th>';
 	
 	foreach ( $users as $user ) {
 		$date=date_i18n("jS M Y", strtotime( $user->user_registered ) ); 
 		echo '<tr><td>' . esc_html( $user->display_name ).'</td>';
-		echo '<td>'.$date.'</td>';
+		echo '<td>'.esc_html($date).'</td>';
 		echo '</tr>';
 	}
 	echo '</table>';
@@ -318,7 +318,7 @@ function bsp_forum_subscriber_count ($attr, $content = '') {
 		}
 	endif;
 	
-	echo $attr['before'].$count.$attr['after'];
+	echo esc_html($attr['before']).esc_html($count).esc_html($attr['after']);
 }
 
 
@@ -423,7 +423,7 @@ function bsp_forum_login ($atts) {
         // Output templates
         if ( ! is_user_logged_in() ) {
                 if (!empty($atts['message'])) {
-                        echo '<p>'.($atts['message']).'</p>' ;
+                        echo '<p>'.esc_html($atts['message']).'</p>' ;
                 }
                 bbp_get_template_part( 'form',     'user-login' );
         } else {

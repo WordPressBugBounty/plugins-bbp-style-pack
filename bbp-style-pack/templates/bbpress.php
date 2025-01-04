@@ -116,7 +116,7 @@ if ($bsp_style_settings_theme_support['fse'] == 2) {
 				esc_html_e('No template page selected for forums to display', 'bbp-style-pack');
 				echo '<br/>' ;
 				esc_html_e('See - ', 'bbp-style-pack');
-				echo '<a href="' . site_url() . '/wp-admin/options-general.php?page=bbp-style-pack&tab=bsp_block_theme">' ;
+				echo '<a href="' . esc_url(site_url()) . '/wp-admin/options-general.php?page=bbp-style-pack&tab=bsp_block_theme">' ;
 				esc_html_e('Style Pack theme support settings', 'bbp-style-pack');
 				echo '</a>' ;
 			}
@@ -132,14 +132,14 @@ if ($bsp_style_settings_theme_support['fse'] == 2) {
 				$forums_slug = bbp_get_root_slug() ;
 				esc_html_e('You are trying to view the bbpress template page, you need to view the forums page itself at ', 'bbp-style-pack');
 				echo '<br/>' ;
-				echo '<a href="/'.$forums_slug.'">' ;
-				echo get_site_url().'/'.$forums_slug ;
+				echo '<a href="/'.esc_html($forums_slug).'">' ;
+				echo esc_url(get_site_url()).'/'.esc_html($forums_slug) ;
 				echo '</a>' ;
 				echo '<br/><br/>' ;
 				esc_html_e('To add forums as a menu item, edit your menu and add this url as a link.', 'bbp-style-pack');
 				echo '<br/><br/>' ;
 				esc_html_e('See ', 'bbp-style-pack');
-				echo '<a href="' . site_url() . '/wp-admin/options-general.php?page=bbp-style-pack&tab=bsp_block_theme">' ;
+				echo '<a href="' . esc_url(site_url()) . '/wp-admin/options-general.php?page=bbp-style-pack&tab=bsp_block_theme">' ;
 				esc_html_e('Style Pack theme support settings', 'bbp-style-pack');
 				echo '</a>' ;
 				esc_html_e(' for further information', 'bbp-style-pack');
@@ -161,7 +161,7 @@ if ($bsp_style_settings_theme_support['fse'] == 2) {
 					esc_html_e('does not contain the \'[bbp-forum-index]\' shortcode, so forums will not display', 'bbp-style-pack');
 					echo '<br/>' ;
 					esc_html_e('See - ', 'bbp-style-pack');
-					echo '<a href="' . site_url() . '/wp-admin/options-general.php?page=bbp-style-pack&tab=bsp_block_theme">' ;
+					echo '<a href="' . esc_url(site_url()) . '/wp-admin/options-general.php?page=bbp-style-pack&tab=bsp_block_theme">' ;
 					echo esc_html_e('Style Pack theme support settings', 'bbp-style-pack');
 					echo '</a>' ;
 				}

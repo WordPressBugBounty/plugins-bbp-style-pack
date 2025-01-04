@@ -13,7 +13,7 @@ function bsp_new() {
         <table class="form-table">
 		<tr valign="top">
 			<th colspan="2">
-				<h3><?php _e( 'What\'s New?', 'bbp-style-pack' ); ?></h3>
+				<h3><?php esc_html_e( 'What\'s New?', 'bbp-style-pack' ); ?></h3>
                                 
                         </th>
 		</tr>
@@ -22,16 +22,16 @@ function bsp_new() {
         <?php
         echo '<table class="bsp-plugin-info">';
                 echo '<tr>';
-                        echo '<th>' . __( 'Version', 'bbp-style-pack' ) . '</th>';
-                        echo '<th>' . __( 'Release Notes', 'bbp-style-pack' ) . '</th>';
+                        echo '<th>' .esc_html(__( 'Version', 'bbp-style-pack' ) ). '</th>';
+                        echo '<th>' .esc_html( __( 'Release Notes', 'bbp-style-pack' )) . '</th>';
                 echo '</tr>';
                 foreach ( $releases as $version => $notes ) {
                         echo '<tr>';
-                                echo '<td style="text-align:center;"><p><b>' . $version . '</b></p></td>';
+                                echo '<td style="text-align:center;"><p><b>' . esc_html($version) . '</b></p></td>';
                                 $note_count = 1;
                                 echo '<td>';
                                 foreach ( $notes as $note ) {
-                                        echo '<p>' . $note_count . '.) ' . $note . '</p>';
+                                        echo '<p>' . esc_html($note_count) . '.) ' . esc_html($note) . '</p>';
                                         $note_count++;
                                 }
                                 echo '</td>';

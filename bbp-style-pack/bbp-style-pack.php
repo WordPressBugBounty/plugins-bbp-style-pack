@@ -4,14 +4,14 @@
 Plugin Name: bbp style pack
 Plugin URI: http://www.rewweb.co.uk/bbp-style-pack/
 Description: This plugin adds styling and features to bbPress.
-Version: 6.1.9
+Version: 6.2.0
 Author: Robin Wilson
 Text Domain: bbp-style-pack
 Domain Path: /languages
 Author URI: http://www.rewweb.co.uk
 License: GPL2
 */
-/*  Copyright 2016-2024  Robin Wilson  (email : wilsonrobine@btinternet.com)
+/*  Copyright 2016-2025  Robin Wilson  (email : wilsonrobine@btinternet.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -26,6 +26,12 @@ License: GPL2
 
 */
 
+//if you decativate and delete bsp plugin, then on reinstalling the default css files are not there, but bsp_version is, so we blank bsp_version to ensure they are recreated
+register_activation_hook( __FILE__, 'bsp_plugin_activate' );
+
+function bsp_plugin_activate($network_wide){
+	 delete_option( 'bsp_version');
+}
 
 /*******************************************
 * global variables
@@ -493,8 +499,8 @@ function bsp_load_plugin() {
                         define( 'BSP_VERSION_NUM', $new_version );
 					
 		$curr_version = get_option( BSP_VERSION_KEY, false );
-
-		if ($new_version != $curr_version)  {
+		
+		if ($new_version != $curr_version )  {
                         
 			// first set whether network activated or not
 			if ( ! function_exists( 'is_plugin_active_for_network' ) ) {
@@ -553,6 +559,7 @@ function bsp_plugin_update( $network_wide ) {
         /* single site install */
                 bsp_plugin_update_actions();
         } // end plugin update
+		
 }
 
 

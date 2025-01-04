@@ -2059,13 +2059,37 @@ if (!empty($bsp_style_settings_form['topic_posting_rulesactivate_for_replies']))
 function bsp_topic_rules() {
         global $bsp_style_settings_form; 
         $content = $bsp_style_settings_form['topic_rules_text'];
-        echo '<div class="bsp-topic-rules">'.esc_html($content).'</div>';
+		//NOTE $content may include HTML tags, so we can't use esc_html
+        echo '<div class="bsp-topic-rules">' ;
+		echo wp_kses($content,array(
+			'a'      => array(
+				'href'  => array(),
+				'title' => array(),
+			),
+			'br'     => array(),
+			'em'     => array(),
+			'strong' => array(),
+			'p' => array(),
+		)) ;
+		echo '</div>';
 }
 
 function bsp_reply_rules() {
         global $bsp_style_settings_form; 
         $content = $bsp_style_settings_form['reply_rules_text'];
-        echo '<div class="bsp-topic-rules">'.esc_html($content).'</div>';
+		//NOTE $content may include HTML tags, so we can't use esc_html
+		echo '<div class="bsp-topic-rules">' ;
+		echo wp_kses($content,array(
+			'a'      => array(
+				'href'  => array(),
+				'title' => array(),
+			),
+			'br'     => array(),
+			'em'     => array(),
+			'strong' => array(),
+			'p' => array(),
+		)) ;
+		echo '</div>';
 }
 
 //This function changes the text wherever it is quoted

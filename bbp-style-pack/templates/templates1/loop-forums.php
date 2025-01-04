@@ -46,7 +46,7 @@ defined( 'ABSPATH' ) || exit;
 				<li class="bbp-header">
 
 					<ul class="forum-titles">
-						<li class="bbp-forum-info"><?php echo $link ; ?></li>
+						<li class="bbp-forum-info"><?php echo wp_kses_post($link); ; ?></li>
 						<li class="bbp-forum-topic-count">
 							<?php 
 								global $bsp_style_settings_f ;
@@ -66,7 +66,7 @@ defined( 'ABSPATH' ) || exit;
 							}
 							?>
 						</li>
-						<li class="bbp-forum-freshness"><?php _e( 'Last Post', 'bbpress' ); ?></li>
+						<li class="bbp-forum-freshness"><?php esc_html_e( 'Last Post', 'bbpress' ); ?></li>
 					</ul>
 
 				</li><!-- .bbp-header -->

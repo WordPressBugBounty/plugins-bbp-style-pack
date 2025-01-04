@@ -359,7 +359,7 @@ function bsp_style_settings_quote() {
                                         <?php echo '<input id="'.esc_html($item).'" class="small-text" name="'.esc_html($item).'" type="text" value="'.esc_html( $value ).'" /><br>'; ?> 
                                         <label class="description">
                                                 <?php esc_html_e( 'Enter the order ie a number from 1 to', 'bbp-style-pack' ); ?>
-                                                <?php echo $total_items; ?>
+                                                <?php echo esc_html($total_items); ?>
                                         </label>
                                         </br>
                                 </td>
@@ -379,7 +379,7 @@ function bsp_style_settings_quote() {
                                                 <?php echo '<input id="'.esc_html($item).'" class="small-text" name="'.esc_html($item).'" type="text" value="'.esc_html( $value ).'" /><br>'; ?> 
                                                 <label class="description">
                                                         <?php esc_html_e( 'Enter the order ie a number from 1 to', 'bbp-style-pack' ); ?>
-                                                        <?php echo $total_items; ?>
+                                                        <?php echo esc_html($total_items); ?>
                                                 </label>
                                                 </br>
                                         </td>
@@ -399,7 +399,7 @@ function bsp_style_settings_quote() {
                                         <?php echo '<input id="'.esc_html($item).'" class="small-text" name="'.esc_html($item).'" type="text" value="'.esc_html( $value ).'" /><br>'; ?> 
                                         <label class="description">
                                                 <?php esc_html_e( 'Enter the order ie a number from 1 to', 'bbp-style-pack' ); ?>
-                                                <?php echo $total_items; ?>
+                                                <?php echo esc_html($total_items); ?>
                                         </label>
                                         </br>
                                 </td>
@@ -414,7 +414,7 @@ function bsp_style_settings_quote() {
                                         <?php echo '<input id="'.esc_html($item).'" class="small-text" name="'.esc_html($item).'" type="text" value="'.esc_html( $value ).'" /><br>'; ?> 
                                         <label class="description">
                                                 <?php esc_html_e( 'Enter the order ie a number from 1 to', 'bbp-style-pack' ); ?>
-                                                <?php echo $total_items; ?>
+                                                <?php echo esc_html($total_items); ?>
                                         </label>
                                         </br>
                                 </td>

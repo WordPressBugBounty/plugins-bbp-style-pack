@@ -154,7 +154,7 @@ function bsp_style_settings_freshness () {
 				<?php
 				$item0='bsp_style_settings_freshness[date_format]' ;
 				$value0 = (!empty($bsp_style_settings_freshness['date_format']) ? $bsp_style_settings_freshness['date_format'] : 1) ; 
-				echo '<input name="'.esc_html($item0).'" id="'.$value0.'" type="radio" value="1" class="code"  ' . checked( 1,$value0, false ) . ' />' ;
+				echo '<input name="'.esc_html($item0).'" id="'.esc_html($value0).'" type="radio" value="1" class="code"  ' . checked( 1,$value0, false ) . ' />' ;
 				esc_html_e ('Click to show time since last post' , 'bbp-style-pack' ) ;?>
 				<br/>
 					<label class="description">
@@ -166,12 +166,12 @@ function bsp_style_settings_freshness () {
 			</td>
 			<td style="width:250px;vertical-align:top">
 				<?php
-				echo '<input name="'.esc_html($item0).'" id="'.$value0.'" type="radio" value="2" class="code"  ' . checked( 2,$value0, false ) . ' />' ;
+				echo '<input name="'.esc_html($item0).'" id="'.esc_html($value0).'" type="radio" value="2" class="code"  ' . checked( 2,$value0, false ) . ' />' ;
 				esc_html_e ('Click to show date of last post' , 'bbp-style-pack' ) ;?>
 			</td>
 			<td style="vertical-align:top">
 				<?php
-				echo '<input name="'.esc_html($item0).'" id="'.$value0.'" type="radio" value="3" class="code"  ' . checked( 3,$value0, false ) . ' />' ;
+				echo '<input name="'.esc_html($item0).'" id="'.esc_html($value0).'" type="radio" value="3" class="code"  ' . checked( 3,$value0, false ) . ' />' ;
 				esc_html_e ('Click to show Hybrid' , 'bbp-style-pack' ) ;?>
 			</td>
 		</tr>
@@ -187,7 +187,7 @@ function bsp_style_settings_freshness () {
 				<?php
 				$item_freshness='bsp_style_settings_freshness[freshness_format]' ;
 				$value_freshness = (!empty($bsp_style_settings_freshness['freshness_format']) ? $bsp_style_settings_freshness['freshness_format'] : 0) ; 
-				echo '<input name="'.$item_freshness.'" id="'.$value_freshness.'" type="radio" value="0" class="code"  ' . checked( 0,$value_freshness, false ) . ' />' ;
+				echo '<input name="'.esc_html($item_freshness).'" id="'.esc_html($value_freshness).'" type="radio" value="0" class="code"  ' . checked( 0,$value_freshness, false ) . ' />' ;
 				esc_html_e ('Click to show full Freshness' , 'bbp-style-pack' ) ;?>
 				<br/>
 					<label class="description">
@@ -203,7 +203,7 @@ function bsp_style_settings_freshness () {
 				<?php
 				$name =  'bsp_style_settings_freshness[date_order]' ;
 				$item = (!empty($bsp_style_settings_freshness['date_order']) ? $bsp_style_settings_freshness['date_order'] : '0');
-				echo '<input name="'.$name.'" id="'.esc_html($item).'" type="radio" value="0" class="code"  ' . checked( 0,$item, false ) . ' />' ;
+				echo '<input name="'.esc_html($name).'" id="'.esc_html($item).'" type="radio" value="0" class="code"  ' . checked( 0,$item, false ) . ' />' ;
 				esc_html_e ('Date First' , 'bbp-style-pack' ) ;?>
 			
 			</td>
@@ -225,7 +225,7 @@ function bsp_style_settings_freshness () {
 			<td style="width:250px;vertical-align:top">
 				<?php
 				
-				echo '<input name="'.$item_freshness.'" id="'.$value_freshness.'" type="radio" value="1" class="code"  ' . checked( 1,$value_freshness, false ) . ' />' ;
+				echo '<input name="'.esc_html($item_freshness).'" id="'.esc_html($value_freshness).'" type="radio" value="1" class="code"  ' . checked( 1,$value_freshness, false ) . ' />' ;
 				esc_html_e ('Click to show shortened Freshness' , 'bbp-style-pack' ) ;?>
 				<br/>
 				<?php esc_html_e( 'e.g' , 'bbp-style-pack' ); ?>
@@ -233,7 +233,7 @@ function bsp_style_settings_freshness () {
 			</td>
 			<td>
 				<?php
-				echo '<input name="'.$name.'" id="'.esc_html($item).'" type="radio" value="1" class="code"  ' . checked( 1,$item, false ) . ' />' ;
+				echo '<input name="'.esc_html($name).'" id="'.esc_html($item).'" type="radio" value="1" class="code"  ' . checked( 1,$item, false ) . ' />' ;
 				esc_html_e ('Time First' , 'bbp-style-pack' ) ;?>
 			</td>
 			<td>
@@ -295,7 +295,7 @@ function bsp_style_settings_freshness () {
 					$date = (!empty($bsp_style_settings_freshness['bsp_date_format_custom']) ? $bsp_style_settings_freshness['bsp_date_format_custom'] : '');
 				}
 				foreach ( $date_formats as $format ) {
-					echo "\t<label><input type='radio' name=".$name." value='" . esc_attr( $format ) . "'";
+					echo "\t<label><input type='radio' name=".esc_html($name)." value='" . esc_attr( $format ) . "'";
 						if ( $date == esc_attr($format) ) { // checked() uses "==" rather than "==="
 							echo " checked='checked'";
 							$custom = false;

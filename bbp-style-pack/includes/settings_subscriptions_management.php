@@ -18,14 +18,14 @@ function bsp_style_settings_subscriptions_management () {
 		<tr valign="top">
 			<th colspan="2">
 				<h3>
-					<?php _e ('Subscriptions Management' , 'bbp-style-pack' ) ; ?>
+					<?php esc_html_e ('Subscriptions Management' , 'bbp-style-pack' ) ; ?>
 				</h3>
 		</tr>
 		
 		<tr>
 			<td>
 				<p><i><b>
-					<?php _e('This section adds the Subscriptions Management tools which were in the bbPress Toolkit plugin which is no longer maintained.', 'bbp-style-pack'); ?>
+					<?php esc_html_e('This section adds the Subscriptions Management tools which were in the bbPress Toolkit plugin which is no longer maintained.', 'bbp-style-pack'); ?>
 				</b></i></p>
 				
 			</td>
@@ -40,7 +40,7 @@ function bsp_style_settings_subscriptions_management () {
 		<tr>
 			<td>
 				<p><b>
-					<?php _e('****NOTE: You already have the bbPress Toolkit plugin activate, deactivate the bbPress Toolkit plugin if you want to use this version in this plugin, and return here to activate.****  ', 'bbp-style-pack' ); ?>
+					<?php esc_html_e('****NOTE: You already have the bbPress Toolkit plugin activate, deactivate the bbPress Toolkit plugin if you want to use this version in this plugin, and return here to activate.****  ', 'bbp-style-pack' ); ?>
 				</b></p>
 			</td>
 		</tr>
@@ -60,7 +60,7 @@ function bsp_style_settings_subscriptions_management () {
 	<!-- checkbox to activate  -->
 		<tr valign="top">  
 			<th>
-			<?php _e('Activate Subscriptions Management', 'bbp-style-pack'); ?>
+			<?php esc_html_e('Activate Subscriptions Management', 'bbp-style-pack'); ?>
 			</th>
 			
 			<td>
@@ -74,12 +74,12 @@ function bsp_style_settings_subscriptions_management () {
 		<td colspan=2>
 		<?php
 		if (!empty($bsp_style_settings_sub_management['subscriptions_management_activate'])) {
-		echo '<p>'; _e('Subscribe new users automatically to the below ticked forums:', 'bbp-style-pack'); echo  '<br>';
+		echo '<p>'; esc_html_e('Subscribe new users automatically to the below ticked forums:', 'bbp-style-pack'); echo  '<br>';
 		$all_forums = bsptoolkit_forum_structure();
 		foreach ($all_forums as $myforum) {
 			echo '<input type="checkbox" name="bsp_style_settings_sub_management['.$myforum['id'].']" value="'.$myforum['id'].'" ';
 			if (!empty( $bsp_style_settings_sub_management[$myforum['id']])) { echo 'checked'; }
-			echo '>' . $myforum['title'].'<br>';
+			echo '>' . esc_html($myforum['title']).'<br>';
 		}
 		}
 		echo '</p>';
@@ -92,7 +92,7 @@ function bsp_style_settings_subscriptions_management () {
 		
 			<!-- save the options -->
 	<p class="submit">
-		<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'bbp-style-pack' ); ?>" />
+		<input type="submit" class="button-primary" value="<?php esc_html_e( 'Save changes', 'bbp-style-pack' ); ?>" />
 	</p>
 		
 		<?php
@@ -104,31 +104,31 @@ function bsp_style_settings_subscriptions_management () {
 				<p>
 				<?php
 		
-		_e( 'This section lets you manage subscriptions letting you subscribe or unsubscribe users to forums and topics', 'bbp-style-pack' ); 
+		esc_html_e( 'This section lets you manage subscriptions letting you subscribe or unsubscribe users to forums and topics', 'bbp-style-pack' ); 
 		if (empty($bsp_style_settings_sub_management['subscriptions_management_activate'])) {
 			echo '<p>' ;
-			_e( 'Once Activated...', 'bbp-style-pack' ); 
+			esc_html_e( 'Once Activated...', 'bbp-style-pack' ); 
 			echo '</p>' ;
 		}			
 		echo '<p>' ;
-		_e( 'To manage subscriptions of a forum, ', 'bbp-style-pack' ); 
-		echo '<a href="' . site_url() . '/wp-admin/edit.php?post_type=forum' . '">' ;
-		_e( 'edit the forums ', 'bbp-style-pack' ); 
+		esc_html_e( 'To manage subscriptions of a forum, ', 'bbp-style-pack' ); 
+		echo '<a href="' . esc_url(site_url()) . '/wp-admin/edit.php?post_type=forum' . '">' ;
+		esc_html_e( 'edit the forums ', 'bbp-style-pack' ); 
 		echo '</a>' ;
-		_e( 'and click on "Subscriptions" as an action of the forum, or edit the forum and find the "Manage Subscriptions" button (somewhere below the Forum Attributes)', 'bbp-style-pack' ); 
+		esc_html_e( 'and click on "Subscriptions" as an action of the forum, or edit the forum and find the "Manage Subscriptions" button (somewhere below the Forum Attributes)', 'bbp-style-pack' ); 
 		echo '</p>';
 		echo '<p>' ;
-		_e( 'To manage subscriptions for topics, ', 'bbp-style-pack' ); 
-		echo '<a href="' . site_url() . '/wp-admin/edit.php?post_type=topic' . '">' ;
-		_e( 'edit the topics ', 'bbp-style-pack' ); 
+		esc_html_e( 'To manage subscriptions for topics, ', 'bbp-style-pack' ); 
+		echo '<a href="' . esc_url(site_url()) . '/wp-admin/edit.php?post_type=topic' . '">' ;
+		esc_html_e( 'edit the topics ', 'bbp-style-pack' ); 
 		echo '</a>' ;
-		_e( 'and find "Subscriptions" as an action for each topic.', 'bbp-style-pack' ); 
+		esc_html_e( 'and find "Subscriptions" as an action for each topic.', 'bbp-style-pack' ); 
 		echo '</p>' ;
-		_e( 'To manage subscriptions for a user, ', 'bbp-style-pack' ); 
-		echo '<a href="' . site_url() . '/wp-admin/users.php' . '">' ;
-		_e( 'edit the users ', 'bbp-style-pack' ); 
+		esc_html_e( 'To manage subscriptions for a user, ', 'bbp-style-pack' ); 
+		echo '<a href="' . esc_url(site_url()) . '/wp-admin/users.php' . '">' ;
+		esc_html_e( 'edit the users ', 'bbp-style-pack' ); 
 		echo '</a>' ;
-		_e( 'and find "Subscriptions" as an action for each user.', 'bbp-style-pack' ); 
+		esc_html_e( 'and find "Subscriptions" as an action for each user.', 'bbp-style-pack' ); 
 		echo '</p>' ;
 		?>
 				</p>

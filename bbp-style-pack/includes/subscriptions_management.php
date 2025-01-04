@@ -76,13 +76,13 @@ add_filter('user_row_actions', 'bsptoolkit_user_subscr_action_link', 10, 2);
 function bsptoolkit_forum_subscrip_metabox() {
 	echo '<br>';
 	if (bbp_is_forum_category(get_the_ID())) {
-		_e('No subscriptions for categories', 'bbp-style-pack');
+		esc_html_e('No subscriptions for categories', 'bbp-style-pack');
 	} else {
 		$forum_id = get_the_ID();
 		$users_arr = bbp_get_forum_subscribers($forum_id);
 		$subscriber_count = count($users_arr);
 		
-		echo '<a class="preview button" href="' . site_url() . '/wp-admin/edit.php?post_type=forum&page=forum_subscriptions&forum_id=' . $forum_id . '">'; _e('Manage Subscriptions', 'bbp-style-pack'); echo ' (' . $subscriber_count . ')</a>';
+		echo '<a class="preview button" href="' . esc_url(site_url()) . '/wp-admin/edit.php?post_type=forum&page=forum_subscriptions&forum_id=' . esc_html($forum_id) . '">'; esc_html_e('Manage Subscriptions', 'bbp-style-pack'); echo ' (' . $subscriber_count . ')</a>';
 	}
 	echo '<br>';
 	echo '<br>';
@@ -123,7 +123,7 @@ function bsptksub_manage_forum_column($column_name, $id) {
                                 }
                                 $users_arr = bbp_get_forum_subscribers($id);
                                 $subscriber_count = count($users_arr);
-                                echo '<a href="' . $url . '">' . $subscriber_count .' '.__('subscriber(s)', 'bbp-style-pack' ).'</a>';
+                                echo '<a href="' . esc_url($url) . '">' . esc_html($subscriber_count) .' '.esc_html(__('subscriber(s)', 'bbp-style-pack' )).'</a>';
                         }
                         break;
                 default:
