@@ -175,7 +175,7 @@ if ( ! function_exists( 'tc_settings' ) ) {
                                                         </th>
                                                         <td>
                                                                 <input id="<?php echo $tc_field_name ?>[topic_label]" class="large-text" name="<?php echo $tc_field_name ?>[topic_label]" type="text" value="<?php echo isset( $tc_options_values['topic_label'] ) ? esc_html( $tc_options_values['topic_label'] ) : ''; ?>" /><br/>
-                                                                <label class="description" for="<?php echo $tc_field_name ?>[topic_label]"><?php esc_html_e( 'Enter the description eg "Topics:", "Topics - ", "Posts :" "Started : " ebsp.', 'bbp-style-pack' ); ?></label><br/>
+                                                                <label class="description" for="<?php echo $tc_field_name ?>[topic_label]"><?php esc_html_e( 'Enter the description eg "Topics:", "Topics - ", "Posts :" "Started : "', 'bbp-style-pack' ); ?></label><br/>
                                                         </td>
                                                 </tr>
 
@@ -204,7 +204,7 @@ if ( ! function_exists( 'tc_settings' ) ) {
                                                         </th>
                                                         <td>
                                                                 <input id="<?php echo $tc_field_name ?>[reply_label]" class="large-text" name="<?php echo $tc_field_name ?>[reply_label]" type="text" value="<?php echo isset( $tc_options_values['reply_label'] ) ? esc_html( $tc_options_values['reply_label'] ) : ''; ?>" /><br/>
-                                                                <label class="description" for="<?php echo $tc_field_name ?>[reply_label]"><?php esc_html_e( 'Enter the description eg "Replies:", "Replies - ", "Posts", "joined in : " ebsp.', 'bp-topic-count' ); ?></label><br/>
+                                                                <label class="description" for="<?php echo $tc_field_name ?>[reply_label]"><?php esc_html_e( 'Enter the description eg "Replies:", "Replies - ", "Posts", "joined in : "', 'bp-topic-count' ); ?></label><br/>
                                                         </td>
                                                 </tr>
 
@@ -234,7 +234,7 @@ if ( ! function_exists( 'tc_settings' ) ) {
                                                         </th>
                                                         <td>
                                                                 <input id="<?php echo $tc_field_name ?>[posts_label]" class="large-text" name="<?php echo $tc_field_name ?>[posts_label]" type="text" value="<?php echo isset( $tc_options_values['posts_label'] ) ? esc_html( $tc_options_values['posts_label'] ) : ''; ?>" /><br/>
-                                                                <label class="description" for="<?php echo $tc_field_name ?>[item3_label]"><?php esc_html_e( 'Enter the description eg "Total posts:", "Total Posts - ", "Total", "Posts: " ebsp.', 'bp-topic-count' ); ?></label><br/>
+                                                                <label class="description" for="<?php echo $tc_field_name ?>[item3_label]"><?php esc_html_e( 'Enter the description eg "Total posts:", "Total Posts - ", "Total", "Posts: "', 'bp-topic-count' ); ?></label><br/>
                                                         </td>
                                                 </tr>
 

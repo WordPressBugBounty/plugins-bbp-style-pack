@@ -104,15 +104,15 @@ defined( 'ABSPATH' ) || exit;
                         if ( ! empty ( $value ) ) {
                                 echo $location === 'author_details' ? '<li>' : '<td>';
                                         if ( empty( $tc_options_values['order'] ) ) { 
-                                                echo esc_html($label1 = $tc_options_values['topic_label'])." ";
-                                                echo esc_html($topic_count_string);
+												$label1 = $tc_options_values['topic_label'];
+                                                echo esc_html($label1)." ";
+                                                echo wp_kses_post($topic_count_string);
                                         }
                                         else {
-                                                echo esc_html($topic_count_string)." ";
-                                                $label1 = $tc_options_values['topic_label'];
-												echo esc_html($label1) ;
-												
-                                        }
+                                                echo wp_kses_post($topic_count_string)." ";
+												$label1 = $tc_options_values['topic_label'];
+                                                echo esc_html($label1) ;
+                                                                                        }
                                 echo $location === 'author_details' ? '</li>' : '</td>';
                         }
 
@@ -123,14 +123,14 @@ defined( 'ABSPATH' ) || exit;
                         if( ! empty( $value ) ) {
                                 echo $location === 'author_details' ? '<li>' : '<td>';
                                         if ( empty( $tc_options_values['order'] ) ) { 
-                                                $label2 = $tc_options_values['reply_label']." ";
-												echo esc_html($label2) ;
-                                                echo esc_html($reply_count_string);
+                                                $label2 = $tc_options_values['reply_label'];
+                                                echo esc_html($label2)." ";
+                                                echo wp_kses_post($reply_count_string);
                                         }
                                         else {
-                                                echo esc_html($reply_count_string)." ";
+                                                echo wp_kses_post($reply_count_string)." ";
                                                 $label2 = $tc_options_values['reply_label'];
-												echo esc_html($label2) ;
+                                                echo esc_html($label2)." ";
                                         }
                                 echo $location === 'author_details' ? '</li>' : '</td>';
                         }
@@ -142,14 +142,14 @@ defined( 'ABSPATH' ) || exit;
                         if( ! empty( $value ) ) {
                             echo $location === 'author_details' ? '<li>' : '<td>';
                                if ( empty( $tc_options_values['order'] ) ) { 
-                                                $label3 = $tc_options_values['posts_label']." ";
-												echo esc_html($label3) ;
-                                                echo esc_html($post_count_string);
+                                               $label3 = $tc_options_values['posts_label'];
+                                                echo esc_html($label3)." ";
+                                                echo wp_kses_post($post_count_string);
                                         }
                                         else {
-                                                echo esc_html($post_count_string)." ";
+                                                echo wp_kses_post($post_count_string)." ";
                                                 $label3 = $tc_options_values['posts_label'];
-												echo esc_html($label3) ;
+                                                echo esc_html($label3)." ";
                                         }
                                 echo $location === 'author_details' ? '</li>' : '</td>';
                         }

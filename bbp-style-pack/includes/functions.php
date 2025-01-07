@@ -900,7 +900,7 @@ function bsp_display_reply_role( $args = array() ) {
         ), 'get_reply_author_role' );
         $r['reply_id'] = bbp_get_reply_id( $r['reply_id'] );
         $author_role = bsp_author_role ($r);
-        echo esc_html($author_role);
+        echo wp_kses_post($author_role);
 }
 
 function bsp_display_topic_role( $args = array() ) {
@@ -913,7 +913,7 @@ function bsp_display_topic_role( $args = array() ) {
         ), 'get_reply_author_role' );
 	$r['topic_id'] = bbp_get_topic_id( $r['topic_id'] );
 	$author_role = bsp_author_role ($r);
-	echo esc_html($author_role);
+	echo wp_kses_post($author_role);
 }
 
 //added function to allow others to call the role
@@ -998,13 +998,6 @@ function bsp_author_role ($r) {
                         if (!empty($r['profile_id'] )) {
                                 return apply_filters( 'bsp_get_reply_author_role', $author_role );	
                         }
-                        
-/* ROBIN - CHECK THIS "BAIL" LINE - SEEMS INCORRECT/INCOMPLETE */
-/* REW commenetd oiut in 5.5.0 - delete if this causes no problems
-/***********************************************************************/
-                        //bail at this point if hide is active or not set
-                        //if (empty ($author_show) ) 
-/***********************************************************************/
 
                         //if this is a topic... (this id matches the topic), then don't display topic author - just bail here
                         //either we are using topic_id, so just quit here

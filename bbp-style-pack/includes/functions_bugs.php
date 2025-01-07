@@ -672,7 +672,7 @@ function bsp_display_errors_at_top_of_topic_list () {
 
 		<div class="bbp-template-notice error" role="alert" tabindex="-1">
 			<ul>
-				<li><?php echo implode( "</li>\n<li>", esc_html($errors) ); ?></li>
+				<li><?php echo esc_html(implode( "</li>\n<li>", $errors )); ?></li>
 		<?php
 		echo '<a href = "#new-post">' ;
 		esc_html_e ('Click here to correct errors' , 'bbp-style-pack' ) ;
