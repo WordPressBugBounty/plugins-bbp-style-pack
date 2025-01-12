@@ -670,9 +670,9 @@ function bsp_display_errors_at_top_of_topic_list () {
 	// Display errors first...
 	if ( ! empty( $errors ) ) : ?>
 
-		<div class="bbp-template-notice error" role="alert" tabindex="-1">
+		<div class="bbp-template-notice bsp-template-notice error" role="alert" tabindex="-1">
 			<ul>
-				<li><?php echo esc_html(implode( "</li>\n<li>", $errors )); ?></li>
+				<li><?php echo wp_kses_post(implode( "</li>\n<li>", $errors )); ?></li>
 		<?php
 		echo '<a href = "#new-post">' ;
 		esc_html_e ('Click here to correct errors' , 'bbp-style-pack' ) ;
