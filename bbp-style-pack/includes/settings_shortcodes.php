@@ -914,7 +914,7 @@ function bsp_shortcodes_display() {
         </p>
         
         <!-- minimum example --> 
-                <p id="bsp-shortcode-<?php echo $shortcode_slug; ?>-min"><tt style="border:1px solid #000;padding:12px;background-color:#f5f5f5;margin:6px;line-height:42px;">[bsp-display-topic-index]</tt></p>
+                <p id="bsp-shortcode-<?php echo $shortcode_slug; ?>-min"><tt style="border:1px solid #000;padding:12px;background-color:#f5f5f5;margin:6px;line-height:42px;">[bsp-display-unreads-index]</tt></p>
                 <p>
                         <button type="button" class="button unselectable" id="copy-<?php echo $shortcode_slug; ?>-min" data-clipboard-action="copy" data-clipboard-target="#bsp-shortcode-<?php echo $shortcode_slug; ?>-min" onmousedown="return false" onselectstart="return false"><?php echo $copy_message; ?></button>
                 </p>

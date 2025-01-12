@@ -283,7 +283,7 @@ function bsp_style_settings_unread () {
 	<!-- checkbox to activate  -->
 		<tr valign="top">  
 			<th >
-				5. <?php esc_html_e('Hide the \'Mark as Read\' Button <p>on the main index page</p>', 'bbp-style-pack'); ?>
+				5. <?php esc_html_e('Hide the \'Mark as Read\' Button <p>on the main index page', 'bbp-style-pack'); ?>
 			</th>
 			
 			<td colspan=2>
@@ -322,7 +322,7 @@ function bsp_style_settings_unread () {
 				esc_html_e ('No opt-in opt-out options' , 'bbp-style-pack' ) ;?>
 				<br>
 				<label class="description">
-					<?php esc_html_e( '<i>Users will always see the unread icons and buttons' , 'bbp-style-pack' ); ?>
+					<i><?php esc_html_e( 'Users will always see the unread icons and buttons' , 'bbp-style-pack' ); ?></i>
 				</label>
 			</td>
 			

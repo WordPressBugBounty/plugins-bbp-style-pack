@@ -131,7 +131,34 @@ function bsp_display_buttons() {
 	if (!empty($bsp_style_settings_buttons['Create Topic Buttonactivate'] ) ) $topic_button=1;
 	if (!empty($bsp_style_settings_buttons['Subscribe Buttonactivate'] ) ) $subscribe_button=1;	
 	if (!empty($bsp_style_settings_buttons['Profile Buttonactivate'] ) ) $profile_button=1;
-	if (!empty ($bsp_style_settings_unread['unread_activate']))	 $unread_button=1;
+	//now work out if we are displaying an unread button
+	if (!empty ($bsp_style_settings_unread['unread_activate']))	{
+		if (is_user_logged_in ()) {
+			global $bsp_style_settings_unread ;
+			if ($bsp_style_settings_unread['optinout'] == 2 ) {
+				//then users must opt in, so only show if they have opted in
+				$user = wp_get_current_user();
+				$user_id = $user->ID ;
+				$optinout = (!empty (get_user_meta($user_id, 'bsp_unread_optinout', true)) ? get_user_meta($user_id, 'bsp_unread_optinout', true) :'') ;
+				if ($optinout==1) {
+					//user has opted in so display
+					$unread_button=1;
+				}
+			}
+			elseif ($bsp_style_settings_unread['optinout'] == 3 ) {	
+				//then users must opt out, so show unless they have opted out
+				$user = wp_get_current_user();
+				$user_id = $user->ID ;
+				$optinout = (!empty (get_user_meta($user_id, 'bsp_unread_optinout', true)) ? get_user_meta($user_id, 'bsp_unread_optinout', true) :'') ; 
+				//if they have not opted out (!=2) then $optinout must equal 1 or be blank
+				if ($optinout!=2) {
+					//user has opted in so display
+					$unread_button=1;
+				}
+			} 
+			else $unread_button=1;
+		}
+	}
 	$total_buttons = $topic_button + $subscribe_button + $profile_button + $unread_button;
 	if ($total_buttons == 0) return;
 	//first set a new div
