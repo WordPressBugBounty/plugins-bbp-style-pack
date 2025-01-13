@@ -85,9 +85,9 @@ function bsp_settings_topic_fields() {
 		$name_display3 = __('Show fields below the topic content' , 'bbp-style-pack');
 		$item='bsp_style_settings_topic_fields['.$name.']' ;
 		$value = (!empty($bsp_style_settings_topic_fields[$name]) ? $bsp_style_settings_topic_fields[$name] : 1) ;
-		echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="radio" value="1" class="code" ' . checked( 1,$value, false ) . ' />'. $name_display1.'<br/>';
-		echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="radio" value="2" class="code" ' . checked( 2,$value, false ) . ' />'. $name_display2.'<br/>';
-		echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="radio" value="3" class="code" ' . checked( 3,$value, false ) . ' />'. $name_display3;
+		echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="radio" value="1" class="code" ' . checked( 1,$value, false ) . ' />'. $name_display1.'<br/>';
+		echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="radio" value="2" class="code" ' . checked( 2,$value, false ) . ' />'. $name_display2.'<br/>';
+		echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="radio" value="3" class="code" ' . checked( 3,$value, false ) . ' />'. $name_display3;
 		?>
 	</td>
 	</tr>
@@ -125,7 +125,7 @@ function bsp_settings_topic_fields() {
 			<?php esc_html_e('Name', 'bbp-style-pack'); ?>
 		</th>
 		<td>
-			<?php echo '<input id="'.esc_html($item1).'" class="large-text" name="'.esc_html($item1).'" type="text" value="'.esc_html( $value ).'"' ; ?> 
+			<?php echo '<input id="'.esc_html($item).'" class="large-text" name="'.esc_html($item).'" type="text" value="'.esc_html( $value ).'"' ; ?> 
 			<label class="description" for="bsp_settings[item1_label]"><?php esc_html_e( 'Enter Field Label ', 'bbp-style-pack' ); ?></label><br/>
 		</td>
 	</tr>
@@ -141,10 +141,10 @@ function bsp_settings_topic_fields() {
 				<?php esc_html_e ('Field Type' , 'bbp-style-pack' ) ;?>
 			</th>
 			<td>
-				<?php echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="radio" value="0" class="code"  ' . checked( 0,$value, false ) . ' />' ; ?>
+				<?php echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="radio" value="0" class="code"  ' . checked( 0,$value, false ) . ' />' ; ?>
 				<label class="description"><?php esc_html_e( 'The user can enter any text', 'bbp-style-pack' ); ?></label>
 			<br/>
-				<?php echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="radio" value="1" class="code"  ' . checked( 1,$value, false ) . ' />' ; ?>
+				<?php echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="radio" value="1" class="code"  ' . checked( 1,$value, false ) . ' />' ; ?>
 				<label class="description"><?php esc_html_e( 'The user can only select from a list', 'bbp-style-pack' ); ?></label>
 			</td>
 	</tr>
@@ -173,7 +173,7 @@ function bsp_settings_topic_fields() {
 			$item='bsp_style_settings_topic_fields['.$name.']' ;
 			$name_display = __('Make this a required field', 'bbp-style-pack'); 
 			$value = (!empty($bsp_style_settings_topic_fields[$name]) ? $bsp_style_settings_topic_fields[$name] : '') ;
-			echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="checkbox" value="1" class="code" ' . checked( 1,$value, false ) . ' /> '.$name_display;
+			echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="checkbox" value="1" class="code" ' . checked( 1,$value, false ) . ' /> '.$name_display;
 			?>
 		</td>
 	</tr>
@@ -190,7 +190,7 @@ function bsp_settings_topic_fields() {
 		$name_display = __('Hide this field on the topic form', 'bbp-style-pack');
 		$item='bsp_style_settings_topic_fields['.$name.']' ;
 		$value = (!empty($bsp_style_settings_topic_fields[$name]) ? $bsp_style_settings_topic_fields[$name] : '') ;
-		echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="checkbox" value="1" class="code" ' . checked( 1,$value, false ) . ' />'. $name_display;
+		echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="checkbox" value="1" class="code" ' . checked( 1,$value, false ) . ' />'. $name_display;
 		?>
 		</td>
 	</tr>
@@ -208,7 +208,7 @@ function bsp_settings_topic_fields() {
 		$name_display = __('Hide this field on the topic', 'bbp-style-pack');
 		$item='bsp_style_settings_topic_fields['.$name.']' ;
 		$value = (!empty($bsp_style_settings_topic_fields[$name]) ? $bsp_style_settings_topic_fields[$name] : '') ;
-		echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="checkbox" value="1" class="code" ' . checked( 1,$value, false ) . ' />'. $name_display;
+		echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="checkbox" value="1" class="code" ' . checked( 1,$value, false ) . ' />'. $name_display;
 		?>
 		</td>
 	</tr>
@@ -233,7 +233,7 @@ function bsp_settings_topic_fields() {
 			$item='bsp_style_settings_topic_fields['.$name.']' ;
 			$name_display = __('Hide the label for this item on the topic', 'bbp-style-pack');
 			$value = (!empty($bsp_style_settings_topic_fields[$name]) ? $bsp_style_settings_topic_fields[$name] : '') ;
-			echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="checkbox" value="1" class="code" ' . checked( 1,$value, false ) . ' />'.$name_display;
+			echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="checkbox" value="1" class="code" ' . checked( 1,$value, false ) . ' />'.$name_display;
 			?>
 		</td>
 	</tr>
@@ -249,7 +249,7 @@ function bsp_settings_topic_fields() {
 			$item='bsp_style_settings_topic_fields['.$name.']' ;
 			$name_display = __('You can opt to hide the label if a user has not entered data, so that the label only shows if the user has entered information ', 'bbp-style-pack');
 			$value = (!empty($bsp_style_settings_topic_fields[$name]) ? $bsp_style_settings_topic_fields[$name] : '') ;
-			echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="checkbox" value="1" class="code" ' . checked( 1,$value, false ) . ' />'.$name_display ;
+			echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="checkbox" value="1" class="code" ' . checked( 1,$value, false ) . ' />'.$name_display ;
 			?>
 		</td>
 	</tr>
@@ -265,8 +265,19 @@ function bsp_settings_topic_fields() {
 			<th> <?php echo esc_html($name_display ); ?> 
 			</th>
 			<td>
-			<?php echo '<input id="'.esc_html($item1).'" class="large-text" name="'.esc_html($item1).'" type="text" value="'.esc_html( $value ).'"<br>' ; ?> 
-			<label class="description"><?php esc_html_e( '<i>Leave blank for all</i>, or enter the forum ID, or forums ID\'s separated by comma\'s,  e.g. <strong>1615</strong> or <strong>1615, 1723, 1852</strong> ', 'bbp-style-pack' ); ?></label><br/>
+			<?php echo '<input id="'.esc_html($item).'" class="large-text" name="'.esc_html($item).'" type="text" value="'.esc_html( $value ).'"<br>' ; ?> 
+			<label class="description">
+			<i>
+			<?php esc_html_e( 'Leave blank for all', 'bbp-style-pack' ) ; ?>
+			</i>
+			<?php esc_html_e( ', or enter the forum ID, or forums ID\'s separated by comma\'s,  e.g.', 'bbp-style-pack' ) ; ?> 
+			<strong>
+			<?php esc_html_e( '1615 ', 'bbp-style-pack' ) ; ?>
+			</strong>
+			<?php esc_html_e( 'or ', 'bbp-style-pack' ) ; ?>
+			<strong>
+			<?php esc_html_e( '1615, 1723, 1852 ', 'bbp-style-pack' ) ; ?>
+			</strong></label><br/>
 			</td>
 		</tr>			
 	
@@ -330,10 +341,10 @@ function bsp_settings_topic_fields() {
 			$value4 = (!empty($bsp_style_settings_topic_fields[$name.$area4]) ? $bsp_style_settings_topic_fields[$name.$area4]  : '') ;
 			?>
 			<th>
-				<?php echo esc_url($name0) ?>
+				<?php echo esc_html($name0) ?>
 			</th>
 			<td width = "50px">
-				<?php echo esc_url($name1) ; ?>
+				<?php echo esc_html($name1) ; ?>
 			</td>
 			<td>
 				<?php echo '<input id="'.esc_html($item1).'" class="small-text" name="'.esc_html($item1).'" type="text" value="'.esc_html( $value1 ).'"<br>' ; ?> 
@@ -344,7 +355,7 @@ function bsp_settings_topic_fields() {
 			<td>
 			</td>
 			<td>
-				<?php echo esc_url($name2) ; ?> 
+				<?php echo esc_html($name2) ; ?> 
 			</td>
 			<td>
 				<?php echo '<input id="'.esc_html($item2).'" class="bsp-color-picker" name="'.esc_html($item2).'" type="text" value="'.esc_html( $value2 ).'"<br>' ; ?> 
@@ -357,7 +368,7 @@ function bsp_settings_topic_fields() {
 			<td>
 			</td>
 			<td>
-				<?php echo esc_url($name3) ; ?> 
+				<?php echo esc_html($name3) ; ?> 
 			</td>
 			<td>
 				<?php echo '<input id="'.esc_html($item3).'" class="medium-text" name="'.esc_html($item3).'" type="text" value="'.esc_html( $value3 ).'"<br>' ; ?> 
@@ -369,7 +380,7 @@ function bsp_settings_topic_fields() {
 			<td>
 			</td>
 			<td>
-				<?php echo esc_url($name4) ; ?>
+				<?php echo esc_html($name4) ; ?>
 			</td>
 			<td>
 				<select name="<?php echo $item4 ; ?>">
@@ -386,7 +397,7 @@ function bsp_settings_topic_fields() {
 			<tr>
 			<?php 
 			$name = ('item font') ;
-			$name0 = __('Label Font', 'bbp-style-pack') ;
+			$name0 = __('Item Font', 'bbp-style-pack') ;
 			$name1 = __('Size', 'bbp-style-pack') ;
 			$name2 = __('Color', 'bbp-style-pack') ;
 			$name3 = __('Font', 'bbp-style-pack') ;
@@ -405,10 +416,10 @@ function bsp_settings_topic_fields() {
 			$value4 = (!empty($bsp_style_settings_topic_fields[$name.$area4]) ? $bsp_style_settings_topic_fields[$name.$area4]  : '') ;
 			?>
 			<th>
-				<?php echo $name0 ?>
+				<?php echo esc_html($name0) ?>
 			</th>
 			<td>
-				<?php echo $name1 ; ?>
+				<?php echo esc_html($name1) ; ?>
 			</td>
 			<td>
 				<?php echo '<input id="'.esc_html($item1).'" class="small-text" name="'.esc_html($item1).'" type="text" value="'.esc_html( $value1 ).'"<br>' ; ?> 
@@ -419,7 +430,7 @@ function bsp_settings_topic_fields() {
 			<td>
 			</td>
 			<td>
-				<?php echo esc_url($name2) ; ?> 
+				<?php echo esc_html($name2) ; ?> 
 			</td>
 			<td>
 				<?php echo '<input id="'.esc_html($item2).'" class="bsp-color-picker" name="'.esc_html($item2).'" type="text" value="'.esc_html( $value2 ).'"<br>' ; ?> 
@@ -432,7 +443,7 @@ function bsp_settings_topic_fields() {
 			<td>
 			</td>
 			<td>
-				<?php echo esc_url($name3) ; ?> 
+				<?php echo esc_html($name3) ; ?> 
 			</td>
 			<td>
 				<?php echo '<input id="'.esc_html($item3).'" class="medium-text" name="'.esc_html($item3).'" type="text" value="'.esc_html( $value3 ).'"<br>' ; ?> 
@@ -444,7 +455,7 @@ function bsp_settings_topic_fields() {
 			<td>
 			</td>
 			<td>
-				<?php echo esc_url($name4) ; ?>
+				<?php echo esc_html($name4) ; ?>
 			</td>
 			<td>
 				<select name="<?php echo $item4 ; ?>">

@@ -3,7 +3,7 @@ Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
 Tested up to: 6.7
-Stable tag: 6.2.3
+Stable tag: 6.2.4
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,9 @@ To install this plugin :
 
 
 == Changelog ==
+
+= 6.2.4 =
+*Fix for settings topics fields error
 
 = 6.2.3 =
 *Fix for not displaying 'mark all topics as read' button if users have opted out
