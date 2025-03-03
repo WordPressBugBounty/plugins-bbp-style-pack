@@ -1,10 +1,10 @@
-<?php
+	<?php
 
 /*
 Plugin Name: bbp style pack
 Plugin URI: http://www.rewweb.co.uk/bbp-style-pack/
 Description: This plugin adds styling and features to bbPress.
-Version: 6.2.4
+Version: 6.2.6
 Author: Robin Wilson
 Text Domain: bbp-style-pack
 Domain Path: /languages
@@ -84,11 +84,10 @@ add_action('plugins_loaded', 'bbp_style_pack_init');
 //theme check needs to be run from setup theme action , as calling at time of plugins loaded produces translation error in 6.7
 add_action('setup_theme', 'bsp_theme_check');
 
-//set bbpress version which is needed for function below and template order (around line 187)
-
-$plugin_data = get_file_data(ABSPATH . 'wp-content/plugins/bbpress/bbpress.php', array('Version' => 'Version'), false);
-$bsp_bbpress_full_version = $plugin_data['Version'];
+//set bbpress version which is needed for function below and template order (around line 236)
+$bsp_bbpress_full_version = get_option('bsp_bbpress_version', '2.6.12') ;
 $bsp_bbpress_version = substr($bsp_bbpress_full_version, 0, 3) ;
+
 
 //now we add the class-bbp-admin class as this throws a dynamic property error as php 8.2 or above does not allow dynamic properties - we need to do this before bbpress loads
 // and the bbpress extend buddypress loader.php for the same reason if buddypress is active
@@ -96,9 +95,10 @@ $bsp_bbpress_version = substr($bsp_bbpress_full_version, 0, 3) ;
 		// OR we are not on bbpress 2.6.9 or later
 		//function loaded so we can use is_plugin_active
 		if( ! function_exists('get_plugin_data') ){
-			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+			$path = str_replace ('wp-content' , 'wp-admin' ,WP_CONTENT_DIR ) ;
+			require_once( $path . '/includes/plugin.php' );
 		}	
-		if (!is_plugin_active ('buddyboss-platform/bp-loader.php') && ($bsp_bbpress_full_version == '2.6.9' || $bsp_bbpress_full_version == '2.6.10' || $bsp_bbpress_full_version == '2.6.11')) {
+		if (!is_plugin_active ('buddyboss-platform/bp-loader.php') && ($bsp_bbpress_full_version == '2.6.9' || $bsp_bbpress_full_version == '2.6.10' || $bsp_bbpress_full_version == '2.6.11' || $bsp_bbpress_full_version == '2.6.12')) {
 			include(BSP_PLUGIN_DIR . '/bbpress-admin/class-bbp-admin.php');
 		}
 
@@ -107,8 +107,10 @@ function bbp_style_pack_init() {
     	unload_textdomain( 'bbpress' );
         load_plugin_textdomain('bbp-style-pack', false, basename( dirname( __FILE__ ) ) . '/languages' );
     	load_plugin_textdomain('bbpress', false, 'bbpress/languages' );
-        //load the plugin stuff
-        bsp_load_plugin() ;
+		//save the bbpress version
+		if( class_exists( 'bbpress' ) )  update_option ('bsp_bbpress_version' , bbp_get_version()) ;
+		//load the plugin stuff
+		bsp_load_plugin() ;
 }
 
 
@@ -139,8 +141,6 @@ if (!empty ($bsp_style_settings_form['Remove_Edit_LogsActivate'] ) || !empty ($b
 if (!empty ($bsp_style_settings_ti['topic_icons']) ) { 
 	add_action( 'bbp_register_theme_packages', 'bsp_register_loop_topics' );
 }
-
-
 
 //add in the mod tools pending shortcode if modtools activated
 if( !class_exists( 'bbPressModToolsPlugin') && !empty($bsp_style_settings_modtools['modtools_activate']) ) {

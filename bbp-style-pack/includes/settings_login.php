@@ -563,7 +563,7 @@ function bsp_login_settings() {
                                 echo '<input name="'.esc_html($item).'" id="'.esc_html($item).'" type="checkbox" value="1" class="code" ' . checked( 1,$item1, false ) . ' />';
                                 echo esc_html($activate_text);
                                 echo '<br>' ;
-                                esc_html_e( 'If users are allowed to see the toolbar, then activating this takes them to the bbpress edit profile, replacing the wordpress one' , 'bbp-style-pack' ) ;
+                                esc_html_e( 'If users are allowed to see the WordPress Admin bar, then activating this takes them to the bbpress edit profile, replacing the wordpress one' , 'bbp-style-pack' ) ;
                                 echo '<br>' ;
                                 esc_html_e( 'Default wording : Edit Profile, but the Menu Item Description from item 5 above will be used if set' , 'bbp-style-pack' ) ;
 

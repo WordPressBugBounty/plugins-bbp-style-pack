@@ -2776,46 +2776,65 @@ function bsp_trash_topic_check() {
 
 //amend the WordPress toolbar edit profile to go to bbPress profile edit
 if (!empty ($bsp_login['toolbar_profile'] )) {
-        add_action('wp_before_admin_bar_render', 'bsp_admin_bar_remove_wp_profile', 0);
-        add_action('admin_bar_menu', 'bsp_add_bbp_profile', 999);
+        add_action('wp_before_admin_bar_render', 'bsp_admin_bar_amend_wp_profile', 100);
 }
 
 
 
-function bsp_admin_bar_remove_wp_profile() {
+function bsp_admin_bar_amend_wp_profile() {
+		/*we can no longer just remove the edit profile link as it is now part of a user-info section, 
+		so the old $wp_admin_bar->remove_menu('edit-profile') no longer works
+		So now we take out both the user section and the logout, and then add them back, but with the bbpress profile edit link
+		*/
         global $wp_admin_bar;
-	$wp_admin_bar->remove_menu('edit-profile');
+		$wp_admin_bar->remove_node('user-info');
+		$wp_admin_bar->remove_node('logout');
+		
+		$user_id      = get_current_user_id();
+		$current_user = wp_get_current_user();
+		$user_info  = get_avatar( $user_id, 64 );
+		$user_info .= "<span class='display-name'>{$current_user->display_name}</span>";
+		//create the user profile link
+			$user=$current_user->user_nicename ;
+			$user_slug = get_option( '_bbp_user_slug' );
+				if (get_option( '_bbp_include_root' ) == true ) {	
+					$forum_slug = get_option( '_bbp_root_slug' );
+					$slug = $forum_slug.'/'.$user_slug.'/';
+				}
+				else {
+					$slug=$user_slug . '/';
+				}
+				
+			$profilelink = '/' .$slug. $user . '/edit';
+
+		if ( $current_user->display_name !== $current_user->user_login ) {
+		$user_info .= "<span class='username'>{$current_user->user_login}</span>";
+		}
+
+		$user_info .= "<span class='display-name edit-profile'>" . __( 'Edit Profile', 'bbp-style-pack' ) . '</span>';
+		
+
+		$wp_admin_bar->add_node(
+			array(
+				'parent' => 'user-actions',
+				'id'     => 'user-info',
+				'title'  => $user_info,
+				'href'   => $profilelink,
+		)
+		);	
+		
+		$wp_admin_bar->add_node(
+			array(
+				'parent' => 'user-actions',
+				'id'     => 'logout',
+				'title'  => __( 'Log Out' ),
+				'href'   => wp_logout_url(),
+			)
+		);
+
 }
 
 
-
-function bsp_add_bbp_profile($wp_admin_bar) {
-	global $bsp_login;
-	if (!empty($bsp_login['edit profileMenu Item Description'] )) {
-		$edit_profile=$bsp_login['edit profileMenu Item Description'];
-	}
-	else $edit_profile = __('Edit Profile', 'bbp-style-pack');
-	$current_user = wp_get_current_user();
-	$user=$current_user->user_nicename ;
-	$user_slug = get_option( '_bbp_user_slug' );
-	if (get_option( '_bbp_include_root' ) == true ) {	
-		$forum_slug = get_option( '_bbp_root_slug' );
-		$slug = $forum_slug.'/'.$user_slug.'/';
-	}
-	else {
-		$slug=$user_slug . '/';
-	}
-			
-	$profilelink = '/' .$slug. $user . '/edit';
-			
-	$wp_admin_bar->add_node( array(
-		'parent' => 'user-actions',
-		'id'		=> 'bbp-edit-profile',
-		'title' => $edit_profile ,
-		'href' => $profilelink,
-	) );
-
-}
 
 //code that does translations
 

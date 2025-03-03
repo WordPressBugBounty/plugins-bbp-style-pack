@@ -472,6 +472,19 @@ function bsp_style_settings_form () {
 			</td>		
 		</tr>
 		
+		<tr>
+		<td>
+			</td>
+			<td colspan = '2'>
+			<?php
+			
+				esc_html_e ('If you wish to use the Gutenberg Editor, please see this thread for if and how to do this:' , 'bbp-style-pack' ) ;?>
+				<br/>
+				<a href="https://wordpress.org/support/topic/how-to-enable-gutenberg-blocks/">https://wordpress.org/support/topic/how-to-enable-gutenberg-blocks/</a>
+			</td>
+			</tr>
+		
+		
 <!--- 10. -->	
 		
 			
@@ -674,7 +687,7 @@ function bsp_style_settings_form () {
 		<tr>
 			<th>
 				<?php echo '11. ' ;
-					esc_html_e ('Placeholder<br>NOTE: Placeholder will only work for text editor - the visual editor does not have that functionality', 'bbp-style-pack' ); ?>
+					esc_html_e ('Placeholder NOTE: Placeholder will only work for text editor - the visual editor does not have that functionality', 'bbp-style-pack' ); ?>
 				
 			</th>
 				
@@ -810,8 +823,13 @@ function bsp_style_settings_form () {
 			
 			<td colspan=2>
 				<?php echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="checkbox" value="1" class="code" ' . checked( 1,$value1, false ) . ' />' ;
-				echo $name1.'<br>' ;
-				esc_html_e( 'bbpress displays error messages within the form. <br> However users are taken to the top of the page on submission, so do not see the messages unless they scroll down. <br> Activating this also adds messages to the top of the display', 'bbp-style-pack' ); ?>
+				echo $name1; ?>
+				<br/>
+				<?php esc_html_e( 'bbpress displays error messages within the form.','bbp-style-pack' ); ?>
+				<br/> 
+				<?php esc_html_e( ' However users are taken to the top of the page on submission, so do not see the messages unless they scroll down.','bbp-style-pack' ); ?>
+				<br/> 				
+				<?php esc_html_e( 'Activating this also adds messages to the top of the display', 'bbp-style-pack' ); ?>
 			</td>
 		</tr>
 		<tr>

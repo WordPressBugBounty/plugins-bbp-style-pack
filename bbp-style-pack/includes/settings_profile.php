@@ -257,7 +257,20 @@ function bsp_profile_settings() {
 				<br/>
 			</td>
 		</tr>
-			
+		
+		<tr>
+			<th>
+				3. <?php esc_html_e ("Amend admin bar profile link", 'bbp-style-pack' ) ; ?>
+			</th>
+			<td colspan=2>
+			<?php esc_html_e ("If users are allowed to see the WordPress admin bar, then you can change this to the bbpress edit profile, replacing the wordpress one", 'bbp-style-pack') ; ?>
+			<?php esc_html_e ('see' , 'bbp-style-pack') ; ?>
+			<a href="/wp-admin/options-general.php?page=bbp-style-pack&tab=login">
+			<?php esc_html_e ('login tab item 6' , 'bbp-style-pack') ; ?>
+			</a>
+			<br>
+			</td>
+		</tr>
 	</table>
 <!-- save the options -->
 	<p class="submit">

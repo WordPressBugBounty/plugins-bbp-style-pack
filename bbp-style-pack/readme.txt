@@ -3,7 +3,7 @@ Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
 Tested up to: 6.7
-Stable tag: 6.2.4
+Stable tag: 6.2.6
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,15 @@ To install this plugin :
 
 
 == Changelog ==
+
+= 6.2.6 =
+
+*I've added the ability to list tags on the topics dashboard page - see dashboard>settings>bbp-style-pack>Dashboard Admin
+
+= 6.2.5 =
+
+*I've corrected an error for those wanting to use the bbpress profile in the WordPress Admin Bar.
+*Technical change - I've changed some lookup functions to not use 'abspath' in bbp-style-pack.php
 
 = 6.2.4 =
 *Fix for settings topics fields error

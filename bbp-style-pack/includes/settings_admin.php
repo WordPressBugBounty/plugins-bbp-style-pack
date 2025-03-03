@@ -111,6 +111,23 @@ function bsp_settings_admin() {
 		
 		</tr>
 		
+		<tr>
+			<td>
+				5. <?php esc_html_e('Add Tags Column', 'bbp-style-pack'); ?>
+			</td>
+					
+			<td>
+				<?php 
+				$item = (!empty( $bsp_settings_admin['activate_topic_tags'] ) ?  $bsp_settings_admin['activate_topic_tags'] : '');
+				echo '<input name="bsp_settings_admin[activate_topic_tags]" id="bsp_settings_admin[activate_topic_tags]" type="checkbox" value="1" class="code" ' . checked( 1,$item, false ) . ' />' ;
+				?>
+				<label class="description" for="bsp_admin[activate_topics_links]">
+					<?php esc_html_e( 'This will add a tags column to the list, letting you see that tags set against each topic', 'bbp-style-pack' ); ?>
+				</label>
+			</td>
+		
+		</tr>
+		
 <!-- REPLIES    ----->		
 		<tr>
 			<th >
@@ -125,7 +142,7 @@ function bsp_settings_admin() {
 		
 		<tr>
 			<td>
-				5. <?php esc_html_e('Make Author items linked', 'bbp-style-pack'); ?>
+				6. <?php esc_html_e('Make Author items linked', 'bbp-style-pack'); ?>
 			</td>
 					
 			<td>
@@ -153,7 +170,7 @@ function bsp_settings_admin() {
 	<!-- checkbox to activate  -->
 		
 			<td>
-				6. <?php esc_html_e( 'Add New Topic and Reply columns', 'bbp-style-pack' ); ?>
+				7. <?php esc_html_e( 'Add New Topic and Reply columns', 'bbp-style-pack' ); ?>
 				
 			</td>
 			<td>
@@ -169,7 +186,7 @@ function bsp_settings_admin() {
 		</tr>
 		<tr>
 			<td>
-				7. <?php esc_html_e('Make Topics and Replies Columns sortable', 'bbp-style-pack'); ?>
+				8. <?php esc_html_e('Make Topics and Replies Columns sortable', 'bbp-style-pack'); ?>
 			</td>
 					
 			<td>
@@ -186,7 +203,7 @@ function bsp_settings_admin() {
 		
 		<tr>
 			<td>
-				8. <?php esc_html_e('Make topic and reply items linked', 'bbp-style-pack'); ?>
+				9. <?php esc_html_e('Make topic and reply items linked', 'bbp-style-pack'); ?>
 			</td>
 					
 			<td>

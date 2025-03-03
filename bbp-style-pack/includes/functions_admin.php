@@ -108,7 +108,7 @@ function bsp_topic_columns_list($columns) {
 return $new ;
 }
 
-//Topic new columns
+//Topic new columns 
 function bsp_topic_display_sort ($column, $topic_id) {
 	// Populate column data
         switch ( $column ) {
@@ -125,6 +125,37 @@ function bsp_topic_display_sort ($column, $topic_id) {
                 case 'bsp_topic_forum' :
 			$forum_id = bbp_get_topic_forum_id () ;
 			echo '<a href="' . esc_url(site_url()) . '/wp-admin/edit.php?post_type=topic&amp;bbp_forum_id='.esc_html($forum_id).'">'.esc_html(bbp_get_forum_title( $forum_id )).'</a>' ;
+                        break;
+        }
+}
+
+//add topic tags column if needed
+if (!empty ( $bsp_settings_admin['activate_topic_tags'])) {
+	add_filter( 'manage_topic_posts_columns', 'bsp_topic_tags_column', 20, 1 );
+	add_action ('manage_topic_posts_custom_column' , 'bsp_topic_tags_list', 10 , 2) ;
+}
+//takes out the old columns and adds the new author and replies linked columns
+function bsp_topic_tags_column($columns) {
+        $new = array();
+        foreach($columns as $key => $title) {
+		$new[$key] = $title;
+			//change the author column in topics
+			if ($key=='bbp_topic_freshness') {
+				$new['bsp_topic_tags']     = 'Tags';
+			}
+		}
+		
+    
+return $new ;
+}
+
+function bsp_topic_tags_list ($column, $topic_id) {
+	// Populate column data
+        switch ( $column ) {
+	// Author
+                case 'bsp_topic_tags' :
+                $tags = bbp_get_topic_tag_names( $topic_id ) ;
+                        echo $tags ;
                         break;
         }
 }
