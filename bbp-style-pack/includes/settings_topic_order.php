@@ -201,7 +201,7 @@ function bsp_style_settings_topic_order () {
 			</th>
 			<td>
 			<?php echo '<input id="'.$item4.'" class="large-text" name="'.$item4.'" type="text" value="'.esc_html( $value4 ).'"<br>' ; ?> 
-			<label class="description"><?php esc_html_e( 'Enter the forum ID, or forums ID\'s separated by comma\'s,  e.g. <strong>1615</strong> or <strong>1615, 1723, 1852</strong> ', 'bbp-style-pack' ); ?></label><br/>
+			<label class="description"><?php esc_html_e( 'Enter the forum ID, or forums ID\'s separated by comma\'s,  e.g. 1615 or 1615, 1723, 1852', 'bbp-style-pack' ); ?></label><br/>
 			</td>
 		</tr>
 				

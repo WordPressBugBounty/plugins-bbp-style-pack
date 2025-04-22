@@ -77,7 +77,7 @@ function bsp_style_settings_forum_order () {
 				echo '<input name="'.$item2.'" id="'.$item2.'" type="radio" value="1" class="code"  ' . checked( 1,$value2, false ) . ' />' ;
 				esc_html_e ('Default Order' , 'bbp-style-pack' ) ;?>
 				<P>
-					<label class="description" for="bsp_settings[new_forum_description]"><?php esc_html_e( '<i>Display forums in the order set in Edit Forum>Forum Attributes>Order and if the same in alphbetical</i>', 'bbp-style-pack' ); ?></label><br/>
+					<label class="description" for="bsp_settings[new_forum_description]"><i><?php esc_html_e( 'Display forums in the order set in Edit Forum>Forum Attributes>Order and if the same in alphbetical', 'bbp-style-pack' ); ?></i></label><br/>
 				<p/>
 				<?php
 				echo '<input name="'.$item2.'" id="'.$item2.'" type="radio" value="2" class="code"  ' . checked( 2,$value2, false ) . ' />' ;

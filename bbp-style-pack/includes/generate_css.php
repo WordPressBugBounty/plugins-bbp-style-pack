@@ -609,11 +609,16 @@ function bsp_enqueue_block_css() {
         foreach ( $block_css_array as $slug => $css_filename) {
                 // if file exists, enqueue with custom URL location
                 if ( file_exists( $src . $css_filename ) ) {
-                        //$location = home_url().'/'.$location ;
-                        wp_enqueue_style( $slug, $src_url . $css_filename, array(), get_option( 'bsp_version' ) );
+					 if ( filesize( $src . $css_filename ) >= 2 ){
+                            return;
+                    }
+                       wp_enqueue_style( $slug, $src_url . $css_filename, array(), get_option( 'bsp_version' ) );
                 }
                 // else, enqueue with default URL location
                 else {
+					if ( filesize( bsp_default_full_block_location( 'url', 'css' ) . $css_filename ) >= 2 ){
+                            return;
+                    }
                         wp_enqueue_script( $slug, bsp_default_full_block_location( 'url', 'css' ) . $css_filename, array(), get_option( 'bsp_version' ) );
                 }
         }
