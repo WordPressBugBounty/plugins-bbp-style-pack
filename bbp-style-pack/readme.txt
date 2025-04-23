@@ -3,7 +3,7 @@ Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
 Tested up to: 6.8
-Stable tag: 6.2.9
+Stable tag: 6.3.0
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,10 @@ To install this plugin :
 
 
 == Changelog ==
+
+= 6.3.0 =
+
+*On display of the forum/topic/reply admin pages an automatic author filter was being added. This could slow display of these pages on sites with thousands of users, so I have made this an option in dashboard>settings>bbp-style-pack>Dashboard Admin 
 
 = 6.2.9 =
 

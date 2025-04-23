@@ -299,7 +299,11 @@ function bsp_sort_topics_replies( $query ) {
 
 
 //ON ALL ITEMS : Add a new filter to the main options to filter the lists to show only the topics (or replies) that have been created by this user
+if (!empty ( $bsp_settings_admin['activate_author_filter'])) {
 add_action('restrict_manage_posts', 'bsp_filter_by_the_author');
+}
+
+
 
 function bsp_filter_by_the_author() {
 	$params = array(

@@ -20,9 +20,42 @@ function bsp_settings_admin() {
 	<?php wp_nonce_field( 'style-settings-admin', 'style-settings-admin' ) ?>
 	<?php settings_fields( 'bsp_settings_admin' );
 	?>
-					
+	<!-- save the options -->
+	<p class="submit">
+		<input type="submit" class="button-primary" value="<?php esc_html_e( 'Save changes', 'bbp-style-pack' ); ?>" />
+	</p>			
 	<table class="form-table">
-<!-- FORUMS     ----->		
+<!-- FORUMS     ----->	
+<tr>
+			<th >
+				<?php esc_html_e('Forums/Topics/Replies', 'bbp-style-pack'); ?>
+			</th>
+			<td>
+				<?php echo '<img src="' . esc_url(plugins_url( 'images/user-admin-authors.png',dirname(__FILE__)  )) . '" width=700px > '; ?>
+			</td>
+		</tr>
+			
+	<!-- checkbox to activate  -->
+		
+			<td width="300" >
+				1. <?php esc_html_e( 'Add an author filter', 'bbp-style-pack' ); ?>
+				
+			</td>
+			<td>
+				<?php 
+				$item = (!empty( $bsp_settings_admin['activate_author_filter'] ) ?  $bsp_settings_admin['activate_author_filter'] : '');
+				echo '<input name="bsp_settings_admin[activate_author_filter]" id="bsp_settings_admin[activate_author_filter]" type="checkbox" value="1" class="code" ' . checked( 1,$item, false ) . ' />' ;
+				?>
+				<label class="description" for="bsp_admin[activate_forum_sort]">
+				<?php esc_html_e( 'This lets you find items by individual author', 'bbp-style-pack' ); ?>
+				<br/><i>
+				<?php esc_html_e( 'Note: on sites with lots of users, selecting this may slow display of the forum/topic/reply dashboard admin pages.  It will not affect the front end.', 'bbp-style-pack' ); ?>
+				</i>
+				</label>
+			</td>
+			
+		</tr>
+		<tr>	
 		<tr>
 			<th >
 				<?php esc_html_e('Forums', 'bbp-style-pack'); ?>
