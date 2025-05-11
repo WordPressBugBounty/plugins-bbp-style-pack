@@ -85,8 +85,8 @@ defined( 'ABSPATH' ) || exit;
 		<?php if ( !empty( $time_since  ) ) : ?>
 		<li class="topic-freshness-time <?php echo esc_html($show_iconla) ; ?> ">
 			<?php
-				echo esc_html($attributes['last_activity']);
-				echo esc_html($time_since) ;
+				echo $attributes['last_activity'];
+				echo $time_since ;
 			?></li>
 			
 		
