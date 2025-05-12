@@ -178,11 +178,11 @@ if (!$check) return ;
 						
 							if (empty($reply)) {
 							echo '<span class="bsp-la-text">' ;
-							echo esc_html($attributes['laTopicAuthorLabel']).'</span> <span class="bsp-la-topic-author topic-author">' . esc_url($author_link) . '</span>' ; 
+							echo esc_html($attributes['laTopicAuthorLabel']).'</span> <span class="bsp-la-topic-author topic-author">' . $author_link . '</span>' ; 
 							}
 							else {
 							echo '<span class="bsp-la-text">' ;
-							echo esc_html($attributes['laReplyAuthorLabel']).'</span> <span class=" bsp-la-topic-author topic-author">' . esc_url($author_link) . '</span>' ; 
+							echo esc_html($attributes['laReplyAuthorLabel']).'</span> <span class=" bsp-la-topic-author topic-author">' . $author_link . '</span>' ; 
 							} ?>
 							
 						</div>
