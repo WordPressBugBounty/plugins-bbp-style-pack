@@ -3,7 +3,7 @@ Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
 Tested up to: 6.8
-Stable tag: 6.3.2
+Stable tag: 6.3.3
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,7 +62,7 @@ To install this plugin :
 
 == Changelog ==
 
-= 6.3.2 =
+= 6.3.2/6.3.3 =
 
 *Correction to how blocks are handled in admin to make them work correctly following WP 6.8 release
 

@@ -70,15 +70,15 @@ defined( 'ABSPATH' ) || exit;
 		<?php if ( !empty( $last_reply  ) ) : ?>
 			<li class="topic-freshness-author <?php echo esc_html($show_iconlr) ; ?> ">
 			<?php
-				echo esc_html($attributes['last_reply']);
-				echo esc_html(bbp_get_author_link( array( 'type' => 'name', 'post_id' => $last_reply, 'size' => '15' ) ));
+				echo $attributes['last_reply'];
+				echo bbp_get_author_link( array( 'type' => 'name', 'post_id' => $last_reply, 'size' => '15' ) );
 			?></li>
 		<?php endif; ?>
 		<?php if ( !empty( $time_since  ) ) : ?>
 			<li class="topic-freshness-time <?php echo esc_html($show_iconla) ; ?> ">
 			<?php
-				echo esc_html($attributes['last_activity']);
-				echo esc_html($time_since) ;
+				echo $attributes['last_activity'];
+				echo $time_since ;
 			?></li>
 		<?php endif; ?>
 		
