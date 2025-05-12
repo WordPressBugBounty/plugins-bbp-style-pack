@@ -3,7 +3,7 @@ Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
 Tested up to: 6.8
-Stable tag: 6.3.1
+Stable tag: 6.3.2
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,10 @@ To install this plugin :
 
 
 == Changelog ==
+
+= 6.3.2 =
+
+*Correction to how blocks are handled in admin to make them work correctly following WP 6.8 release
 
 = 6.3.1 =
 
@@ -246,6 +250,5 @@ To install this plugin :
 = 5.7.9/5.8.0 =
 * An improvement for those using the subscription emails and WPML - these have to modified to allow WPML to translate as required.
 * A fix for those using the more/less content function as well as the open in new window, as this caused an error.
-
 
 
