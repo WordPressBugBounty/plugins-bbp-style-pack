@@ -469,7 +469,10 @@ Create a private sub forum and the parent forum will remain at nil EVEN if you u
  
 So if you have a forum with ONLY private sub forums, then the sub forums will never display.
  
-If you turn one of the sub forums into public, and then update the parent forum, it will set the count at 1. Then if you set the subforum back to private, the count will not change, so the sub forums will display.  But update the parent forum after that then the sub forums will  not display.  I suspect this is how you got them to display by flipping private to public, and then lost that again.  If would be chance on what order you did the changes !!
+If you turn one of the sub forums into public, and then update the parent forum, it will set the count at 1. Then if you set the subforum back to private, 
+the count will not change, so the sub forums will display.  But update the parent forum after that then the sub forums will  not display.  
+I suspect this is how you got them to display by flipping private to public, and then lost that again.  
+If would be chance on what order you did the changes !!
 
 Now this matters because bbp_forum_get_subforums looks at this parameter and only lists sub forums if the count is not zero.
 
@@ -479,11 +482,10 @@ so function below has that count parameter taken out.
 
 //This fix has an 'exclude fix' in settings bugs, so we check if it is empty and apply fix if it is
 if (empty ($bsp_style_settings_bugs['subfourm_fix'])) {
-	add_filter ('bbp_forum_get_subforums', 'bsp_sub_forum_fix', 10 , 3) ;
-	
+	add_filter ('bbp_forum_get_subforums', 'bsp_sub_forum_fix', 10 , 2) ;
 }
 
-function bsp_sub_forum_fix ($retval, $r, $args) {
+function bsp_sub_forum_fix ($retval, $r) {
 	//if sub forums exist then return as we don't need to process
 	if (!empty ($retval)) return $retval ;
 	//otherwise set forum_id and process 
@@ -492,9 +494,8 @@ function bsp_sub_forum_fix ($retval, $r, $args) {
 return $retval ;	
 }
 
-//this bsp function is also used by subscriptions_management
+//CARE : this bsp function is also used by subscriptions_management
 function bsp_forum_get_subforums($forum_id, $args = array()) {
-		
 	// Parse arguments against default values
 	$r = bbp_parse_args( $args, array(
 		'post_parent'         => $forum_id,
@@ -516,28 +517,29 @@ function bsp_forum_get_subforums($forum_id, $args = array()) {
 	return (array) apply_filters( 'bsp_forum_get_subforums', $retval, $r, $args );
 }
 
-/*  *****************fix register_shutdown_function() */
-//Uncaught TypeError: register_shutdown_function(): Argument #1 ($callback) must be a valid callback, class BBP_Converter_DB does not have a method “__destruct”
-//This error is caused by the following trail:
-//\bbpress\includes\core\actions.php line 465
-//add_action( 'bbp_login_form_login', 'bbp_user_maybe_convert_pass' );
-//which calls the function bbp_user_maybe_convert_pass in
-//\bbpress\includes\users\functions.php line 958-988
-//this function says 'Convert passwords from previous platform encryption to WordPress encryption.'
-//this would I am guessing be after an attempt at converting forums from another type to bbpress.  
-//this seems to look in data usermeta for pw and tries to convert them for wordpress.  If it finds ones that need doing, then it sets up a convertor on line 978
-//bbp_setup_converter();
-//this then loads various files including \bbpress\includes\admin\classes\class-bbp-converter-db.php
-//this file has register_shutdown_function( array( $this, '__destruct' ) ); on line 33 which is casuing the problem
-//taking out lines 33-37 fixes this according to https://bbpress.org/forums/topic/bbp_converter_db-does-not-have-a-method-__destruct/
-// register_shutdown_function( array( $this, '__destruct' ) );
-// 
-// if ( WP_DEBUG && WP_DEBUG_DISPLAY ) {
-//    $this->show_errors();
-// }
-//BUT given that is the pw is either not set up or wrong in ten database, the easiest solution is just to not call the function if the site admin is happy
-//and users can use forgotten password to set up a new one themsleves.
-//so we just take out the add_action( 'bbp_login_form_login', 'bbp_user_maybe_convert_pass' );
+/*  *****************fix register_shutdown_function() 
+Uncaught TypeError: register_shutdown_function(): Argument #1 ($callback) must be a valid callback, class BBP_Converter_DB does not have a method “__destruct”
+This error is caused by the following trail:
+\bbpress\includes\core\actions.php line 465
+add_action( 'bbp_login_form_login', 'bbp_user_maybe_convert_pass' );
+which calls the function bbp_user_maybe_convert_pass in
+\bbpress\includes\users\functions.php line 958-988
+this function says 'Convert passwords from previous platform encryption to WordPress encryption.'
+this would I am guessing be after an attempt at converting forums from another type to bbpress.  
+this seems to look in data usermeta for pw and tries to convert them for wordpress.  If it finds ones that need doing, then it sets up a convertor on line 978
+bbp_setup_converter();
+this then loads various files including \bbpress\includes\admin\classes\class-bbp-converter-db.php
+this file has register_shutdown_function( array( $this, '__destruct' ) ); on line 33 which is casuing the problem
+taking out lines 33-37 fixes this according to https://bbpress.org/forums/topic/bbp_converter_db-does-not-have-a-method-__destruct/
+register_shutdown_function( array( $this, '__destruct' ) );
+ 
+ if ( WP_DEBUG && WP_DEBUG_DISPLAY ) {
+    $this->show_errors();
+}
+BUT given that is the pw is either not set up or wrong in ten database, the easiest solution is just to not call the function if the site admin is happy
+and users can use forgotten password to set up a new one themsleves.
+so we just take out the add_action( 'bbp_login_form_login', 'bbp_user_maybe_convert_pass' );
+*/
 
 if (!empty ($bsp_style_settings_bugs['register_shutdown'])) {
 	add_action ('plugins_loaded' , 'bsp_remove_bbp_user_maybe_convert_pass') ;
