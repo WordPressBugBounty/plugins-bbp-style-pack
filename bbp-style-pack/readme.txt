@@ -3,7 +3,7 @@ Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
 Tested up to: 6.8
-Stable tag: 6.3.5
+Stable tag: 6.3.6
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,11 @@ To install this plugin :
 
 
 == Changelog ==
+
+= 6.3.6 =
+
+*a minor change to unread posts
+
 = 6.3.5 =
 
 *a fix for an error thrown in some cases if using private sub forums

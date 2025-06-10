@@ -349,11 +349,13 @@ function bsp_unread_button() {
 	}
 	$forum_id = bbp_get_forum_id();
 	$html_safe = '
-                <form action="" method="post" >
+                <div class="bsp-mark-all">
+				<form action="" method="post" >
                         <input type="hidden" name="bsp_ur_mark_all_topic_as_read" value="1"/>
                         <input type="hidden" name="bsp_ur_mark_id" value="' . esc_html($forum_id) . '"/>
                         <input class="' . esc_html($class) . '"type="submit" value="' . $text . '"/>
                 </form>
+				</div>
 			';
 	echo $html_safe;	
 }

@@ -283,7 +283,7 @@ function bsp_style_settings_unread () {
 	<!-- checkbox to activate  -->
 		<tr valign="top">  
 			<th >
-				5. <?php esc_html_e('Hide the \'Mark as Read\' Button <p>on the main index page', 'bbp-style-pack'); ?>
+				5. <?php esc_html_e('Hide the \'Mark as Read\' Button on the main index page', 'bbp-style-pack'); ?>
 			</th>
 			
 			<td colspan=2>
