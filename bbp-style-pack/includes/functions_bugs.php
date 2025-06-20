@@ -685,3 +685,14 @@ function bsp_display_errors_at_top_of_topic_list () {
 
 	<?php endif;
 }
+
+
+if (empty ($bsp_style_settings_bugs['disallowed_error_fix'])) {
+add_filter ('bbp_blacklist_keys' , 'bsp_disallowed_keys') ;
+}
+
+function bsp_disallowed_keys () {
+	$moderation = trim( get_option( 'disallowed_keys' ) );
+return $moderation ;
+}
+

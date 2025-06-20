@@ -25,21 +25,6 @@ global $bsp_style_settings_f;
 global $bsp_login_fail;
 global $bsp_style_settings_topic_preview;
 
-if(!function_exists('rclog')){
-
-	function rclog( $data ) {
-		if ( is_array( $data ) ) {
-			foreach ($data as $key=>$item ) {
-			$data = $key.': '.$item;
-			echo "<script>console.log('" . $data . "');</script>";
-			}
-		}
-		else {
-			$output = "<script>console.log('" . $data . "');</script>";
-			echo $output;
-		}
-	}
-}
 
 
 /**********forum list create vertical list************/
@@ -3927,4 +3912,34 @@ function bsp_bulk_edit_save( $post_id ){
 
         // re-hook this function.
         add_action( 'save_post', 'bsp_bulk_edit_save' );
+}
+
+
+//function to change 'your topic/reply cannopt be created at this time'
+
+if ( !empty ($bsp_style_settings_form['disallowedActivateLink'])) {
+add_filter( 'bbp_has_errors', 'bsp_has_errors') ;
+}
+
+function bsp_has_errors($has_errors ){
+	if (empty ($has_errors)) return ;
+	global $bsp_style_settings_form ;
+	// Get bbPress
+	$bbp = bbpress();
+	$error_text = (!empty($bsp_style_settings_form['disallowedMessage']) ? $bsp_style_settings_form['disallowedMessage']  : 'Your submission contains disallowed words or links') ;
+	// Loop through notices
+	foreach ( $bbp->errors->get_error_codes() as $code ) {
+			if (str_contains($code, 'bbp_topic_moderation')) {
+				bsp_remove_error( 'bbp_topic_moderation') ;
+				bbp_add_error( 'bsp_topic_moderation', '<strong>'.__('Error','bbp-style-pack').'</strong>:'.$error_text);
+			}
+			if (str_contains($code, 'bbp_reply_moderation')) {
+				bsp_remove_error( 'bbp_reply_moderation') ;
+				bbp_add_error( 'bsp_topic_moderation', '<strong>'.__('Error','bbp-style-pack').'</strong>:'.$error_text);}
+	}
+return $has_errors ;
+}
+
+function bsp_remove_error( $code = '',) {
+	bbpress()->errors->remove( $code) ;
 }

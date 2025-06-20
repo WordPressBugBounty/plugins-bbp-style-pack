@@ -906,7 +906,7 @@ class bsp_Forum_Lists_Widget extends WP_Widget {
 	
 		<?php echo $args['after_widget']; ?>
 		
-		
+		</div>
 		<?php // Reset the $post global
 		wp_reset_postdata();
 	}

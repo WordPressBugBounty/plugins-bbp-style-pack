@@ -3,7 +3,7 @@ Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
 Tested up to: 6.8
-Stable tag: 6.3.6
+Stable tag: 6.3.7
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,11 @@ To install this plugin :
 
 
 == Changelog ==
+
+= 6.3.7 =
+
+*a correction to forum lists widget division which was not closed correctly
+*bbpress has a bug where the discussion disallowed comment keys set in dashboard>settings> discussion do not work - I've have added a fix for this which is active by default, which can be taken out in the style pack bug fixes tab
 
 = 6.3.6 =
 
@@ -194,73 +199,4 @@ To install this plugin :
 
 = 6.0.1 =
 * I've added the abilty to bulk move topics between forums in dashboard>topics.  Use the bulk edit feature and you can set the forum against multiple topics 
-
-
-= 5.9.9 =
-* Some FSE theme users are seeing css header issues - so I've added a different bbpress template version which can be selected.  See Theme Support tab Page display options. 
-
-= 5.9.8 =
-* In the topic/reply order tab, I've added a further option in the order of replies to list the topic at the end.
-
-= 5.9.7 =
-* On the 'subscriptions emails' tab, I've added the ability to have the forum name in the title of the emails.
-
-= 5.9.6 =
-* I've fixed a small error relating to auto login
-
-
-= 5.9.5 =
-* We've improved auto login in the subscriptions email tab to redirect to the correct reply on login.
-* We've improved how Style Pack and bbpress language translations work with other plugins such as loco-translate
-
-
-= 5.9.4 =
-* I've corrected the reply links pagination to work correctly when reverse reply order is selected in the topic order tab.
-
-
-= 5.9.3 =
-* I've improved the way the subscription management auto login works for sites who may work in multiple languages and have additional paths in the url.
-
-
-= 5.9.2 =
-* I've added the abilty to display dashicons instead of the topics/voices/posts text on forum and topic page titles - see the forums index and topics index tabs for details.
-
-
-= 5.9.1 =
-* If you are using moderation, when moderators receive an email and click the link, if they are not logged in they cannot immediately moderate.  I've now added the ability to set an automatic login - see the forums moderation settings for details in dashboard>settings>forums.
-
-
-= 5.8.9/5.9.0 =
-*  I've added a bug fix for bbpress if you are using akismet.  When Akismet detects spam, it does not correctly amend the latest activity.  This fixes that.  If you are using akismet, then go to Dashboard>settings>bbp style pack>bug fixes and select the option
-*  Fixed an error in some php versions which threw a 'Undefined array key' error in subscriptions management
-*  A technical change - fixed a deprectaed function reset() in functions.php
-*  The [bbp-stats] shortcode was not showing the correct forum count if there were private forums, this now has a fix in 'bbPress bugs' tab.
-
-= 5.8.8 =
-* A bug fix for those using blocks - I've fixed an error seen if you also have WordPress script debug set.
-
-
-= 5.8.7 =
-* A technical change - I've added some further code to make some links in the backend work correctly if you are using a sub-directory by ensuring that the correct site_url function is used.
-* A further technical change to remove a deprecated function (FILTER_SANITIZE_STRING) and replace it with FILTER_UNSAFE_RAW
- 
-
-= 5.8.6 =
-* A technical chnage - I've added a filter to allow the tinymce editor to have attributes.
-
-= 5.8.3/5.8.4/5.8.5 =
-* I've added a widget 'list forums' that lists the forums and number of posts, similar to the one on the bbpress support site.
-
-
-= 5.8.2 =
-* I've added the ability for the topic title in a forum page to take you to the latest reply, and if 'unread posts' is active, the latest unread post.  See 'Topics Index Styling' tab item 21.
-
-
-= 5.8.1 =
-* I've made further improvements on how subscriptions management works, allowing subscriptions to be switched off for roles.
-
-= 5.7.9/5.8.0 =
-* An improvement for those using the subscription emails and WPML - these have to modified to allow WPML to translate as required.
-* A fix for those using the more/less content function as well as the open in new window, as this caused an error.
-
 

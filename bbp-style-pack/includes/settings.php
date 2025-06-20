@@ -109,7 +109,6 @@ function bsp_settings_page() {
                                                 <?php esc_html_e('If you find this plugin useful, please consider donating just a few dollars to help me develop and maintain it. You support will be appreciated', 'bbp-style-pack'); ?>
                                         </td>
                                         <td>
-                                        <?php esc_html_e('With thanks to Jacobo Feijóo for extensive testing !', 'bbp-style-pack'); ?>
                                         </td>
                                 </tr>
                         </table>

@@ -886,6 +886,52 @@ function bsp_style_settings_form () {
 		<tr>
 		<tr valign="top">
 			<?php
+			$name='disallowed' ;
+			$name0 = __('Change disallowed content error message', 'bbp-style-pack') ;
+			$name1 = __('ActivateLink', 'bbp-style-pack') ;
+			$area1='ActivateLink';
+			$item1="bsp_style_settings_form[".$name.$area1."]" ;
+			$value1 = (!empty($bsp_style_settings_form[$name.$area1]) ? $bsp_style_settings_form[$name.$area1]  : '') ;
+			?>
+			<th>
+				<?php echo '18. '.esc_html($name0) ?>
+			</th>
+			
+			
+			<td colspan=2>
+				<?php echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="checkbox" value="1" class="code" ' . checked( 1,$value1, false ) . ' />' ;
+				esc_html_e( 'Activate', 'bbp-style-pack' ); ?>
+				<br/>
+				<?php esc_html_e( 'You can prevent use of particular words or links in titles or content by adding these to the dashboard>settings>discussion>Disallowed Comment Keys section.', 'bbp-style-pack' ); ?>
+				<br/>
+				<?php esc_html_e( 'If you do this, then a topic/reply with disallowed words will get a message saying "Your topic cannot be created at this time" which is not very helpful!', 'bbp-style-pack' ); ?>
+				<br/>
+				<?php esc_html_e( 'You can amend this message below', 'bbp-style-pack' ); ?>
+				
+				
+			</td>
+		</tr>
+		<tr>
+		<?php 
+			$name='disallowed' ;
+			$name2 = __('Message', 'bbp-style-pack') ;
+			$area2='Message';
+			$item2="bsp_style_settings_form[".$name.$area2."]" ;
+			$value2 = (!empty($bsp_style_settings_form[$name.$area2]) ? $bsp_style_settings_form[$name.$area2]  : '') ;
+			?>
+			<td>
+				<?php echo esc_html($name2) ?>
+			</td>
+			<td>
+				<?php echo '<input id="'.esc_html($item2).'" class="large-text" name="'.esc_html($item2).'" type="text" value="'.esc_html( $value2 ).'"' ; ?> 
+				<label class="description"><?php esc_html_e( 'Default : Your submission contains disallowed words or links', 'bbp-style-pack' ); ?></label><br/>
+				</td>
+		</tr>
+		
+<!-- 19. -->	
+		<tr>
+		<tr valign="top">
+			<?php
 			$name0 = __('Limit Topic Tags to a list', 'bbp-style-pack') ;
 			$name='topic_tag' ;
 			$area1='_list';
@@ -893,7 +939,7 @@ function bsp_style_settings_form () {
 			$value1 = (!empty($bsp_style_settings_form[$name.$area1]) ? $bsp_style_settings_form[$name.$area1]  : '') ;
 			?>
 			<th>
-				<?php echo '18. '.esc_html($name0) ?>
+				<?php echo '19. '.esc_html($name0) ?>
 			</th>
 			<td colspan=2>
 				<?php echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="checkbox" value="1" class="code" ' . checked( 1,$value1, false ) . ' />' ;
@@ -903,7 +949,7 @@ function bsp_style_settings_form () {
 			</td>
 		<tr>
 		
-<!-- 19. -->	
+<!-- 20. -->	
 		<tr valign="top">
 			<?php
 			$name='no_anon_name' ;
@@ -914,7 +960,7 @@ function bsp_style_settings_form () {
 			$value1 = (!empty($bsp_style_settings_form[$name.$area1]) ? $bsp_style_settings_form[$name.$area1]  : '') ;
 			?>
 			<th>
-				<?php echo '19. '.esc_html($name0) ?>
+				<?php echo '20. '.esc_html($name0) ?>
 			</th>
 			
 			
@@ -939,7 +985,7 @@ function bsp_style_settings_form () {
 				</td>
 			</tr>
 		
-<!-- 20. -->	
+<!-- 21. -->	
 		<tr valign="top">
 			<?php
 			$name='no_anon_email' ;
@@ -950,7 +996,7 @@ function bsp_style_settings_form () {
 			$value1 = (!empty($bsp_style_settings_form[$name.$area1]) ? $bsp_style_settings_form[$name.$area1]  : '') ;
 			?>
 			<th>
-				<?php echo '20. '.esc_html($name0) ?>
+				<?php echo '21. '.esc_html($name0) ?>
 			</th>
 			
 			
@@ -960,7 +1006,7 @@ function bsp_style_settings_form () {
 			</td>
 		</tr>
 		
-<!-- 21. -->	
+<!-- 22. -->	
 		<tr valign="top">
 			<?php
 			$name='no_anon_website' ;
@@ -971,7 +1017,7 @@ function bsp_style_settings_form () {
 			$value1 = (!empty($bsp_style_settings_form[$name.$area1]) ? $bsp_style_settings_form[$name.$area1]  : '') ;
 			?>
 			<th>
-				<?php echo '21. '.esc_html($name0) ?>
+				<?php echo '22. '.esc_html($name0) ?>
 			</th>
 			
 			

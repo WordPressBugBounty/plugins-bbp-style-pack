@@ -369,7 +369,35 @@ function bsp_settings_bugs() {
 				</label>
 			</td>
 		
-		</tr>		
+		</tr>	
+
+<!-- ACTIVATE  -->	
+	<!-- checkbox to activate  -->
+		<tr valign="top">  
+			<th >
+				<?php esc_html_e('Fix new disallowed keys not working', 'bbp-style-pack'); ?>
+			</th>
+			<td>
+					<?php esc_html_e( 'bbPress has a bug where the discussion disallowed comment keys set in dashboard>settings> discussion do not work.  You can exclude this fix if you wish', 'bbp-style-pack' ); ?>
+				</td>
+			
+		</tr>
+		<tr>
+			<td>
+			</td>
+			
+					
+			<td>
+				<?php 
+				$item = (!empty( $bsp_style_settings_bugs['disallowed_error_fix'] ) ?  $bsp_style_settings_bugs['disallowed_error_fix'] : '');
+				echo '<input name="bsp_style_settings_bugs[disallowed_error_fix]" id="bsp_style_settings_bugs[disallowed_error_fix]" type="checkbox" value="1" class="code" ' . checked( 1,$item, false ) . ' />' ;
+				?>
+				<label class="description" for="bsp_settings[disallowed_error_fix]">
+					<?php esc_html_e( 'Exclude Fix', 'bbp-style-pack' ); ?>
+				</label>
+			</td>
+		
+		</tr>				
 						
 				
 <?php
