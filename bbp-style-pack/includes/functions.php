@@ -3915,7 +3915,7 @@ function bsp_bulk_edit_save( $post_id ){
 }
 
 
-//function to change 'your topic/reply cannopt be created at this time'
+//function to change 'your topic/reply cannot be created at this time'
 
 if ( !empty ($bsp_style_settings_form['disallowedActivateLink'])) {
 add_filter( 'bbp_has_errors', 'bsp_has_errors') ;
@@ -3940,6 +3940,6 @@ function bsp_has_errors($has_errors ){
 return $has_errors ;
 }
 
-function bsp_remove_error( $code = '',) {
+function bsp_remove_error( $code = '') {
 	bbpress()->errors->remove( $code) ;
 }

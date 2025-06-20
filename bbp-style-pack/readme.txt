@@ -3,7 +3,7 @@ Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
 Tested up to: 6.8
-Stable tag: 6.3.7
+Stable tag: 6.3.8
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,7 +62,7 @@ To install this plugin :
 
 == Changelog ==
 
-= 6.3.7 =
+= 6.3.7/6.3.8 =
 
 *a correction to forum lists widget division which was not closed correctly
 *bbpress has a bug where the discussion disallowed comment keys set in dashboard>settings> discussion do not work - I've have added a fix for this which is active by default, which can be taken out in the style pack bug fixes tab
