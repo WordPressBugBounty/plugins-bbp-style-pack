@@ -26,7 +26,6 @@ global $bsp_login_fail;
 global $bsp_style_settings_topic_preview;
 
 
-
 /**********forum list create vertical list************/
 function bsp_sub_forum_list($args) {
         $args['separator'] = '<br>';
@@ -1859,8 +1858,7 @@ function bsp_get_forum_display_thumbnail ($forum_id=0) {
 		}
 
 	}
-        rclog ($output);
-        return $output;
+       return $output;
 }
 
 function bsp_forum_display_thumbnail_end1() {
