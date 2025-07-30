@@ -1033,36 +1033,7 @@ function bsp_style_settings_f () {
 
 
 	
-<!--16. oh bother message ------------------------------------------------------------------->
-		<tr valign="top">
-			<th>
-				16. <?php esc_html_e('Change empty forum index message', 'bbp-style-pack'); ?>
-			</th>
-			<td colspan="2">
-				<?php 
-				$item1 = (!empty ($bsp_style_settings_f['empty_index'] ) ? $bsp_style_settings_f['empty_index']  : '' ) ?>
-				<input id="bsp_style_settings_f[empty_index]" class="large-text" name="bsp_style_settings_f[empty_index]" type="text" value="<?php echo esc_html( $item1 ) ;?>" /><br/>
-				<label class="description" for="bsp_settings[empty_forum]"><?php esc_html_e( 'Default : Oh bother! No forums were found here!', 'bbp-style-pack' ); ?></label><br/>
-			</td>
-		</tr>
-		
-		<tr>
-			<?php 
-			$name = 'empty_index' ;
-			$name0 = __('Don\'t show empty forum index message', 'bbp-style-pack') ;
-			$area1 = 'Activate' ;
-			$item1 =  "bsp_style_settings_f[".$name.$area1."]" ;
-			$value1 = (!empty($bsp_style_settings_f[$name.$area1]) ? $bsp_style_settings_f[$name.$area1] : '');
-			?>
-			<td>
-			</td>
-			<td>
-				<?php echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="checkbox" value="1" class="code" ' . checked( 1,$value1, false ) . ' />' ;
-				esc_html_e('Don\'t show this message','bbp-style-pack');
-				?>
-			</td>
-		</tr>
-<!--17. oh bother message ------------------------------------------------------------------->			
+<!--16. search ------------------------------------------------------------------->			
 		<tr valign="top">
 			<?php
 			
@@ -1071,7 +1042,7 @@ function bsp_style_settings_f () {
 			
 			?>
 			<th>
-				<?php echo '17. '.esc_html($name0) ?>
+				<?php echo '16. '.esc_html($name0) ?>
 			</th>
 			<td colspan = '2'>
 				<label class="description"><?php esc_html_e( 'You can style the search widget via the tab \'Search Styling\' ', 'bbp-style-pack' ); ?></label><br/>
@@ -1079,11 +1050,11 @@ function bsp_style_settings_f () {
 		</tr>
 		
 		
-<!--18. wordpress search  ONLY ALLOW IF PRIVATE GROUPS NOT ACTIVATED------------------------------------------------------------------->
+<!--17. wordpress search  ONLY ALLOW IF PRIVATE GROUPS NOT ACTIVATED------------------------------------------------------------------->
 	
 		<tr valign="top">
 			<th>
-				18. <?php esc_html_e('Allow main site search to access bbpress topics and replies', 'bbp-style-pack'); ?>
+				17. <?php esc_html_e('Allow main site search to access bbpress topics and replies', 'bbp-style-pack'); ?>
 			</th>
 		<?php if( ! function_exists('bbp_private_groups_init') ) { ?>
 			<?php 

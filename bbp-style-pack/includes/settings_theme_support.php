@@ -39,7 +39,7 @@ function bsp_style_settings_theme_support() {
 						
 						<p><b> <?php esc_html_e('Alternately and for closer integration you can use the', 'bbp-style-pack')?>
 						<a href= "https://wordpress.org/plugins/enable-bbp-block-theme/">Enable bbPress for Block Themes </a> 
-						<?php esc_html_e('plugin, in which case select the "No theme support" option below', 'bbp-style-pack'); ?> </p>
+						<?php esc_html_e('plugin, in which case select the "Do NOT Enable bbp Style Pack theme support " option below', 'bbp-style-pack'); ?> </p>
                       
 
 						</b> </p>
@@ -460,7 +460,11 @@ function bsp_style_settings_theme_support() {
                         esc_html_e (' theme (or a child theme of this theme)' , 'bbp-style-pack' ) ; ?>
                 </b></p>
                 <p>
-                        <?php esc_html_e ('This theme needs a specific bbpress template file.' , 'bbp-style-pack') ; ?>
+                        <?php esc_html_e ('This theme used to need a specific bbpress template file.' , 'bbp-style-pack') ; ?>
+                </p>
+				
+				 <p>
+                        <?php esc_html_e ('BUT it looks like the theme now works with bbpress, so we suggest you ONLY ACTIVATE the suppport below of you are having issues.' , 'bbp-style-pack') ; ?>
                 </p>
                
                 <p> <?php esc_html_e ('If you find other things not working, then please advise us via' , 'bbp-style-pack') ; ?>

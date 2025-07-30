@@ -95,7 +95,7 @@ $topic_post_type = array(
 				'supports'            => bbp_get_topic_post_type_supports(),
 				'description'         => esc_html__( 'bbPress Topics', 'bbpress' ),
 				'capabilities'        => bbp_get_topic_caps(),
-				'capability_type'     => array( 'topic', 'topics' ),
+		 		'capability_type'     => array( 'topic', 'topics' ),
 				'menu_position'       => 555555,
 				'has_archive'         => ( 'forums' === bbp_show_on_root() ) ? bbp_get_topic_archive_slug() : false,
 				'exclude_from_search' => true,

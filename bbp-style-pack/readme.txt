@@ -3,7 +3,7 @@ Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
 Tested up to: 6.8
-Stable tag: 6.3.9
+Stable tag: 6.4.0
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,9 @@ To install this plugin :
 
 
 == Changelog ==
+
+= 6.4.0 =
+*I've improved the functionality for how the 'oh bother no topics' message is shown in a forum has no topics yet.
 
 = 6.3.9 =
 

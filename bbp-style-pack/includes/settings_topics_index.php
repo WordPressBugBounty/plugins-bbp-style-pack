@@ -943,6 +943,14 @@ function bsp_style_settings_ti () {
 				<label class="description" for="bsp_settings[empty_forum]"><?php esc_html_e( 'Default : Oh bother! No topics were found here!', 'bbp-style-pack' ); ?></label><br/>
 			</td>
 		</tr>
+		
+		<tr>
+		<td></td>
+		<td>
+			<?php esc_html_e('OR','bbp-style-pack'); ?>
+		</td>
+		</tr>
+		
 		<!-- oh bother message ------------------------------------------------------------------->
 		<tr>
 			<?php 
@@ -956,7 +964,7 @@ function bsp_style_settings_ti () {
 			</td>
 			<td>
 				<?php echo '<input name="'.esc_html($item1).'" id="'.esc_html($item1).'" type="checkbox" value="1" class="code" ' . checked( 1,$value1, false ) . ' />' ;
-				esc_html_e('Don\'t show this message','bbp-style-pack');
+				esc_html_e('Do not show ANY message','bbp-style-pack');
 				?>
 			</td>
 		</tr>

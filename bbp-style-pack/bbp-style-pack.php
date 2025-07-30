@@ -4,7 +4,7 @@
 Plugin Name: bbp style pack
 Plugin URI: http://www.rewweb.co.uk/bbp-style-pack/
 Description: This plugin adds styling and features to bbPress.
-Version: 6.3.9
+Version: 6.4.0
 Author: Robin Wilson
 Text Domain: bbp-style-pack
 Domain Path: /languages
@@ -148,9 +148,9 @@ if( !class_exists( 'bbPressModToolsPlugin') && !empty($bsp_style_settings_modtoo
 	add_action( 'bbp_register_theme_packages', 'bsp_register_modtools_template' );
 }
 
-//add in the feedback no topics is this is to be blank
-if (!empty ($bsp_style_settings_ti['empty_forumActivate'] ) ) {
-        add_action( 'bbp_register_theme_packages', 'bsp_register_plugin_form_no_feedback_template' );
+//add in the feedback no topics if this is to be blank or have a different message
+if (!empty ($bsp_style_settings_ti['empty_forumActivate']) || !empty ($bsp_style_settings_ti['empty_forum'] ) ) {
+        add_action( 'bbp_register_theme_packages', 'bsp_register_feedback_no_topics_template' );
 }
 
 //add in the loop-single-topic if needed
@@ -180,9 +180,10 @@ function bsp_get_form_topicandreply_template_path6() {
 	return BSP_PLUGIN_DIR . '/templates/topicandreplyform6';
 }
 
-function bsp_get_form_no_feedback_template_path() {
-	return BSP_PLUGIN_DIR . '/templates/feedbacknotopics';
+function bsp_get_feedback_no_topics_templatepath() {
+	return BSP_PLUGIN_DIR . '/templates/feedback';
 }
+
 
 function bsp_get_modtools_template_path() {
 	return BSP_PLUGIN_DIR . '/templates/modtools';
@@ -277,9 +278,9 @@ function bsp_register_loop_forums() {
 	bbp_register_template_stack( 'bsp_get_loop_forums_template_path', $priority );
 }
 
-function bsp_register_plugin_form_no_feedback_template() {
+function bsp_register_feedback_no_topics_template() {
 	global $priority ;
-	bbp_register_template_stack( 'bsp_get_form_no_feedback_template_path', $priority);
+	bbp_register_template_stack( 'bsp_get_feedback_no_topics_templatepath', $priority);
 }
 
 function bsp_register_plugin_topic_title() {

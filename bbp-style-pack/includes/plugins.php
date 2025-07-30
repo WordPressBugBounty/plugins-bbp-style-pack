@@ -233,13 +233,20 @@ function bsp_plugins () {
 	</td><td>
 	<?php esc_html_e('Allows you to easily add Google reCAPTCHA v2 on your bbPress forum.', 'bbp-style-pack'); ?> 
 	</td></tr>
+	
 	<tr><td style="width:250px">	
 	<a href = "https://wordpress.org/plugins/bbpress-login-register-links-on-forum-topic-pages/">Login Register Links On Forum Topic Pages</a>
 	</td><td>
 	<?php esc_html_e('Puts Login Register Links On Forum Topic Pages, and lots more', 'bbp-style-pack'); ?> 
 	</td></tr>
 	
+	<tr><td style="width:250px">	
+	<a href = "https://wordpress.org/plugins/comment-mention/">Comment Mention</a>
+	</td><td>
+	<?php esc_html_e('Lets you use @mentions in bbpress', 'bbp-style-pack'); ?> 
+	</td></tr>
 	
+	<tr></tr>
 	
 	<tr><th colspan=2>	
 	<?php esc_html_e('Other useful stuff', 'bbp-style-pack'); ?>

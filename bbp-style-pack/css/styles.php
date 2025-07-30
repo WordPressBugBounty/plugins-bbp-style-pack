@@ -903,19 +903,7 @@ global $bsp_style_settings_topic_fields ;
 		}
 		?>
                                 
-/*  15 ----------------------  Message - empty forum --------------------------*/
 
-        <?php 
-		$field= (!empty($dataf['empty_indexActivate']) ? $dataf['empty_indexActivate'] : '');
-		if (!empty ($field)){
-        ?>
-			#bbpress-forums .bbp-template-notice
-			{
-				display: none;
-			}
-		<?php
-		}
-		?> 
 
  
 /********______________TOPIC INDEX___________________________________________*/ 

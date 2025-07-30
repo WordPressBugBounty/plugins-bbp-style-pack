@@ -2098,28 +2098,6 @@ function bsp_reply_rules() {
 }
 
 //This function changes the text wherever it is quoted
-function bsp_change_text2( $translated_text, $text, $domain ) {
-	global $bsp_style_settings_ti;
-	if ( $text == 'Oh bother! No topics were found here!' || $text == 'Oh, bother! No topics were found here.') {
-                $translated_text = $bsp_style_settings_ti['empty_forum'];
-	}
-	return $translated_text;
-}
-
-if (!empty ($bsp_style_settings_ti['empty_forum'] )) add_filter( 'gettext', 'bsp_change_text2', 20, 3 );
-
-//This function changes the text wherever it is quoted
-function bsp_change_text4( $translated_text, $text, $domain ) {
-	global $bsp_style_settings_f;
-	if ( $text == 'Oh bother! No forums were found here!' || $text == 'Oh, bother! No forums were found here.' ) {
-                $translated_text = $bsp_style_settings_f['empty_index'];
-	}
-	return $translated_text;
-}
-
-if (!empty ($bsp_style_settings_f['empty_index'] )) add_filter( 'gettext', 'bsp_change_text4', 20, 3 );
-
-//This function changes the text wherever it is quoted
 function bsp_change_text3( $translated_text, $text, $domain ) {
 	global $bsp_style_settings_search;
 	if ( $text == 'Oh bother! No search results were found here!' || $text == 'Oh, bother! No search results were found here.' ) {
