@@ -3,7 +3,7 @@ Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
 Tested up to: 6.8
-Stable tag: 6.4.0
+Stable tag: 6.4.1
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,10 @@ To install this plugin :
 
 
 == Changelog ==
+
+= 6.4.1 =
+*If you have bbpress and buddypress AND debug active or are looking at error logs, you may see an error message "Translation loading for the bbpress domain was triggered too early". You can remove this message using dashboard>settings>bbp style pack>bbPress bug fixes tab and applying the relevant fix.
+
 
 = 6.4.0 =
 *I've improved the functionality for how the 'oh bother no topics' message is shown in a forum has no topics yet.

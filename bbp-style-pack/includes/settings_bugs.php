@@ -397,7 +397,39 @@ function bsp_settings_bugs() {
 				</label>
 			</td>
 		
-		</tr>				
+		</tr>	
+
+<!-- ACTIVATE  -->	
+	<!-- checkbox to activate  -->
+		<tr valign="top">  
+			<th >
+				<?php esc_html_e('Fix bbPress domain triggered early if Buddypress also active', 'bbp-style-pack'); ?>
+			</th>
+			<td>
+				<?php esc_html_e( 'If you have bbpress and buddypress AND debug active or are looking at error logs, you may see "Translation loading for the bbpress domain was triggered too early".', 'bbp-style-pack' ); ?>
+				<p>
+				<?php esc_html_e( 'Activate this fix to remove this', 'bbp-style-pack' ); ?>
+				</p>
+				<p>
+				<?php esc_html_e( 'NOTE: The "Translation loading for the bbpress domain was triggered too early" message may appear for many other reasoins as well.', 'bbp-style-pack' ); ?>
+				
+				</p>
+			</td>
+			</tr>
+			<tr>
+			<td>
+			</td>
+			<td>
+				<?php 
+				$item = (!empty( $bsp_style_settings_bugs['bbpress_domain_early_buddypress'] ) ?  $bsp_style_settings_bugs['bbpress_domain_early_buddypress'] : '');
+				echo '<input name="bsp_style_settings_bugs[bbpress_domain_early_buddypress]" id="bsp_style_settings_bugs[bbpress_domain_early_buddypress]" type="checkbox" value="1" class="code" ' . checked( 1,$item, false ) . ' />' ;
+				?>
+				<label class="description" for="bsp_settings[disallowed_error_fix]">
+					<?php esc_html_e( 'Apply Fix', 'bbp-style-pack' ); ?>
+				</label>
+			</td>
+			
+		</tr>		
 						
 				
 <?php

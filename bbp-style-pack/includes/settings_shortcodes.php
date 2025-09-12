@@ -264,7 +264,7 @@ function bsp_shortcodes_display() {
                 <h5>
                         <?php esc_html_e( 'All Options:', 'bbp-style-pack' ); ?>
                 </h5>
-                <p id="bsp-shortcode-<?php echo $shortcode_slug; ?>"><tt style="border:1px solid #000;padding:12px;background-color:#f5f5f5;margin:6px;line-height:42px;">[bsp-display-topic-index forum="2932,2921" breadcrumb="false" search="false" title="Main Forums"]</tt></p>
+                <p id="bsp-shortcode-<?php echo $shortcode_slug; ?>"><tt style="border:1px solid #000;padding:12px;background-color:#f5f5f5;margin:6px;line-height:42px;">[bsp-display-forum-index forum="2932,2921" breadcrumb="false" search="false" title="Main Forums"]</tt></p>
                 <p>
                         <button type="button" class="button unselectable" id="copy-<?php echo $shortcode_slug; ?>" data-clipboard-action="copy" data-clipboard-target="#bsp-shortcode-<?php echo $shortcode_slug; ?>" onmousedown="return false" onselectstart="return false"><?php echo $copy_message; ?></button>
                         <button type="button" class="button" id="toggle-button-<?php echo $shortcode_slug; ?>" onclick="togglediv('toggle-<?php echo $shortcode_slug; ?>')"><?php echo $show_details_message; ?></button>

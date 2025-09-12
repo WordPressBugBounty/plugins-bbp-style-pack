@@ -4,7 +4,7 @@
 Plugin Name: bbp style pack
 Plugin URI: http://www.rewweb.co.uk/bbp-style-pack/
 Description: This plugin adds styling and features to bbPress.
-Version: 6.4.0
+Version: 6.4.1
 Author: Robin Wilson
 Text Domain: bbp-style-pack
 Domain Path: /languages
@@ -78,6 +78,7 @@ if(!defined('BSP_PLUGIN_DIR'))
 
 if(!defined('BSP_PLUGIN_URL'))
 	define('BSP_PLUGIN_URL', plugin_dir_url( __FILE__ ));
+
 
 add_action('plugins_loaded', 'bbp_style_pack_init');
 
@@ -422,6 +423,15 @@ function bsp_load_plugin() {
                 include(BSP_PLUGIN_DIR . '/includes/generate_css.php');
                 include(BSP_PLUGIN_DIR . '/includes/widgets.php');
                 include(BSP_PLUGIN_DIR . '/includes/functions_bugs.php');
+				
+				
+				//bp-loader if buddypress active and set
+				global $bsp_style_settings_bugs ;
+
+					if (!empty($bsp_style_settings_bugs['bbpress_domain_early_buddypress'])) {
+						include(BSP_PLUGIN_DIR . '/includes/functions_buddypress_support.php');
+						add_action ('bp_include' , 'bsp_amend_buddypress_loader', 1) ;
+					}
             
                 // admin-only files
                 if ( is_admin() ) {
