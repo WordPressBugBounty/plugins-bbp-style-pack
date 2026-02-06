@@ -29,8 +29,38 @@ function bsp_settings_bugs() {
 	<?php settings_fields( 'bsp_style_settings_bugs' );
         bsp_clear_cache();
 	?>
-					
+	<!-- save the options -->
+	<p class="submit">
+		<input type="submit" class="button-primary" value="<?php esc_html_e( 'Save changes', 'bbp-style-pack' ); ?>" />
+	</p>			
 			<table class="form-table">
+			
+			<!-- ACTIVATE  -->	
+	<!-- checkbox to activate  -->
+		<tr valign="top">  
+			<th >
+				<?php esc_html_e('Fix Load Text domain notice' , 'bbp-style-pack'); ?>
+			</th>
+			<td>
+				<?php esc_html_e( 'If you are using a child theme, you may see Fix Notice: Function _load_textdomain_just_in_time, apply this fix to remove. ', 'bbp-style-pack' ); ?>
+			</td>
+			
+		</tr>
+		<tr>
+			<td>
+			</td>
+					
+			<td>
+				<?php 
+				$item = (!empty( $bsp_style_settings_bugs['child_theme'] ) ?  $bsp_style_settings_bugs['child_theme'] : '');
+				echo '<input name="bsp_style_settings_bugs[child_theme]" id="bsp_style_settings_bugs[child_theme]" type="checkbox" value="1" class="code" ' . checked( 1,$item, false ) . ' />' ;
+				?>
+				<label class="description" for="bsp_settings[new_topic_description]">
+					<?php esc_html_e( 'Apply Fix', 'bbp-style-pack' ); ?>
+				</label>
+			</td>
+		
+		</tr>
 			
 			<!-- ACTIVATE  -->	
 	<!-- checkbox to activate  -->
@@ -429,7 +459,37 @@ function bsp_settings_bugs() {
 				</label>
 			</td>
 			
-		</tr>		
+		</tr>	
+		
+		<!-- ACTIVATE  -->	
+	<!-- checkbox to activate  -->
+		<tr valign="top">  
+			<th >
+				<?php esc_html_e('Fix seems_utf8 deprecated in Wordpress 6.9 and later', 'bbp-style-pack'); ?>
+			</th>
+			<td>
+					<?php esc_html_e( 'The Wordpress function seems_utf8 is no longer being used (deprecated) so you may see an error in forums if you are using Wordpress 6.9 You can exclude this fix if you wish', 'bbp-style-pack' ); ?>
+				</td>
+			
+		</tr>
+		<tr>
+			<td>
+			</td>
+			
+					
+			<td>
+				<?php 
+				$item = (!empty( $bsp_style_settings_bugs['seems_utf8_error_fix'] ) ?  $bsp_style_settings_bugs['seems_utf8_error_fix'] : '');
+				echo '<input name="bsp_style_settings_bugs[seems_utf8_error_fix]" id="bsp_style_settings_bugs[seems_utf8_error_fix]" type="checkbox" value="1" class="code" ' . checked( 1,$item, false ) . ' />' ;
+				?>
+				<label class="description" for="bsp_settings[new_topic_description]">
+					<?php esc_html_e( 'Exclude Fix', 'bbp-style-pack' ); ?>
+				</label>
+			</td>
+		
+		</tr>	
+
+		
 						
 				
 <?php

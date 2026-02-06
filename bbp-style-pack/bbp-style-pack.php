@@ -4,7 +4,7 @@
 Plugin Name: bbp style pack
 Plugin URI: http://www.rewweb.co.uk/bbp-style-pack/
 Description: This plugin adds styling and features to bbPress.
-Version: 6.4.1
+Version: 6.4.4
 Author: Robin Wilson
 Text Domain: bbp-style-pack
 Domain Path: /languages
@@ -82,8 +82,23 @@ if(!defined('BSP_PLUGIN_URL'))
 
 add_action('plugins_loaded', 'bbp_style_pack_init');
 
-//theme check needs to be run from setup theme action , as calling at time of plugins loaded produces translation error in 6.7
+
+
+/*theme check needs to be run from setup theme action , as calling at time of plugins loaded produces translation error in 6.7
+see also https://wordpress.org/support/topic/function-load-error/#post-18745586 on possibly running it later
+so if you are running a child theme (which could be a block child theme!), then doing the bsp_theme_check at 'setup_theme' does not work, and it must be called
+at the 'after_setup_theme' action point.  The issue is that we don't know until after setup if it is a child theme, so the option to call
+the right action is not there !!!
+*/
+
+if (!empty ($bsp_style_settings_bugs['child_theme'])) {
+add_action('after_setup_theme' , 'bsp_theme_check') ;
+}
+else {
 add_action('setup_theme', 'bsp_theme_check');
+}
+
+
 
 //set bbpress version which is needed for function below and template order (around line 236)
 $bsp_bbpress_full_version = get_option('bsp_bbpress_version', '2.6.12') ;
@@ -820,7 +835,7 @@ function bsp_register_block_pattern_categories() {
 
 
 function bsp_theme_check() {
-
+	
 /*******************************************
 * Theme Checks
 *******************************************/
@@ -858,3 +873,4 @@ function bsp_theme_check() {
 					include(BSP_PLUGIN_DIR . '/includes/functions_theme_support.php');
 				
 }
+

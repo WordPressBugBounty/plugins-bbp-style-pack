@@ -696,3 +696,33 @@ function bsp_disallowed_keys () {
 return $moderation ;
 }
 
+//take out error in seems_utf8 on version 6.9
+//seems_utf8 is now deprecated, so this fixes that
+//but function 'wp_is_valid_utf8' does not exist until 6.9, so we need to exclude this if we are on earlier versions
+global $wp_version ;
+$wp_main_version = substr($wp_version, 0, 3) ;
+if (empty ($bsp_style_settings_bugs['seems_utf8_error_fix']) && $wp_main_version>='6.9') {
+remove_filter( 'bbp_get_topic_author_display_name', 'bbp_format_user_display_name' );
+remove_filter( 'bbp_get_reply_author_display_name', 'bbp_format_user_display_name' );
+add_filter( 'bbp_get_topic_author_display_name', 'bsp_format_user_display_name' );
+add_filter( 'bbp_get_reply_author_display_name', 'bsp_format_user_display_name' );
+}
+
+function bsp_format_user_display_name( $display_name = '' ) {
+
+	// Default return value
+	$retval = $display_name;
+
+	// Use the mbstring library if possible
+	if ( function_exists( 'mb_check_encoding' ) && ! mb_check_encoding( $display_name, 'UTF-8' ) ) {
+		$retval = mb_convert_encoding( $display_name, 'UTF-8', 'ISO-8859-1' );
+
+	// Fallback to function that (deprecated in PHP8.2)
+	} elseif ( wp_is_valid_utf8( $display_name ) === false ) {
+		$retval = utf8_encode( $display_name );
+	}
+
+	// Return
+	return $retval;
+}
+

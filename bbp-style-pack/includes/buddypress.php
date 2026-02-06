@@ -36,7 +36,7 @@ function bsp_buddypress_surpress_profile_pages() {
 
                 // set test URL
                 if ( defined( 'BP_ENABLE_ROOT_PROFILES' ) ) $test_url = $bp->root_domain.'/';
-                else $test_url = $bp->root_domain.'/'.BP_MEMBERS_SLUG.'/';
+                else $test_url = $bp->root_domain.'/'.bp_get_members_slug().'/';
             
                 //see if username is in the url - ie matches
                 $current_username = wp_get_current_user()->user_nicename;
