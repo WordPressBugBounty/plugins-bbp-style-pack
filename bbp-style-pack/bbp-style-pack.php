@@ -4,14 +4,14 @@
 Plugin Name: bbp style pack
 Plugin URI: http://www.rewweb.co.uk/bbp-style-pack/
 Description: This plugin adds styling and features to bbPress.
-Version: 6.4.4
+Version: 6.4.5
 Author: Robin Wilson
 Text Domain: bbp-style-pack
 Domain Path: /languages
 Author URI: http://www.rewweb.co.uk
 License: GPL2
 */
-/*  Copyright 2016-2025  Robin Wilson  (email : wilsonrobine@btinternet.com)
+/*  Copyright 2016-2026  Robin Wilson  (email : wilsonrobine@btinternet.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 

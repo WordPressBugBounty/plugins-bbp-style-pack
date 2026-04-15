@@ -217,13 +217,13 @@ function bsp_display_selected_forum($attr, $content = '' ) {
 
         if ( !empty( $attr['breadcrumb'] ) ) {
                 if ( trim( strtolower( $attr['breadcrumb'] ) ) == 'no' || trim( strtolower( $attr['breadcrumb'] ) ) == 'false' ) {
-                        add_filter ('bbp_no_breadcrumb', '__return_false');
+                        add_filter ('bbp_no_breadcrumb', '__return_true');
                 }
         }	
 
         if ( !empty( $attr['search'] ) ) { 
                 if ( trim( strtolower( $attr['search'] ) ) == 'no' || trim( strtolower( $attr['search'] ) ) == 'false' ) {
-                        add_filter ('bbp_allow_search', '__return_false');
+                        add_filter ('bbp_allow_search', '__return_false' );
                 }
         }			
 

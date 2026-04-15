@@ -13,7 +13,9 @@
 defined( 'ABSPATH' ) || exit;
 
 
-?>
+
+
+if ( bbp_allow_search() ) : ?>
 
 <form role="search" method="get" id="bbp-search-form" action="<?php bbp_search_url(); ?>">
 
@@ -39,4 +41,6 @@ defined( 'ABSPATH' ) || exit;
 		
 	</div>
 </form>
+
+<?php endif;
 

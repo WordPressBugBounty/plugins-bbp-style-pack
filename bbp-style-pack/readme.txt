@@ -3,7 +3,7 @@ Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
 Tested up to: 6.9
-Stable tag: 6.4.4
+Stable tag: 6.4.5
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,9 @@ To install this plugin :
 
 
 == Changelog ==
+
+= 6.4.5 =
+* A minor change to the bsp-display-forum-index shortcode to correctly allow hiding of breadcrumbs if desired.
 
 = 6.4.4 =
 *A fix for version 6.4.3 which threw an error if you had not updated to WordPress 6.9'. 
