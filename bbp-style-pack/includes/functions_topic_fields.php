@@ -15,9 +15,6 @@ function bsp_required_topic_field ($forum_id) {
 	global $bsp_style_settings_topic_fields;
 	$fields_number = bsp_get_topic_fields_number() ;
 	$i=1 ;
-	?>
-	
-	<?php
 	//START OF LOOP
 	while($i<= $fields_number)   {
 		//get the forum id of this topic
@@ -143,7 +140,7 @@ function bsp_topic_fields_form_save ($topic_id = 0) {
 			update_post_meta( $topic_id, 'bsp_topic_fields_label_name'.$i,  $label);
 			// Update post meta
 			if ( !empty( $_POST['bsp_topic_fields_label'.$i] ) ) {
-				update_post_meta( $topic_id, 'bsp_topic_fields_label'.$i,  $_POST['bsp_topic_fields_label'.$i]);
+				update_post_meta( $topic_id, 'bsp_topic_fields_label'.$i, sanitize_text_field($_POST['bsp_topic_fields_label'.$i]));
 			}
 			
 			// Delete post meta
@@ -229,10 +226,10 @@ function bsp_topic_content_append_topic_fields($args = array()) {
 				if ($show_label == true) {
 					$name = 'separator' ;
 					$separator = (!empty($bsp_style_settings_topic_fields[$name]) ? $bsp_style_settings_topic_fields[$name] : ': ' ) ;
-					$topic_fields.= '<span class="bsp_topic_fields_label">'.$label.'</span>'.$separator ;
+					$topic_fields.= '<span class="bsp_topic_fields_label">'.esc_html($label).'</span>'.$separator ;
 				}
 				//then add the data if not empty
-				if (!empty ($data)) $topic_fields.= '<span class="bsp_topic_fields_data">'.$data.'</span>' ;
+				if (!empty ($data)) $topic_fields.= '<span class="bsp_topic_fields_data">'.esc_html($data).'</span>' ;
 			}
 				//increments $i	
 		

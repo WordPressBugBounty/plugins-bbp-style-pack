@@ -2,8 +2,8 @@
 Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
-Tested up to: 6.9
-Stable tag: 6.4.5
+Tested up to: 7.0
+Stable tag: 6.4.6
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,7 @@ For bbPress - Lets you style bbPress, and add display features
 
 
 == Description  ==
-This Plugin lets you style bbPress, and add display features
+This Plugin lets you style bbPress, and add display features.
 
 You can change the forum styling for elements, letting you match (or contrast!) bbPress to your theme
 
@@ -61,6 +61,9 @@ To install this plugin :
 
 
 == Changelog ==
+
+= 6.4.6 =
+* Fix an issue with topic additional fields
 
 = 6.4.5 =
 * A minor change to the bsp-display-forum-index shortcode to correctly allow hiding of breadcrumbs if desired.
