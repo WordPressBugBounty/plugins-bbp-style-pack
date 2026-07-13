@@ -85,7 +85,7 @@ function bsp_get_amend_field_input ($i, $current_value) {
 		$value = (!empty($bsp_style_settings_topic_fields[$name1]) ? $bsp_style_settings_topic_fields[$name1] : 0) ;
 			//if zero then a text field
 			if ($value==0) {
-			$field= '<input type="text" name="bsp_topic_fields_label'.$i.'" id="bsp_topic_fields_label'.$i.'" value="'.$current_value.'" />' ;
+			$field= '<input type="text" name="bsp_topic_fields_label'.$i.'" id="bsp_topic_fields_label'.$i.'" value="'.esc_attr($current_value).'" />' ;
 			}
 			//if 1 then a dropdown field
 			if ($value==1) {
@@ -102,12 +102,12 @@ function bsp_get_display_dropdown_options ($i,$current_value) {
 	$total_options = count ($list_options) ;
 	$list='<select name="bsp_topic_fields_label'.$i.'">' ;
 	if (!empty ($current_value)) {
-	 $list.='<option selected value="'.$current_value.'">'.$current_value.'</option>' ;
+	 $list.='<option selected value="'.esc_attr($current_value).'">'.esc_html($current_value).'</option>' ;
 	}
 	//array starts at zero, so start there until $total options-1
 	$j=0 ;
 	while ($j<= ($total_options-1))   {
-		$list.=	'<option value="'.$list_options[$j].'">'.$list_options[$j].'</option>' ;
+		$list.=	'<option value="'.esc_attr($list_options[$j]).'">'.esc_html($list_options[$j]).'</option>' ;
 		$j++ ;
 	}
 	$list.=	'</select>' ;

@@ -3,7 +3,7 @@ Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
 Tested up to: 7.0
-Stable tag: 6.4.6
+Stable tag: 6.4.7
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,9 @@ To install this plugin :
 
 
 == Changelog ==
+
+= 6.4.7 =
+* Fix an security issue with topic additional fields - with thanks to “Artus KG” for both finding the issue and helping with the fix.
 
 = 6.4.6 =
 * Fix an issue with topic additional fields
