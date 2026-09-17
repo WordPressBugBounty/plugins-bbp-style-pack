@@ -95,7 +95,7 @@ class BBP_Forums_Component extends BP_Component {
 		// Require files if they exist
 		foreach ( $includes as $file ) {
 			if ( @is_file( $this->path . $file ) ) {
-				require $this->path . $file;
+				require_once $this->path . $file;
 			}
 		}
 

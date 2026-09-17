@@ -2,8 +2,8 @@
 Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
-Tested up to: 7.0
-Stable tag: 6.4.7
+Tested up to: 7.1
+Stable tag: 6.4.8
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,9 @@ To install this plugin :
 
 
 == Changelog ==
+
+= 6.4.8 =
+* Fix an issue following release of bbpress 2.6.17 if you are also using buddypress.
 
 = 6.4.7 =
 * Fix an security issue with topic additional fields - with thanks to “Artus KG” for both finding the issue and helping with the fix.
@@ -120,8 +123,87 @@ To install this plugin :
 *Correction to forum information block to correctly show last activity 
 
 
-= 6.3.0 =
 
+<<<<<<< .mine
+*On display of the forum/topic/reply admin pages an automatic author filter was being added. This could slow display of these pages on sites with thousands of users, so I have made this an option in dashboard>settings>bbp-style-pack>Dashboard Admin 
+
+= 6.2.9 =
+
+*amended css enqueing so that blank css files are not downloaded
+
+= 6.2.8 =
+
+*further bug fix for 6.2.6
+
+= 6.2.7 =
+
+*bug fix for 6.2.6
+
+
+= 6.2.6 =
+
+*I've added the ability to list tags on the topics dashboard page - see dashboard>settings>bbp-style-pack>Dashboard Admin
+
+= 6.2.5 =
+
+*I've corrected an error for those wanting to use the bbpress profile in the WordPress Admin Bar.
+*Technical change - I've changed some lookup functions to not use 'abspath' in bbp-style-pack.php
+
+= 6.2.4 =
+*Fix for settings topics fields error
+
+= 6.2.3 =
+*Fix for not displaying 'mark all topics as read' button if users have opted out
+*Fix for incorrect shortcode for displaying unread topics
+
+
+= 6.2.2 =
+*minor fix for a bug in 6.2.1 !
+
+
+= 6.2.1 =
+*Some further technical changes which will help bring this plugin up to date with all the latest WordPress coding standards and PHP changes
+
+
+= 6.2.0 =
+*Some further technical changes which will help bring this plugin up to date with all the latest WordPress coding standards and PHP changes
+
+= 6.1.8/6.1.9 =
+*Some further technical changes which will help bring this plugin up to date with all the latest WordPress coding standards and PHP changes
+
+= 6.1.7 =
+*fix issue with reply titles in subscription emails
+*fix deprecated cache clearing function for WT3C
+*Some further technical changes which will help bring this plugin up to date with all the latest WordPress coding standards and PHP changes
+
+= 6.1.6 =
+*fix issue for bock themes not displaying all templates in dashboard>themes>customise
+*fix issue for shortcodes not working in block theme footers - I've added an additional option in theme set-up to allow this.
+
+= 6.1.5 =
+*correct issue for Astra theme
+
+= 6.1.4 =
+* Further improvements for issues with translations following WP 6.7 release.
+* I've added an additional shortcode is you are using unread posts, which lets you have say a page showing all unread posts.
+* Some further technical changes which will help bring this plugin up to date with all the latest WordPress coding standards and PHP changes
+
+
+
+= 6.1.3 =
+* Change to getting bbpress version in bbp-style-pack.php as old method is causing issues with translations following WP 6.7 release.
+* fix to error in unread functions 'Attempt to read property “ID” on null'
+* fix to forums and topic index icons in version 6.1.2
+
+
+
+= 6.1.2 =
+* The second of several technical releases which will help bring this plugin up to date with all the latest WordPress coding standards and PHP changes
+
+= 6.1.1 =
+* The first of several technical releases which will help bring this plugin up to date with all the latest WordPress coding standards and PHP changes
+
+||||||| .r3657461
 *On display of the forum/topic/reply admin pages an automatic author filter was being added. This could slow display of these pages on sites with thousands of users, so I have made this an option in dashboard>settings>bbp-style-pack>Dashboard Admin 
 
 = 6.2.9 =
@@ -232,3 +314,5 @@ To install this plugin :
 = 6.0.1 =
 * I've added the abilty to bulk move topics between forums in dashboard>topics.  Use the bulk edit feature and you can set the forum against multiple topics 
 
+=======
+>>>>>>> .r3699801
