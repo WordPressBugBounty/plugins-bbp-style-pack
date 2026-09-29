@@ -3,7 +3,7 @@ Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
 Tested up to: 7.1
-Stable tag: 6.4.8
+Stable tag: 6.4.9
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,9 @@ To install this plugin :
 
 
 == Changelog ==
+
+= 6.4.9 =
+* Fix an security issue with quotes.
 
 = 6.4.8 =
 * Fix an issue following release of bbpress 2.6.17 if you are also using buddypress.

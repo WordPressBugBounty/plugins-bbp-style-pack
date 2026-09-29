@@ -103,7 +103,7 @@ add_action ('wp_ajax_nopriv_get_status_by_ajax' , 'bsp_function');
 function bsp_function() {
 	//check_ajax_referrer
 	//this comes from the variables set in generate_css.php wp_localise_script function
-	wp_verify_nonce( $_POST['quote'], 'get_id_content' );
+	wp_verify_nonce( $_POST['security'], 'get_id_content' );
 	global $bsp_style_settings_quote;
 	$id = absint( filter_var( $_POST['id'], FILTER_UNSAFE_RAW, FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH ) );
 	//set up elements
@@ -161,14 +161,25 @@ function bsp_function() {
 	$order = array();
 	$i=1;
 	//set the limit to $total_items and set up order
-		while($i<=$total_items) {
-                        if ((!empty($bsp_style_settings_quote["preamble_order"]) ? $bsp_style_settings_quote["preamble_order"] : $default_preamble) == $i) $order[$i] = 'preamble_order';
-                        if ((!empty($bsp_style_settings_quote["date_order"]) ? $bsp_style_settings_quote["date_order"] : $default_date) == $i) $order[$i] = 'date_order';
-                        if ((!empty($bsp_style_settings_quote["author_order"]) ? $bsp_style_settings_quote["author_order"] : $default_author) == $i) $order[$i] = 'author_order';
-                        if ((!empty($bsp_style_settings_quote["conclusion_order"]) ? $bsp_style_settings_quote["conclusion_order"] : $default_conclusion) == $i) $order[$i] = 'conclusion_order';
-                        //increments $i	
-                        $i++;	
-		}	 
+		if ($total_items==3) {
+			while($i<=$total_items) {
+							if ((!empty($bsp_style_settings_quote["preamble_order"]) ? $bsp_style_settings_quote["preamble_order"] : $default_preamble) == $i) $order[$i] = 'preamble_order';
+							if ((!empty($bsp_style_settings_quote["author_order"]) ? $bsp_style_settings_quote["author_order"] : $default_author) == $i) $order[$i] = 'author_order';
+							if ((!empty($bsp_style_settings_quote["conclusion_order"]) ? $bsp_style_settings_quote["conclusion_order"] : $default_conclusion) == $i) $order[$i] = 'conclusion_order';
+							//increments $i	
+							$i++;	
+			}
+		}
+		elseif ($total_items==4) {
+			while($i<=$total_items) {
+							if ((!empty($bsp_style_settings_quote["preamble_order"]) ? $bsp_style_settings_quote["preamble_order"] : $default_preamble) == $i) $order[$i] = 'preamble_order';
+							if ((!empty($bsp_style_settings_quote["date_order"]) ? $bsp_style_settings_quote["date_order"] : $default_date) == $i) $order[$i] = 'date_order';
+							if ((!empty($bsp_style_settings_quote["author_order"]) ? $bsp_style_settings_quote["author_order"] : $default_author) == $i) $order[$i] = 'author_order';
+							if ((!empty($bsp_style_settings_quote["conclusion_order"]) ? $bsp_style_settings_quote["conclusion_order"] : $default_conclusion) == $i) $order[$i] = 'conclusion_order';
+							//increments $i	
+							$i++;	
+			}
+		}
 		//start output
 		echo '<blockquote><div class="bsp-quote-title">';
 		$i=1;
@@ -243,8 +254,8 @@ function bsp_custom_quote_profile_links( $content ) {
                                                 // To this: <a href="https://site.com/forums/users/username/" title="View username's profile"><span class="bbp-author-name">username</span></a>
                                                 $view_profile_text = sprintf( 
                                                         /* translators: %s is a username */
-                                                        __( 'View %s\'s profile', 'bbpress'),
-                                                        $user_name
+                                                        esc_attr( sprintf(__( 'View %s\'s profile', 'bbpress'),
+                                                        $user_name))
                                                 );
                                                 $new_link = preg_replace( '#">(.*?)</a>#is', '" title="'.$view_profile_text.'"><span class="bbp-author-name">$1</span></a>', $link );
 
@@ -260,7 +271,7 @@ function bsp_custom_quote_profile_links( $content ) {
                                                 // force-remove nested quote profile links for this user
                                                 $content = preg_replace( '#'.$new_link.'#is', '<span class="bbp-author-name">'.$user_name.'</span>', $content );
                                                 // force re-add nested quote profile links and/or add them for any that were missing profile links in the first place
-                                                $content = preg_replace( '#<span class="bbp-author-name">'.$user_name.'</span>#is', $new_link, $content );      
+                                                $content = preg_replace( '#<span class="bbp-author-name">'.esc_html($user_name).'</span>#is', $new_link, $content );      
                                         }
                                 }
                         }
