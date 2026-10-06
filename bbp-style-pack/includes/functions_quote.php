@@ -269,7 +269,9 @@ function bsp_custom_quote_profile_links( $content ) {
                                                 // and then force re-add them afterwards (re-standardize with profile links).
                                                 
                                                 // force-remove nested quote profile links for this user
-                                                $content = preg_replace( '#'.$new_link.'#is', '<span class="bbp-author-name">'.$user_name.'</span>', $content );
+												//old version pre 6.5.0 - in 6.4.9 it errored see https://wordpress.org/support/topic/bbp-style-pack-v6-4-9-replies-not-showing-with-quotes-enabled/
+                                                //$content = preg_replace( '#'.$new_link.'#is', '<span class="bbp-author-name">'.$user_name.'</span>', $content );
+												$content = preg_replace( '#'.preg_quote( $new_link, '#' ).'#is', '<span class="bbp-author-name">'.$user_name.'</span>', $content );
                                                 // force re-add nested quote profile links and/or add them for any that were missing profile links in the first place
                                                 $content = preg_replace( '#<span class="bbp-author-name">'.esc_html($user_name).'</span>#is', $new_link, $content );      
                                         }

@@ -23,25 +23,18 @@ function bsp_style_settings_theme_support() {
                         echo $theme ;
                         esc_html_e (', which is a block theme also known as "Full Site Editing" or FSE theme' , 'bbp-style-pack' ) ; ?>
                 </b></p>
+				
+				<h3><b>
+                        <?php esc_html_e ('bbPress now supports FSE themes, and the below is simply for backward compatibility with style pack users who used these settings before bbPress updated to include FSE themes.' , 'bbp-style-pack') ;
+                        ?>
+                </h3></p>
 
                 <p>
-                        <?php 
-                        esc_html_e (' This is one of the new "block themes" - this is a new way that WordPress plans to develop themes. ' , 'bbp-style-pack' ) ; ?>
-						<?php esc_html_e(' As Wordpress roll out blocks and FSE themes, we developers are needing to learn new techniques and tools.', 'bbp-style-pack'); ?> </p>
-                        
-						<p> <?php esc_html_e('bbPress authors have stated that they plan to release a version that will work with FSE themes in the future ', 'bbp-style-pack'); ?>
-						<?php esc_html_e('but at the moment it needs a bit of help to do so.', 'bbp-style-pack'); ?> </p>
-						<p> <?php esc_html_e('So until then you can use the settings below to get bbpress to work with your FSE theme.', 'bbp-style-pack'); ?> </p>
-						
+                       
                         <p>	<?php esc_html_e('If you just want your forums to display with no other content, then (if your theme does not specifically cater for bbpress) enabling basic support should allow the forums to display.', 'bbp-style-pack'); ?> </p>
                         <p>	<?php esc_html_e('If you just want additional content on the forums page above, below or to the side of the forums, then enabling advanced support should let you do this, BUT read the instructions on how to set this up below.', 'bbp-style-pack'); ?> </p>
                         <p><i>	<?php esc_html_e('In either case, you can set the width of the forum page if you need to.', 'bbp-style-pack'); ?> </i> </p>
 						
-						<p><b> <?php esc_html_e('Alternately and for closer integration you can use the', 'bbp-style-pack')?>
-						<a href= "https://wordpress.org/plugins/enable-bbp-block-theme/">Enable bbPress for Block Themes </a> 
-						<?php esc_html_e('plugin, in which case select the "Do NOT Enable bbp Style Pack theme support " option below', 'bbp-style-pack'); ?> </p>
-                      
-
 						</b> </p>
 						
 
