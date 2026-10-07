@@ -241,7 +241,9 @@ function bsp_custom_quote_profile_links( $content ) {
                                                 'search_fields' => array( 'user_login', 'user_nicename', 'display_name' )
                                         );
                                         $user_query = new WP_User_Query($args);
-                                        if ( $user_query && ! is_wp_error( $user_query ) ) {
+										//old if... changed see https://wordpress.org/support/topic/bbp-style-pack-v6-4-9-replies-not-showing-with-quotes-enabled/#post-19038601
+                                        //if ( $user_query && ! is_wp_error( $user_query ) ) {
+										if ( $user_query && ! is_wp_error( $user_query ) && ! empty( $user_query->results ) ) {
                                                 // get the user info for the first result of the search
                                                 $user_info = $user_query->results[0]->data;
                                                 $user_nicename = bbp_get_user_nicename( $user_info->ID );

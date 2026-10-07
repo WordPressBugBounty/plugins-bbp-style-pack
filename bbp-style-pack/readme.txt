@@ -3,7 +3,7 @@ Contributors: robin-w
 Tags: forum, bbpress, bbp, style
 Donate link: http://www.rewweb.co.uk/donate
 Tested up to: 7.1
-Stable tag: 6.5.0
+Stable tag: 6.5.1
 License: GPLv2 or later 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,10 @@ To install this plugin :
 
 
 == Changelog ==
+
+
+= 6.5.1 =
+* further fix to prevent errors in quotes where username has changed
 
 = 6.5.0 =
 * Fix a display issue with 6.4.9 in quotes, with thanks to @modrobert and @ahillmortons for their help with resolving
