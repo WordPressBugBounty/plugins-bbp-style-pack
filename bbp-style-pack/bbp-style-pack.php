@@ -4,7 +4,7 @@
 Plugin Name: bbp style pack
 Plugin URI: http://www.rewweb.co.uk/bbp-style-pack/
 Description: This plugin adds styling and features to bbPress.
-Version: 6.5.1
+Version: 6.5.2
 Author: Robin Wilson
 Text Domain: bbp-style-pack
 Domain Path: /languages
@@ -852,9 +852,11 @@ function bsp_theme_check() {
                 //check for specific themes
                $theme= wp_get_theme() ;
 			   $theme_name = $theme->get( 'Name' ) ;
+			   //amended - see https://wordpress.org/support/topic/notice-on-every-request-parent-theme-compared-as-a-string-in-bsp_theme_check/
 			   $parent = wp_get_theme()->parent();
+			   $parent_name = $parent ? $parent->get( 'Name' ):'' ;
 			   				
-				if ($theme_name == 'Astra' || $parent ==  'Astra') {
+				if ($theme_name == 'Astra' || $parent_name ==  'Astra') {
                        // if (!empty ($theme_name->get('Version'))) $version =  $theme_name->get('Version');
 					$version = '' ;
                         //older version don't have this issue, and fixed in later, so only...
@@ -864,9 +866,9 @@ function bsp_theme_check() {
                }
 			   
 		
-				if ($theme_name == 'Divi' || $parent ==  'Divi' ) $bsp_theme_check = 'divi' ;
-				if ($theme_name == 'Kadence' || $parent ==  'Kadence' ) $bsp_theme_check = 'kadence' ;
-				if ($theme_name == 'Hello Elementor' || $parent ==  'Hello Elementor') $bsp_theme_check = 'hello-elementor' ;
+				if ($theme_name == 'Divi' || $parent_name ==  'Divi' ) $bsp_theme_check = 'divi' ;
+				if ($theme_name == 'Kadence' || $parent_name ==  'Kadence' ) $bsp_theme_check = 'kadence' ;
+				if ($theme_name == 'Hello Elementor' || $parent_name ==  'Hello Elementor') $bsp_theme_check = 'hello-elementor' ;
 				}
 				
 				if (!empty ($bsp_theme_check))
